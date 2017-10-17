@@ -12,7 +12,7 @@ src/dash-cli
 src/dash-tx
 src/test/test_dash
 src/qt/test/test_dash-qt
-src/bench/bench_dash
+src/bench/bench_dash 
 
 # autoreconf
 Makefile.in
