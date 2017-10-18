@@ -79,7 +79,6 @@ libconftest.dylib*
 
 # Compilation and Qt preprocessor part
 *.qm
-Makefile
 dash-qt
 Dash-Qt.app
 
