@@ -61,6 +61,7 @@ libconftest.dylib*
 *.pyc
 *.o
 *.o-*
+*.patch
 .dash
 *.a
 *.pb.cc
@@ -79,6 +80,7 @@ libconftest.dylib*
 
 # Compilation and Qt preprocessor part
 *.qm
+Makefile
 dash-qt
 Dash-Qt.app
 
