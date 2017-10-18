@@ -57,7 +57,7 @@ void DarksendConfig::clickHigh()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("PrivateSend Configuration"),
         tr(
-            "PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Dash's configuration screen."
+            "PrivateSend was successfully set to high (%1 and 8 rounds). You can exchange this at any time by opening Dash's configuration screen."
         ).arg(strAmount)
     );
 
