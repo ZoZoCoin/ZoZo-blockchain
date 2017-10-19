@@ -1876,7 +1876,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         return InitError("Failed to load masternode cache from mncache.dat");
     }
 
-    if(!mnodeman.size()) {///have to change to default KaiKaiKaiKaiKaiKai (mnodeman.size())
+    if(mnodeman.size()) {///have to change to default KaiKaiKaiKaiKaiKai (mnodeman.size())
         uiInterface.InitMessage(_("Loading masternode payment cache..."));
         CFlatDB<CMasternodePayments> flatdb2("mnpayments.dat", "magicMasternodePaymentsCache");
         if(!flatdb2.Load(mnpayments)) {
@@ -1886,7 +1886,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         uiInterface.InitMessage(_("Loading governance cache..."));
         CFlatDB<CGovernanceManager> flatdb3("governance.dat", "magicGovernanceCache");
         if(!flatdb3.Load(governance)) {
-            return InitError("Failed to load governanceXXXX cache from governance.dat");
+            return InitError("Failed to load governance cache from governance.dat");
         }
         governance.InitOnLoad();
     } else {
