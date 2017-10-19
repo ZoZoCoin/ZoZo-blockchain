@@ -71,10 +71,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/dashcore
-pkgincludedir = $(includedir)/dashcore
-pkglibdir = $(libdir)/dashcore
-pkglibexecdir = $(libexecdir)/dashcore
+pkgdatadir = $(datadir)/zozocoincore
+pkgincludedir = $(includedir)/zozocoincore
+pkglibdir = $(libdir)/zozocoincore
+pkglibexecdir = $(libexecdir)/zozocoincore
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -120,7 +120,7 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = $(top_builddir)/src/config/dash-config.h
+CONFIG_HEADER = $(top_builddir)/src/config/zozocoin-config.h
 CONFIG_CLEAN_FILES = libbitcoinconsensus.pc share/setup.nsi \
 	share/qt/Info.plist src/test/buildenv.py \
 	qa/pull-tester/run-bitcoind-for-test.sh \
@@ -224,11 +224,10 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/qa/pull-tester/tests_config.py.in \
 	$(top_srcdir)/share/qt/Info.plist.in \
 	$(top_srcdir)/share/setup.nsi.in \
-	$(top_srcdir)/src/config/dash-config.h.in \
+	$(top_srcdir)/src/config/zozocoin-config.h.in \
 	$(top_srcdir)/src/test/buildenv.py.in COPYING INSTALL \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -381,11 +380,11 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = otool
 OTOOL64 = :
-PACKAGE = dashcore
-PACKAGE_BUGREPORT = https://github.com/dashpay/dash/issues
-PACKAGE_NAME = Dash Core
-PACKAGE_STRING = Dash Core 0.12.1
-PACKAGE_TARNAME = dashcore
+PACKAGE = zozocoincore
+PACKAGE_BUGREPORT = https://github.com/zozocoinpay/zozocoin/issues
+PACKAGE_NAME = Zozocoin Core
+PACKAGE_STRING = Zozocoin Core 0.12.1
+PACKAGE_TARNAME = zozocoincore
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.12.1
 PATH_SEPARATOR = :
@@ -489,7 +488,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /Volumes/Work/Working/Coin/newDash/dash/depends/x86_64-w64-mingw32
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -506,12 +505,12 @@ SUBDIRS = src
 GZIP_ENV = "-9n"
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libbitcoinconsensus.pc
-BITCOIND_BIN = $(top_builddir)/src/dashd$(EXEEXT)
-BITCOIN_QT_BIN = $(top_builddir)/src/qt/dash-qt$(EXEEXT)
-BITCOIN_CLI_BIN = $(top_builddir)/src/dash-cli$(EXEEXT)
+BITCOIND_BIN = $(top_builddir)/src/zozocoind$(EXEEXT)
+BITCOIN_QT_BIN = $(top_builddir)/src/qt/zozocoin-qt$(EXEEXT)
+BITCOIN_CLI_BIN = $(top_builddir)/src/zozocoin-cli$(EXEEXT)
 BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
-OSX_APP = Dash-Qt.app
-OSX_DMG = Dash-Core.dmg
+OSX_APP = Zozocoin-Qt.app
+OSX_DMG = Zozocoin-Core.dmg
 OSX_BACKGROUND_IMAGE = background.tiff
 OSX_DEPLOY_SCRIPT = $(top_srcdir)/contrib/macdeploy/macdeployqtplus
 OSX_FANCY_PLIST = $(top_srcdir)/contrib/macdeploy/fancy.plist
@@ -535,13 +534,13 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) $
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
 COVERAGE_INFO = baseline_filtered_combined.info baseline.info block_test.info \
-  leveldb_baseline.info test_dash_filtered.info total_coverage.info \
+  leveldb_baseline.info test_zozocoin_filtered.info total_coverage.info \
   baseline_filtered.info block_test_filtered.info rpc_test.info rpc_test_filtered.info \
-  leveldb_baseline_filtered.info test_dash_coverage.info test_dash.info
+  leveldb_baseline_filtered.info test_zozocoin_coverage.info test_zozocoin.info
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/Dash-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/Zozocoin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 #APP_DIST_DIR = $(top_builddir)/dist
 #APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
@@ -585,20 +584,20 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 
-src/config/dash-config.h: src/config/stamp-h1
+src/config/zozocoin-config.h: src/config/stamp-h1
 	@test -f $@ || rm -f src/config/stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) src/config/stamp-h1
 
-src/config/stamp-h1: $(top_srcdir)/src/config/dash-config.h.in $(top_builddir)/config.status
+src/config/stamp-h1: $(top_srcdir)/src/config/zozocoin-config.h.in $(top_builddir)/config.status
 	@rm -f src/config/stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status src/config/dash-config.h
-$(top_srcdir)/src/config/dash-config.h.in:  $(am__configure_deps) 
+	cd $(top_builddir) && $(SHELL) ./config.status src/config/zozocoin-config.h
+$(top_srcdir)/src/config/zozocoin-config.h.in:  $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f src/config/stamp-h1
 	touch $@
 
 distclean-hdr:
-	-rm -f src/config/dash-config.h src/config/stamp-h1
+	-rm -f src/config/zozocoin-config.h src/config/stamp-h1
 libbitcoinconsensus.pc: $(top_builddir)/config.status $(srcdir)/libbitcoinconsensus.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 share/setup.nsi: $(top_builddir)/config.status $(top_srcdir)/share/setup.nsi.in
@@ -1107,7 +1106,7 @@ $(OSX_APP)/Contents/Resources/bitcoin.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Dash-Qt: $(BITCOIN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Zozocoin-Qt: $(BITCOIN_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -1124,10 +1123,10 @@ deploydir: $(OSX_DMG)
 #	@rm -f $@
 #	@cd $(@D); $(LN_S) /Applications $(@F)
 
-#$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt
+#$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Zozocoin-Qt
 
 #$(OSX_DMG): $(APP_DIST_EXTRAS)
-#	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "Dash-Core" -no-pad -r -dir-mode 0755 -apple -o $@ dist
+#	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "Zozocoin-Core" -no-pad -r -dir-mode 0755 -apple -o $@ dist
 
 #$(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE): contrib/macdeploy/$(OSX_BACKGROUND_IMAGE)
 #	$(MKDIR_P) $(@D)
@@ -1135,7 +1134,7 @@ deploydir: $(OSX_DMG)
 #$(APP_DIST_DIR)/.DS_Store: contrib/macdeploy/DS_Store
 #	$(INSTALL) $< $@
 
-#$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+#$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Zozocoin-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 #	INSTALLNAMETOOL=$(INSTALLNAMETOOL)  OTOOL=$(OTOOL) STRIP=$(STRIP) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -translations-dir=$(QT_TRANSLATION_DIR) -add-qt-tr $(OSX_QT_TRANSLATIONS) -verbose 2
 
 #deploydir: $(APP_DIST_EXTRAS)
@@ -1168,16 +1167,16 @@ $(BITCOIN_CLI_BIN): FORCE
 #baseline_filtered_combined.info: leveldb_baseline_filtered.info baseline_filtered.info
 #	$(LCOV) -a leveldb_baseline_filtered.info -a baseline_filtered.info -o $@
 
-#test_dash.info: baseline_filtered_combined.info
+#test_zozocoin.info: baseline_filtered_combined.info
 #	$(MAKE) -C src/ check
-#	$(LCOV) -c -d $(abs_builddir)/src -t test_dash -o $@
+#	$(LCOV) -c -d $(abs_builddir)/src -t test_zozocoin -o $@
 #	$(LCOV) -z -d $(abs_builddir)/src
 #	$(LCOV) -z -d $(abs_builddir)/src/leveldb
 
-#test_dash_filtered.info: test_dash.info
+#test_zozocoin_filtered.info: test_zozocoin.info
 #	$(LCOV) -r $< "/usr/include/*" -o $@
 
-#block_test.info: test_dash_filtered.info
+#block_test.info: test_zozocoin_filtered.info
 #	$(MKDIR_P) qa/tmp
 #	-@TIMEOUT=15 qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS)
 #	$(LCOV) -c -d $(abs_builddir)/src --t BitcoinJBlockTest -o $@
@@ -1187,7 +1186,7 @@ $(BITCOIN_CLI_BIN): FORCE
 #block_test_filtered.info: block_test.info
 #	$(LCOV) -r $< "/usr/include/*" -o $@
 
-#rpc_test.info: test_dash_filtered.info
+#rpc_test.info: test_zozocoin_filtered.info
 #	-@TIMEOUT=15 python qa/pull-tester/rpc-tests.py $(EXTENDED_RPC_TESTS)
 #	$(LCOV) -c -d $(abs_builddir)/src --t rpc-tests -o $@
 #	$(LCOV) -z -d $(abs_builddir)/src
@@ -1196,13 +1195,13 @@ $(BITCOIN_CLI_BIN): FORCE
 #rpc_test_filtered.info: rpc_test.info
 #	$(LCOV) -r $< "/usr/include/*" -o $@
 
-#test_dash_coverage.info: baseline_filtered_combined.info test_dash_filtered.info
-#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_dash_filtered.info -o $@
+#test_zozocoin_coverage.info: baseline_filtered_combined.info test_zozocoin_filtered.info
+#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_zozocoin_filtered.info -o $@
 
-#total_coverage.info: baseline_filtered_combined.info test_dash_filtered.info block_test_filtered.info rpc_test_filtered.info
-#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_dash_filtered.info -a block_test_filtered.info -a rpc_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
+#total_coverage.info: baseline_filtered_combined.info test_zozocoin_filtered.info block_test_filtered.info rpc_test_filtered.info
+#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_zozocoin_filtered.info -a block_test_filtered.info -a rpc_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-#test_dash.coverage/.dirstamp:  test_dash_coverage.info
+#test_zozocoin.coverage/.dirstamp:  test_zozocoin_coverage.info
 #	$(GENHTML) -s $< -o $(@D)
 #	@touch $@
 
@@ -1210,16 +1209,16 @@ $(BITCOIN_CLI_BIN): FORCE
 #	$(GENHTML) -s $< -o $(@D)
 #	@touch $@
 
-#cov: test_dash.coverage/.dirstamp total.coverage/.dirstamp
+#cov: test_zozocoin.coverage/.dirstamp total.coverage/.dirstamp
 
-# Dash: disable the test until upstream switches from convoluted comparison tool
+# Zozocoin: disable the test until upstream switches from convoluted comparison tool
 # Ref https://github.com/bitcoin/bitcoin/issues/4545
 #check-local:
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 
 clean-local:
-	rm -rf coverage_percent.txt test_dash.coverage/ total.coverage/ qa/tmp/ cache/ $(OSX_APP)
+	rm -rf coverage_percent.txt test_zozocoin.coverage/ total.coverage/ qa/tmp/ cache/ $(OSX_APP)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

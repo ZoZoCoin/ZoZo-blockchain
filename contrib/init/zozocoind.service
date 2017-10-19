@@ -1,0 +1,22 @@
+[Unit]
+Description=Zozocoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=zozocoincore
+Group=zozocoincore
+
+Type=forking
+PIDFile=/var/lib/zozocoind/zozocoind.pid
+ExecStart=/usr/bin/zozocoind -daemon -pid=/var/lib/zozocoind/zozocoind.pid \
+-conf=/etc/zozocoincore/zozocoin.conf -datadir=/var/lib/zozocoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

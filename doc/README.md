@@ -1,7 +1,7 @@
 Zozo Core 0.12.1
 =====================
 
-This is the official reference wallet for Zozo digital currency and comprises the backbone of the Zozo peer-to-peer network. You can [download Zozo Core](https://www.dash.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Zozo digital currency and comprises the backbone of the Zozo peer-to-peer network. You can [download Zozo Core](https://www.zozocoin.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -16,7 +16,7 @@ Unpack the files into a directory and run:
 
 ### Windows
 
-Unpack the files into a directory, and then run dash-qt.exe.
+Unpack the files into a directory, and then run zozocoin-qt.exe.
 
 ### OS X
 
@@ -24,10 +24,10 @@ Drag Zozo-Qt to your applications folder, and then run Zozo-Qt.
 
 ### Need Help?
 
-* See the [Zozo documentation](https://dashpay.atlassian.net/wiki/display/DOC)
+* See the [Zozo documentation](https://zozocoinpay.atlassian.net/wiki/display/DOC)
 for help and more information.
-* Ask for help on [#dashpay](http://webchat.freenode.net?channels=dashpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=dashpay).
-* Ask for help on the [ZozoTalk](https://dashtalk.org/) forums.
+* Ask for help on [#zozocoinpay](http://webchat.freenode.net?channels=zozocoinpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=zozocoinpay).
+* Ask for help on the [ZozoTalk](https://zozocointalk.org/) forums.
 
 Building
 ---------------------
@@ -57,8 +57,8 @@ The Zozo Core repo's [root README](/README.md) contains relevant information on 
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [ZozoTalk](https://dashtalk.org/) forums, in the Development & Technical Discussion board.
-* Discuss on [#dashpay](http://webchat.freenode.net/?channels=dashpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=dashpay).
+* Discuss on the [ZozoTalk](https://zozocointalk.org/) forums, in the Development & Technical Discussion board.
+* Discuss on [#zozocoinpay](http://webchat.freenode.net/?channels=zozocoinpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=zozocoinpay).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

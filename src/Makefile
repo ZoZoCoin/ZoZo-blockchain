@@ -72,10 +72,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/dashcore
-pkgincludedir = $(includedir)/dashcore
-pkglibdir = $(libdir)/dashcore
-pkglibexecdir = $(libexecdir)/dashcore
+pkgdatadir = $(datadir)/zozocoincore
+pkgincludedir = $(includedir)/zozocoincore
+pkglibdir = $(libdir)/zozocoincore
+pkglibexecdir = $(libexecdir)/zozocoincore
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -96,14 +96,14 @@ am__append_2 = libbitcoin_wallet.a
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5) $(am__EXEEXT_6)
 TESTS = $(am__EXEEXT_3) $(am__EXEEXT_6)
-am__append_4 = dashd
-am__append_5 = dash-cli dash-tx
+am__append_4 = zozocoind
+am__append_5 = zozocoin-cli zozocoin-tx
 #am__append_6 = compat/glibc_compat.cpp
-#am__append_7 = dashd-res.rc
+#am__append_7 = zozocoind-res.rc
 #am__append_8 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_9 = libbitcoin_wallet.a
-#am__append_10 = dash-cli-res.rc
-#am__append_11 = dash-tx-res.rc
+#am__append_10 = zozocoin-cli-res.rc
+#am__append_11 = zozocoin-tx-res.rc
 #am__append_12 = compat/glibc_compat.cpp
 am__append_13 = $(LIBLEVELDB_INT) \
 	$(LIBMEMENV_INT)
@@ -116,8 +116,8 @@ am__append_18 = -DLEVELDB_PLATFORM_POSIX
 #am__append_19 = leveldb/util/env_win.cc \
 #	leveldb/port/port_win.cc
 am__append_20 = leveldb/port/port_posix.cc
-am__append_21 = test/test_dash
-am__append_22 = test/test_dash
+am__append_21 = test/test_zozocoin
+am__append_22 = test/test_zozocoin
 am__append_23 = \
 	test/bctest.py \
 	test/bitcoin-util-test.py \
@@ -141,11 +141,11 @@ am__append_24 = \
 am__append_25 = $(LIBBITCOIN_WALLET)
 #am__append_26 = $(ZMQ_LIBS)
 am__append_27 = $(CLEAN_BITCOIN_TEST)
-am__append_28 = bench/bench_dash
+am__append_28 = bench/bench_zozocoin
 #am__append_29 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_30 = $(LIBBITCOIN_WALLET)
 am__append_31 = $(CLEAN_BITCOIN_BENCH)
-am__append_32 = qt/dash-qt
+am__append_32 = qt/zozocoin-qt
 am__append_33 = qt/libbitcoinqt.a
 #am__append_34 = qt/winshutdownmonitor.cpp
 am__append_35 = \
@@ -183,8 +183,8 @@ am__append_36 = $(BITCOIN_MM)
 am__append_38 = $(LIBBITCOIN_WALLET)
 #am__append_39 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_40 = $(CLEAN_QT)
-am__append_41 = qt/test/test_dash-qt
-am__append_42 = qt/test/test_dash-qt
+am__append_41 = qt/test/test_zozocoin-qt
+am__append_42 = qt/test/test_zozocoin-qt
 am__append_43 = qt/test/moc_paymentservertests.cpp
 am__append_44 = \
   qt/test/paymentservertests.cpp
@@ -221,7 +221,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__include_HEADERS_DIST) \
 	$(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = $(top_builddir)/src/config/dash-config.h
+CONFIG_HEADER = $(top_builddir)/src/config/zozocoin-config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 ARFLAGS = cru
@@ -550,15 +550,18 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/forms/receiverequestdialog.ui qt/forms/debugwindow.ui \
 	qt/forms/sendcoinsdialog.ui qt/forms/sendcoinsentry.ui \
 	qt/forms/signverifymessagedialog.ui \
-	qt/forms/transactiondescdialog.ui qt/dash.qrc \
-	qt/dash_locale.qrc qt/locale/dash_bg.ts qt/locale/dash_de.ts \
-	qt/locale/dash_en.ts qt/locale/dash_es.ts qt/locale/dash_fi.ts \
-	qt/locale/dash_fr.ts qt/locale/dash_it.ts qt/locale/dash_ja.ts \
-	qt/locale/dash_pl.ts qt/locale/dash_pt.ts qt/locale/dash_ru.ts \
-	qt/locale/dash_sk.ts qt/locale/dash_sv.ts qt/locale/dash_vi.ts \
-	qt/locale/dash_zh_CN.ts qt/locale/dash_zh_TW.ts \
-	qt/paymentrequest.proto qt/res/icons/bitcoin.ico \
-	qt/res/icons/bitcoin.png qt/res/icons/drkblue/add.png \
+	qt/forms/transactiondescdialog.ui qt/zozocoin.qrc \
+	qt/zozocoin_locale.qrc qt/locale/zozocoin_bg.ts \
+	qt/locale/zozocoin_de.ts qt/locale/zozocoin_en.ts \
+	qt/locale/zozocoin_es.ts qt/locale/zozocoin_fi.ts \
+	qt/locale/zozocoin_fr.ts qt/locale/zozocoin_it.ts \
+	qt/locale/zozocoin_ja.ts qt/locale/zozocoin_pl.ts \
+	qt/locale/zozocoin_pt.ts qt/locale/zozocoin_ru.ts \
+	qt/locale/zozocoin_sk.ts qt/locale/zozocoin_sv.ts \
+	qt/locale/zozocoin_vi.ts qt/locale/zozocoin_zh_CN.ts \
+	qt/locale/zozocoin_zh_TW.ts qt/paymentrequest.proto \
+	qt/res/icons/bitcoin.ico qt/res/icons/bitcoin.png \
+	qt/res/icons/drkblue/add.png \
 	qt/res/icons/drkblue/address-book.png \
 	qt/res/icons/drkblue/browse.png \
 	qt/res/icons/drkblue/clock1.png \
@@ -717,7 +720,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/icons/trad/verify.png qt/res/images/drkblue/about.png \
 	qt/res/images/drkblue/splash.png \
 	qt/res/images/drkblue/splash_testnet.png \
-	qt/res/images/drkblue/dash_logo_horizontal.png \
+	qt/res/images/drkblue/zozocoin_logo_horizontal.png \
 	qt/res/images/drkblue/unchecked.png \
 	qt/res/images/drkblue/checked.png \
 	qt/res/images/drkblue/drkblue_downArrow.png \
@@ -730,7 +733,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/images/crownium/about.png \
 	qt/res/images/crownium/splash.png \
 	qt/res/images/crownium/splash_testnet.png \
-	qt/res/images/crownium/dash_logo_horizontal.png \
+	qt/res/images/crownium/zozocoin_logo_horizontal.png \
 	qt/res/images/crownium/unchecked.png \
 	qt/res/images/crownium/checked.png \
 	qt/res/images/crownium/drkblue_downArrow.png \
@@ -742,7 +745,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/images/crownium/drkblue_walletFrame_bg.png \
 	qt/res/images/light/about.png qt/res/images/light/splash.png \
 	qt/res/images/light/splash_testnet.png \
-	qt/res/images/light/dash_logo_horizontal.png \
+	qt/res/images/light/zozocoin_logo_horizontal.png \
 	qt/res/images/light/unchecked.png \
 	qt/res/images/light/checked.png \
 	qt/res/images/light/drkblue_downArrow.png \
@@ -754,7 +757,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/images/light/drkblue_walletFrame_bg.png \
 	qt/res/images/trad/about.png qt/res/images/trad/splash.png \
 	qt/res/images/trad/splash_testnet.png \
-	qt/res/images/trad/dash_logo_horizontal.png \
+	qt/res/images/trad/zozocoin_logo_horizontal.png \
 	qt/res/images/trad/drkblue_downArrow.png \
 	qt/res/images/trad/drkblue_downArrow_small.png \
 	qt/res/images/trad/drkblue_upArrow_small.png \
@@ -870,8 +873,8 @@ am__objects_8 = qt/qt_libbitcoinqt_a-moc_addressbookpage.$(OBJEXT) \
 	qt/qt_libbitcoinqt_a-moc_walletview.$(OBJEXT)
 am__objects_9 = qt/qt_libbitcoinqt_a-paymentrequest.pb.$(OBJEXT)
 am__objects_10 =  \
-	qt/qt_libbitcoinqt_a-qrc_dash.$(OBJEXT)
-am__objects_11 = qt/qt_libbitcoinqt_a-qrc_dash_locale.$(OBJEXT)
+	qt/qt_libbitcoinqt_a-qrc_zozocoin.$(OBJEXT)
+am__objects_11 = qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.$(OBJEXT)
 nodist_qt_libbitcoinqt_a_OBJECTS = $(am__objects_8) \
 	$(am__objects_3) $(am__objects_9) \
 	$(am__objects_3) $(am__objects_10) \
@@ -942,27 +945,28 @@ libbitcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(libbitcoinconsensus_la_LDFLAGS) $(LDFLAGS) -o $@
 am_libbitcoinconsensus_la_rpath = -rpath \
 	$(libdir)
-am__EXEEXT_1 = dashd$(EXEEXT)
-am__EXEEXT_2 = dash-cli$(EXEEXT) \
-	dash-tx$(EXEEXT)
-am__EXEEXT_3 = test/test_dash$(EXEEXT)
-am__EXEEXT_4 = bench/bench_dash$(EXEEXT)
-am__EXEEXT_5 = qt/dash-qt$(EXEEXT)
-am__EXEEXT_6 = qt/test/test_dash-qt$(EXEEXT)
+am__EXEEXT_1 = zozocoind$(EXEEXT)
+am__EXEEXT_2 = zozocoin-cli$(EXEEXT) \
+	zozocoin-tx$(EXEEXT)
+am__EXEEXT_3 = test/test_zozocoin$(EXEEXT)
+am__EXEEXT_4 = bench/bench_zozocoin$(EXEEXT)
+am__EXEEXT_5 = qt/zozocoin-qt$(EXEEXT)
+am__EXEEXT_6 =  \
+	qt/test/test_zozocoin-qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS)
-am__bench_bench_dash_SOURCES_DIST = bench/bench_dash.cpp \
+am__bench_bench_zozocoin_SOURCES_DIST = bench/bench_zozocoin.cpp \
 	bench/bench.cpp bench/bench.h bench/Examples.cpp
-am_bench_bench_dash_OBJECTS = bench/bench_bench_dash-bench_dash.$(OBJEXT) \
-	bench/bench_bench_dash-bench.$(OBJEXT) \
-	bench/bench_bench_dash-Examples.$(OBJEXT)
-bench_bench_dash_OBJECTS = $(am_bench_bench_dash_OBJECTS)
+am_bench_bench_zozocoin_OBJECTS = bench/bench_bench_zozocoin-bench_zozocoin.$(OBJEXT) \
+	bench/bench_bench_zozocoin-bench.$(OBJEXT) \
+	bench/bench_bench_zozocoin-Examples.$(OBJEXT)
+bench_bench_zozocoin_OBJECTS = $(am_bench_bench_zozocoin_OBJECTS)
 am__DEPENDENCIES_1 = $(am__append_14)
 am__DEPENDENCIES_2 = $(am__append_15)
 am__DEPENDENCIES_3 =
 #am__DEPENDENCIES_4 =  \
 #	$(LIBBITCOIN_ZMQ) \
 #	$(am__DEPENDENCIES_3)
-bench_bench_dash_DEPENDENCIES =  \
+bench_bench_zozocoin_DEPENDENCIES =  \
 	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
@@ -971,101 +975,35 @@ bench_bench_dash_DEPENDENCIES =  \
 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
-bench_bench_dash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+bench_bench_zozocoin_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) \
-	$(bench_bench_dash_LDFLAGS) $(LDFLAGS) -o $@
-am__dash_cli_SOURCES_DIST = dash-cli.cpp dash-cli-res.rc
-#am__objects_13 = dash-cli-res.$(OBJEXT)
-am_dash_cli_OBJECTS = dash_cli-dash-cli.$(OBJEXT) $(am__objects_13)
-dash_cli_OBJECTS = $(am_dash_cli_OBJECTS)
-dash_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
-	$(LIBBITCOIN_UTIL) $(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
-dash_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(dash_cli_CXXFLAGS) \
-	$(CXXFLAGS) $(dash_cli_LDFLAGS) $(LDFLAGS) -o $@
-am__dash_tx_SOURCES_DIST = dash-tx.cpp dash-tx-res.rc
-#am__objects_14 = dash-tx-res.$(OBJEXT)
-am_dash_tx_OBJECTS = dash_tx-dash-tx.$(OBJEXT) $(am__objects_14)
-dash_tx_OBJECTS = $(am_dash_tx_OBJECTS)
-dash_tx_DEPENDENCIES = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
-dash_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(dash_tx_CXXFLAGS) \
-	$(CXXFLAGS) $(dash_tx_LDFLAGS) $(LDFLAGS) -o $@
-am__dashd_SOURCES_DIST = dashd.cpp dashd-res.rc
-#am__objects_15 = dashd-res.$(OBJEXT)
-am_dashd_OBJECTS = dashd-dashd.$(OBJEXT) $(am__objects_15)
-dashd_OBJECTS = $(am_dashd_OBJECTS)
-#am__DEPENDENCIES_5 = $(LIBBITCOIN_ZMQ) \
-#	$(am__DEPENDENCIES_3)
-dashd_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
-	$(LIBUNIVALUE) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) $(LIBSECP256K1) \
-	$(am__DEPENDENCIES_5) $(am__append_9) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
-dashd_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(dashd_CXXFLAGS) \
-	$(CXXFLAGS) $(dashd_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_dash_qt_SOURCES_DIST = qt/dash.cpp qt/macdockiconhandler.mm \
-	qt/macnotificationhandler.mm qt/res/dash-qt-res.rc
-am__objects_16 =  \
-	qt/qt_dash_qt-macdockiconhandler.$(OBJEXT) \
-	qt/qt_dash_qt-macnotificationhandler.$(OBJEXT)
-am__objects_17 =  \
-	$(am__objects_16)
-am__objects_18 = qt/res/dash-qt-res.$(OBJEXT)
-#am__objects_19 =  \
-#	$(am__objects_18)
-am_qt_dash_qt_OBJECTS = qt/qt_dash_qt-dash.$(OBJEXT) \
-	$(am__objects_17) $(am__objects_19)
-qt_dash_qt_OBJECTS = $(am_qt_dash_qt_OBJECTS)
-#am__DEPENDENCIES_6 =  \
-#	$(LIBBITCOIN_ZMQ) \
-#	$(am__DEPENDENCIES_3)
-qt_dash_qt_DEPENDENCIES = qt/libbitcoinqt.a \
-	$(LIBBITCOIN_SERVER) $(am__append_38) \
-	$(am__DEPENDENCIES_6) $(LIBBITCOIN_CLI) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
-qt_dash_qt_LINK = $(LIBTOOL) $(AM_V_lt) $(qt_dash_qt_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(OBJCXXLD) $(AM_OBJCXXFLAGS) \
-	$(OBJCXXFLAGS) $(qt_dash_qt_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_test_test_dash_qt_SOURCES_DIST = qt/test/compattests.cpp \
+	$(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) \
+	$(bench_bench_zozocoin_LDFLAGS) $(LDFLAGS) -o $@
+am__qt_test_test_zozocoin_qt_SOURCES_DIST = qt/test/compattests.cpp \
 	qt/test/test_main.cpp qt/test/uritests.cpp \
 	qt/test/compattests.h qt/test/uritests.h \
 	qt/test/paymentrequestdata.h qt/test/paymentservertests.h \
 	qt/test/paymentservertests.cpp
-am__objects_20 = qt/test/qt_test_test_dash_qt-paymentservertests.$(OBJEXT)
-am_qt_test_test_dash_qt_OBJECTS = qt/test/qt_test_test_dash_qt-compattests.$(OBJEXT) \
-	qt/test/qt_test_test_dash_qt-test_main.$(OBJEXT) \
-	qt/test/qt_test_test_dash_qt-uritests.$(OBJEXT) \
-	$(am__objects_3) $(am__objects_20)
-am__objects_21 = qt/test/qt_test_test_dash_qt-moc_paymentservertests.$(OBJEXT)
-am__objects_22 = qt/test/qt_test_test_dash_qt-moc_compattests.$(OBJEXT) \
-	qt/test/qt_test_test_dash_qt-moc_uritests.$(OBJEXT) \
-	$(am__objects_21)
-nodist_qt_test_test_dash_qt_OBJECTS =  \
-	$(am__objects_22)
-qt_test_test_dash_qt_OBJECTS = $(am_qt_test_test_dash_qt_OBJECTS) \
-	$(nodist_qt_test_test_dash_qt_OBJECTS)
-#am__DEPENDENCIES_7 =  \
+am__objects_13 = qt/test/qt_test_test_zozocoin_qt-paymentservertests.$(OBJEXT)
+am_qt_test_test_zozocoin_qt_OBJECTS = qt/test/qt_test_test_zozocoin_qt-compattests.$(OBJEXT) \
+	qt/test/qt_test_test_zozocoin_qt-test_main.$(OBJEXT) \
+	qt/test/qt_test_test_zozocoin_qt-uritests.$(OBJEXT) \
+	$(am__objects_3) $(am__objects_13)
+am__objects_14 = qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.$(OBJEXT)
+am__objects_15 = qt/test/qt_test_test_zozocoin_qt-moc_compattests.$(OBJEXT) \
+	qt/test/qt_test_test_zozocoin_qt-moc_uritests.$(OBJEXT) \
+	$(am__objects_14)
+nodist_qt_test_test_zozocoin_qt_OBJECTS =  \
+	$(am__objects_15)
+qt_test_test_zozocoin_qt_OBJECTS =  \
+	$(am_qt_test_test_zozocoin_qt_OBJECTS) \
+	$(nodist_qt_test_test_zozocoin_qt_OBJECTS)
+#am__DEPENDENCIES_5 =  \
 #	$(LIBBITCOIN_ZMQ) \
 #	$(am__DEPENDENCIES_3)
-qt_test_test_dash_qt_DEPENDENCIES =  \
+qt_test_test_zozocoin_qt_DEPENDENCIES =  \
 	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
-	$(am__append_45) $(am__DEPENDENCIES_7) \
+	$(am__append_45) $(am__DEPENDENCIES_5) \
 	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
 	$(LIBUNIVALUE) $(am__DEPENDENCIES_1) \
@@ -1082,11 +1020,44 @@ qt_test_test_dash_qt_DEPENDENCIES =  \
 	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
 	$(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_3)
-qt_test_test_dash_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+qt_test_test_zozocoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) \
-	$(qt_test_test_dash_qt_LDFLAGS) $(LDFLAGS) -o $@
-am__test_test_dash_SOURCES_DIST = test/arith_uint256_tests.cpp \
+	$(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) \
+	$(qt_test_test_zozocoin_qt_LDFLAGS) $(LDFLAGS) -o $@
+am__qt_zozocoin_qt_SOURCES_DIST = qt/zozocoin.cpp \
+	qt/macdockiconhandler.mm qt/macnotificationhandler.mm \
+	qt/res/zozocoin-qt-res.rc
+am__objects_16 = qt/qt_zozocoin_qt-macdockiconhandler.$(OBJEXT) \
+	qt/qt_zozocoin_qt-macnotificationhandler.$(OBJEXT)
+am__objects_17 =  \
+	$(am__objects_16)
+am__objects_18 = qt/res/zozocoin-qt-res.$(OBJEXT)
+#am__objects_19 =  \
+#	$(am__objects_18)
+am_qt_zozocoin_qt_OBJECTS =  \
+	qt/qt_zozocoin_qt-zozocoin.$(OBJEXT) \
+	$(am__objects_17) $(am__objects_19)
+qt_zozocoin_qt_OBJECTS = $(am_qt_zozocoin_qt_OBJECTS)
+#am__DEPENDENCIES_6 =  \
+#	$(LIBBITCOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
+qt_zozocoin_qt_DEPENDENCIES = qt/libbitcoinqt.a \
+	$(LIBBITCOIN_SERVER) $(am__append_38) \
+	$(am__DEPENDENCIES_6) $(LIBBITCOIN_CLI) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
+qt_zozocoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
+	$(qt_zozocoin_qt_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
+	$(OBJCXXLD) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) \
+	$(qt_zozocoin_qt_LDFLAGS) $(LDFLAGS) -o $@
+am__test_test_zozocoin_SOURCES_DIST = test/arith_uint256_tests.cpp \
 	test/scriptnum10.h test/addrman_tests.cpp test/alert_tests.cpp \
 	test/allocator_tests.cpp test/base32_tests.cpp \
 	test/base58_tests.cpp test/base64_tests.cpp \
@@ -1109,100 +1080,139 @@ am__test_test_dash_SOURCES_DIST = test/arith_uint256_tests.cpp \
 	test/scriptnum_tests.cpp test/serialize_tests.cpp \
 	test/sighash_tests.cpp test/sigopcount_tests.cpp \
 	test/skiplist_tests.cpp test/streams_tests.cpp \
-	test/test_dash.cpp test/test_dash.h test/timedata_tests.cpp \
-	test/transaction_tests.cpp test/txvalidationcache_tests.cpp \
-	test/versionbits_tests.cpp test/uint256_tests.cpp \
-	test/univalue_tests.cpp test/util_tests.cpp \
-	test/accounting_tests.cpp wallet/test/wallet_tests.cpp \
-	test/rpc_wallet_tests.cpp test/data/script_tests.json \
-	test/data/base58_keys_valid.json \
+	test/test_zozocoin.cpp test/test_zozocoin.h \
+	test/timedata_tests.cpp test/transaction_tests.cpp \
+	test/txvalidationcache_tests.cpp test/versionbits_tests.cpp \
+	test/uint256_tests.cpp test/univalue_tests.cpp \
+	test/util_tests.cpp test/accounting_tests.cpp \
+	wallet/test/wallet_tests.cpp test/rpc_wallet_tests.cpp \
+	test/data/script_tests.json test/data/base58_keys_valid.json \
 	test/data/base58_encode_decode.json \
 	test/data/base58_keys_invalid.json test/data/tx_invalid.json \
 	test/data/tx_valid.json test/data/sighash.json \
 	test/data/alertTests.raw
-am__objects_23 = test/test_test_dash-accounting_tests.$(OBJEXT) \
-	wallet/test/test_test_dash-wallet_tests.$(OBJEXT) \
-	test/test_test_dash-rpc_wallet_tests.$(OBJEXT)
-am__objects_24 = test/test_test_dash-arith_uint256_tests.$(OBJEXT) \
-	test/test_test_dash-addrman_tests.$(OBJEXT) \
-	test/test_test_dash-alert_tests.$(OBJEXT) \
-	test/test_test_dash-allocator_tests.$(OBJEXT) \
-	test/test_test_dash-base32_tests.$(OBJEXT) \
-	test/test_test_dash-base58_tests.$(OBJEXT) \
-	test/test_test_dash-base64_tests.$(OBJEXT) \
-	test/test_test_dash-bip32_tests.$(OBJEXT) \
-	test/test_test_dash-bloom_tests.$(OBJEXT) \
-	test/test_test_dash-bswap_tests.$(OBJEXT) \
-	test/test_test_dash-cachemap_tests.$(OBJEXT) \
-	test/test_test_dash-cachemultimap_tests.$(OBJEXT) \
-	test/test_test_dash-checkblock_tests.$(OBJEXT) \
-	test/test_test_dash-Checkpoints_tests.$(OBJEXT) \
-	test/test_test_dash-coins_tests.$(OBJEXT) \
-	test/test_test_dash-compress_tests.$(OBJEXT) \
-	test/test_test_dash-crypto_tests.$(OBJEXT) \
-	test/test_test_dash-DoS_tests.$(OBJEXT) \
-	test/test_test_dash-getarg_tests.$(OBJEXT) \
-	test/test_test_dash-hash_tests.$(OBJEXT) \
-	test/test_test_dash-key_tests.$(OBJEXT) \
-	test/test_test_dash-limitedmap_tests.$(OBJEXT) \
-	test/test_test_dash-dbwrapper_tests.$(OBJEXT) \
-	test/test_test_dash-main_tests.$(OBJEXT) \
-	test/test_test_dash-mempool_tests.$(OBJEXT) \
-	test/test_test_dash-merkle_tests.$(OBJEXT) \
-	test/test_test_dash-miner_tests.$(OBJEXT) \
-	test/test_test_dash-multisig_tests.$(OBJEXT) \
-	test/test_test_dash-netbase_tests.$(OBJEXT) \
-	test/test_test_dash-pmt_tests.$(OBJEXT) \
-	test/test_test_dash-policyestimator_tests.$(OBJEXT) \
-	test/test_test_dash-pow_tests.$(OBJEXT) \
-	test/test_test_dash-prevector_tests.$(OBJEXT) \
-	test/test_test_dash-ratecheck_tests.$(OBJEXT) \
-	test/test_test_dash-reverselock_tests.$(OBJEXT) \
-	test/test_test_dash-rpc_tests.$(OBJEXT) \
-	test/test_test_dash-sanity_tests.$(OBJEXT) \
-	test/test_test_dash-scheduler_tests.$(OBJEXT) \
-	test/test_test_dash-script_P2SH_tests.$(OBJEXT) \
-	test/test_test_dash-script_P2PKH_tests.$(OBJEXT) \
-	test/test_test_dash-script_tests.$(OBJEXT) \
-	test/test_test_dash-scriptnum_tests.$(OBJEXT) \
-	test/test_test_dash-serialize_tests.$(OBJEXT) \
-	test/test_test_dash-sighash_tests.$(OBJEXT) \
-	test/test_test_dash-sigopcount_tests.$(OBJEXT) \
-	test/test_test_dash-skiplist_tests.$(OBJEXT) \
-	test/test_test_dash-streams_tests.$(OBJEXT) \
-	test/test_test_dash-test_dash.$(OBJEXT) \
-	test/test_test_dash-timedata_tests.$(OBJEXT) \
-	test/test_test_dash-transaction_tests.$(OBJEXT) \
-	test/test_test_dash-txvalidationcache_tests.$(OBJEXT) \
-	test/test_test_dash-versionbits_tests.$(OBJEXT) \
-	test/test_test_dash-uint256_tests.$(OBJEXT) \
-	test/test_test_dash-univalue_tests.$(OBJEXT) \
-	test/test_test_dash-util_tests.$(OBJEXT) \
-	$(am__objects_23)
-am_test_test_dash_OBJECTS = $(am__objects_24) \
+am__objects_20 = test/test_test_zozocoin-accounting_tests.$(OBJEXT) \
+	wallet/test/test_test_zozocoin-wallet_tests.$(OBJEXT) \
+	test/test_test_zozocoin-rpc_wallet_tests.$(OBJEXT)
+am__objects_21 = test/test_test_zozocoin-arith_uint256_tests.$(OBJEXT) \
+	test/test_test_zozocoin-addrman_tests.$(OBJEXT) \
+	test/test_test_zozocoin-alert_tests.$(OBJEXT) \
+	test/test_test_zozocoin-allocator_tests.$(OBJEXT) \
+	test/test_test_zozocoin-base32_tests.$(OBJEXT) \
+	test/test_test_zozocoin-base58_tests.$(OBJEXT) \
+	test/test_test_zozocoin-base64_tests.$(OBJEXT) \
+	test/test_test_zozocoin-bip32_tests.$(OBJEXT) \
+	test/test_test_zozocoin-bloom_tests.$(OBJEXT) \
+	test/test_test_zozocoin-bswap_tests.$(OBJEXT) \
+	test/test_test_zozocoin-cachemap_tests.$(OBJEXT) \
+	test/test_test_zozocoin-cachemultimap_tests.$(OBJEXT) \
+	test/test_test_zozocoin-checkblock_tests.$(OBJEXT) \
+	test/test_test_zozocoin-Checkpoints_tests.$(OBJEXT) \
+	test/test_test_zozocoin-coins_tests.$(OBJEXT) \
+	test/test_test_zozocoin-compress_tests.$(OBJEXT) \
+	test/test_test_zozocoin-crypto_tests.$(OBJEXT) \
+	test/test_test_zozocoin-DoS_tests.$(OBJEXT) \
+	test/test_test_zozocoin-getarg_tests.$(OBJEXT) \
+	test/test_test_zozocoin-hash_tests.$(OBJEXT) \
+	test/test_test_zozocoin-key_tests.$(OBJEXT) \
+	test/test_test_zozocoin-limitedmap_tests.$(OBJEXT) \
+	test/test_test_zozocoin-dbwrapper_tests.$(OBJEXT) \
+	test/test_test_zozocoin-main_tests.$(OBJEXT) \
+	test/test_test_zozocoin-mempool_tests.$(OBJEXT) \
+	test/test_test_zozocoin-merkle_tests.$(OBJEXT) \
+	test/test_test_zozocoin-miner_tests.$(OBJEXT) \
+	test/test_test_zozocoin-multisig_tests.$(OBJEXT) \
+	test/test_test_zozocoin-netbase_tests.$(OBJEXT) \
+	test/test_test_zozocoin-pmt_tests.$(OBJEXT) \
+	test/test_test_zozocoin-policyestimator_tests.$(OBJEXT) \
+	test/test_test_zozocoin-pow_tests.$(OBJEXT) \
+	test/test_test_zozocoin-prevector_tests.$(OBJEXT) \
+	test/test_test_zozocoin-ratecheck_tests.$(OBJEXT) \
+	test/test_test_zozocoin-reverselock_tests.$(OBJEXT) \
+	test/test_test_zozocoin-rpc_tests.$(OBJEXT) \
+	test/test_test_zozocoin-sanity_tests.$(OBJEXT) \
+	test/test_test_zozocoin-scheduler_tests.$(OBJEXT) \
+	test/test_test_zozocoin-script_P2SH_tests.$(OBJEXT) \
+	test/test_test_zozocoin-script_P2PKH_tests.$(OBJEXT) \
+	test/test_test_zozocoin-script_tests.$(OBJEXT) \
+	test/test_test_zozocoin-scriptnum_tests.$(OBJEXT) \
+	test/test_test_zozocoin-serialize_tests.$(OBJEXT) \
+	test/test_test_zozocoin-sighash_tests.$(OBJEXT) \
+	test/test_test_zozocoin-sigopcount_tests.$(OBJEXT) \
+	test/test_test_zozocoin-skiplist_tests.$(OBJEXT) \
+	test/test_test_zozocoin-streams_tests.$(OBJEXT) \
+	test/test_test_zozocoin-test_zozocoin.$(OBJEXT) \
+	test/test_test_zozocoin-timedata_tests.$(OBJEXT) \
+	test/test_test_zozocoin-transaction_tests.$(OBJEXT) \
+	test/test_test_zozocoin-txvalidationcache_tests.$(OBJEXT) \
+	test/test_test_zozocoin-versionbits_tests.$(OBJEXT) \
+	test/test_test_zozocoin-uint256_tests.$(OBJEXT) \
+	test/test_test_zozocoin-univalue_tests.$(OBJEXT) \
+	test/test_test_zozocoin-util_tests.$(OBJEXT) \
+	$(am__objects_20)
+am_test_test_zozocoin_OBJECTS = $(am__objects_21) \
 	$(am__objects_3) $(am__objects_3)
-am__objects_25 = $(am__objects_3) $(am__objects_3)
-nodist_test_test_dash_OBJECTS = $(am__objects_25)
-test_test_dash_OBJECTS = $(am_test_test_dash_OBJECTS) \
-	$(nodist_test_test_dash_OBJECTS)
-am__DEPENDENCIES_8 = libbitcoinconsensus.la
-#am__DEPENDENCIES_9 =  \
+am__objects_22 = $(am__objects_3) $(am__objects_3)
+nodist_test_test_zozocoin_OBJECTS =  \
+	$(am__objects_22)
+test_test_zozocoin_OBJECTS = $(am_test_test_zozocoin_OBJECTS) \
+	$(nodist_test_test_zozocoin_OBJECTS)
+am__DEPENDENCIES_7 = libbitcoinconsensus.la
+#am__DEPENDENCIES_8 =  \
 #	$(am__DEPENDENCIES_3)
-test_test_dash_DEPENDENCIES = $(LIBBITCOIN_SERVER) \
-	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-	$(LIBUNIVALUE) $(am__DEPENDENCIES_1) \
-	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(LIBSECP256K1) \
-	$(am__append_25) $(am__DEPENDENCIES_8) \
+test_test_zozocoin_DEPENDENCIES =  \
+	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(LIBSECP256K1) $(am__append_25) \
+	$(am__DEPENDENCIES_7) $(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
-	$(am__DEPENDENCIES_9)
-test_test_dash_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_8)
+test_test_zozocoin_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(test_test_dash_CXXFLAGS) $(CXXFLAGS) \
-	$(test_test_dash_LDFLAGS) $(LDFLAGS) -o $@
+	$(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) \
+	$(test_test_zozocoin_LDFLAGS) $(LDFLAGS) -o $@
+am__zozocoin_cli_SOURCES_DIST = zozocoin-cli.cpp zozocoin-cli-res.rc
+#am__objects_23 = zozocoin-cli-res.$(OBJEXT)
+am_zozocoin_cli_OBJECTS = zozocoin_cli-zozocoin-cli.$(OBJEXT) \
+	$(am__objects_23)
+zozocoin_cli_OBJECTS = $(am_zozocoin_cli_OBJECTS)
+zozocoin_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
+	$(LIBBITCOIN_UTIL) $(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
+zozocoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(zozocoin_cli_CXXFLAGS) \
+	$(CXXFLAGS) $(zozocoin_cli_LDFLAGS) $(LDFLAGS) -o $@
+am__zozocoin_tx_SOURCES_DIST = zozocoin-tx.cpp zozocoin-tx-res.rc
+#am__objects_24 = zozocoin-tx-res.$(OBJEXT)
+am_zozocoin_tx_OBJECTS = zozocoin_tx-zozocoin-tx.$(OBJEXT) \
+	$(am__objects_24)
+zozocoin_tx_OBJECTS = $(am_zozocoin_tx_OBJECTS)
+zozocoin_tx_DEPENDENCIES = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
+zozocoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(zozocoin_tx_CXXFLAGS) \
+	$(CXXFLAGS) $(zozocoin_tx_LDFLAGS) $(LDFLAGS) -o $@
+am__zozocoind_SOURCES_DIST = zozocoind.cpp zozocoind-res.rc
+#am__objects_25 = zozocoind-res.$(OBJEXT)
+am_zozocoind_OBJECTS = zozocoind-zozocoind.$(OBJEXT) $(am__objects_25)
+zozocoind_OBJECTS = $(am_zozocoind_OBJECTS)
+#am__DEPENDENCIES_9 = $(LIBBITCOIN_ZMQ) \
+#	$(am__DEPENDENCIES_3)
+zozocoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
+	$(LIBUNIVALUE) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) $(LIBSECP256K1) \
+	$(am__DEPENDENCIES_9) $(am__append_9) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
+zozocoind_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(zozocoind_CXXFLAGS) \
+	$(CXXFLAGS) $(zozocoind_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -1281,11 +1291,13 @@ SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(libbitcoin_wallet_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) \
 	$(qt_libbitcoinqt_a_SOURCES) \
 	$(nodist_qt_libbitcoinqt_a_SOURCES) \
-	$(libbitcoinconsensus_la_SOURCES) $(bench_bench_dash_SOURCES) \
-	$(dash_cli_SOURCES) $(dash_tx_SOURCES) $(dashd_SOURCES) \
-	$(qt_dash_qt_SOURCES) $(qt_test_test_dash_qt_SOURCES) \
-	$(nodist_qt_test_test_dash_qt_SOURCES) \
-	$(test_test_dash_SOURCES) $(nodist_test_test_dash_SOURCES)
+	$(libbitcoinconsensus_la_SOURCES) \
+	$(bench_bench_zozocoin_SOURCES) \
+	$(qt_test_test_zozocoin_qt_SOURCES) \
+	$(nodist_qt_test_test_zozocoin_qt_SOURCES) \
+	$(qt_zozocoin_qt_SOURCES) $(test_test_zozocoin_SOURCES) \
+	$(nodist_test_test_zozocoin_SOURCES) $(zozocoin_cli_SOURCES) \
+	$(zozocoin_tx_SOURCES) $(zozocoind_SOURCES)
 DIST_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(am__leveldb_libleveldb_a_SOURCES_DIST) \
 	$(am__leveldb_libmemenv_a_SOURCES_DIST) \
@@ -1296,11 +1308,12 @@ DIST_SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(am__libbitcoin_zmq_a_SOURCES_DIST) \
 	$(am__qt_libbitcoinqt_a_SOURCES_DIST) \
 	$(am__libbitcoinconsensus_la_SOURCES_DIST) \
-	$(am__bench_bench_dash_SOURCES_DIST) \
-	$(am__dash_cli_SOURCES_DIST) $(am__dash_tx_SOURCES_DIST) \
-	$(am__dashd_SOURCES_DIST) $(am__qt_dash_qt_SOURCES_DIST) \
-	$(am__qt_test_test_dash_qt_SOURCES_DIST) \
-	$(am__test_test_dash_SOURCES_DIST)
+	$(am__bench_bench_zozocoin_SOURCES_DIST) \
+	$(am__qt_test_test_zozocoin_qt_SOURCES_DIST) \
+	$(am__qt_zozocoin_qt_SOURCES_DIST) \
+	$(am__test_test_zozocoin_SOURCES_DIST) \
+	$(am__zozocoin_cli_SOURCES_DIST) \
+	$(am__zozocoin_tx_SOURCES_DIST) $(am__zozocoind_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -1663,11 +1676,11 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = otool
 OTOOL64 = :
-PACKAGE = dashcore
-PACKAGE_BUGREPORT = https://github.com/dashpay/dash/issues
-PACKAGE_NAME = Dash Core
-PACKAGE_STRING = Dash Core 0.12.1
-PACKAGE_TARNAME = dashcore
+PACKAGE = zozocoincore
+PACKAGE_BUGREPORT = https://github.com/zozocoinpay/zozocoin/issues
+PACKAGE_NAME = Zozocoin Core
+PACKAGE_STRING = Zozocoin Core 0.12.1
+PACKAGE_TARNAME = zozocoincore
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.12.1
 PATH_SEPARATOR = :
@@ -1771,7 +1784,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /Volumes/Work/Working/Coin/newDash/dash/depends/x86_64-w64-mingw32
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -1812,7 +1825,7 @@ lib_LTLIBRARIES = libbitcoinconsensus.la
 #LIBBITCOIN_CONSENSUS = 
 LIBBITCOIN_CONSENSUS = libbitcoinconsensus.la
 BENCHMARKS = 
-# dash core #
+# zozocoin core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addressindex.h \
@@ -1934,7 +1947,7 @@ BITCOIN_CORE_H = \
   zmq/zmqpublishnotifier.h
 
 
-# server: shared between dashd and dash-qt
+# server: shared between zozocoind and zozocoin-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -1989,7 +2002,7 @@ libbitcoin_server_a_SOURCES = \
 #  zmq/zmqpublishnotifier.cpp
 
 
-# wallet: shared between dashd and dash-qt, but only linked
+# wallet: shared between zozocoind and zozocoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -2060,7 +2073,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.h
 
 
-# common: shared between dashd, and dash-qt and non-server tools
+# common: shared between zozocoind, and zozocoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -2103,7 +2116,7 @@ libbitcoin_util_a_SOURCES = support/pagelocker.cpp chainparamsbase.cpp \
 	util.cpp utilmoneystr.cpp utilstrencodings.cpp utiltime.cpp \
 	$(BITCOIN_CORE_H) $(am__append_6)
 
-# cli: shared between dash-cli and dash-qt
+# cli: shared between zozocoin-cli and zozocoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -2114,33 +2127,35 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-dashd_SOURCES = dashd.cpp $(am__append_7)
-dashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-dashd_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) $(LIBUNIVALUE) \
-	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBLEVELDB) \
-	$(LIBMEMENV) $(LIBSECP256K1) $(am__append_8) $(am__append_9) \
-	$(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
-	$(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+zozocoind_SOURCES = zozocoind.cpp $(am__append_7)
+zozocoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+zozocoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+zozocoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+zozocoind_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
+	$(LIBUNIVALUE) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) $(am__append_8) \
+	$(am__append_9) $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) \
+	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) \
+	$(EVENT_LIBS)
 
-# dash-cli binary #
-dash_cli_SOURCES = dash-cli.cpp $(am__append_10)
-dash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-dash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-dash_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) $(LIBBITCOIN_UTIL) \
-	$(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+# zozocoin-cli binary #
+zozocoin_cli_SOURCES = zozocoin-cli.cpp $(am__append_10)
+zozocoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+zozocoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+zozocoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+zozocoin_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
+	$(LIBBITCOIN_UTIL) $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
+	$(EVENT_LIBS)
 #
 
-# dash-tx binary #
-dash_tx_SOURCES = dash-tx.cpp $(am__append_11)
-dash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-dash_tx_LDADD = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) $(BOOST_LIBS) \
-	$(CRYPTO_LIBS)
+# zozocoin-tx binary #
+zozocoin_tx_SOURCES = zozocoin-tx.cpp $(am__append_11)
+zozocoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+zozocoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+zozocoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+zozocoin_tx_LDADD = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) \
+	$(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #
@@ -2226,7 +2241,7 @@ leveldb_libmemenv_a_CPPFLAGS = $(leveldb_libleveldb_a_CPPFLAGS)
 leveldb_libmemenv_a_CXXFLAGS = $(leveldb_libleveldb_a_CXXFLAGS)
 leveldb_libmemenv_a_SOURCES = leveldb/helpers/memenv/memenv.cc
 TEST_SRCDIR = test
-TEST_BINARY = test/test_dash$(EXEEXT)
+TEST_BINARY = test/test_zozocoin$(EXEEXT)
 JSON_TEST_FILES = \
   test/data/script_tests.json \
   test/data/base58_keys_valid.json \
@@ -2274,17 +2289,18 @@ BITCOIN_TESTS = test/arith_uint256_tests.cpp \
 	test/sighash_tests.cpp \
 	test/sigopcount_tests.cpp \
 	test/skiplist_tests.cpp \
-	test/streams_tests.cpp test/test_dash.cpp \
-	test/test_dash.h test/timedata_tests.cpp \
+	test/streams_tests.cpp \
+	test/test_zozocoin.cpp test/test_zozocoin.h \
+	test/timedata_tests.cpp \
 	test/transaction_tests.cpp \
 	test/txvalidationcache_tests.cpp \
 	test/versionbits_tests.cpp \
 	test/uint256_tests.cpp \
 	test/univalue_tests.cpp test/util_tests.cpp \
 	$(am__append_24)
-test_test_dash_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
-test_test_dash_LDADD = $(LIBBITCOIN_SERVER) \
+test_test_zozocoin_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_zozocoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
+test_test_zozocoin_LDADD = $(LIBBITCOIN_SERVER) \
 	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
 	$(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
@@ -2295,21 +2311,21 @@ test_test_dash_LDADD = $(LIBBITCOIN_SERVER) \
 	$(SSL_LIBS) $(CRYPTO_LIBS) \
 	$(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) \
 	$(EVENT_LIBS) $(am__append_26)
-test_test_dash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-test_test_dash_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
-nodist_test_test_dash_SOURCES = $(GENERATED_TEST_FILES)
+test_test_zozocoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+test_test_zozocoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+nodist_test_test_zozocoin_SOURCES = $(GENERATED_TEST_FILES)
 CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
 BENCH_SRCDIR = bench
-BENCH_BINARY = bench/bench_dash$(EXEEXT)
-bench_bench_dash_SOURCES = \
-  bench/bench_dash.cpp \
+BENCH_BINARY = bench/bench_zozocoin$(EXEEXT)
+bench_bench_zozocoin_SOURCES = \
+  bench/bench_zozocoin.cpp \
   bench/bench.cpp \
   bench/bench.h \
   bench/Examples.cpp
 
-bench_bench_dash_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
-bench_bench_dash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-bench_bench_dash_LDADD = $(LIBBITCOIN_SERVER) \
+bench_bench_zozocoin_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_zozocoin_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+bench_bench_zozocoin_LDADD = $(LIBBITCOIN_SERVER) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UNIVALUE) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
 	$(LIBLEVELDB) $(LIBMEMENV) $(LIBSECP256K1) \
@@ -2317,27 +2333,27 @@ bench_bench_dash_LDADD = $(LIBBITCOIN_SERVER) \
 	$(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) \
 	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
 	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-bench_bench_dash_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+bench_bench_zozocoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 CLEAN_BITCOIN_BENCH = bench/*.gcda bench/*.gcno
 
-# dash qt core #
+# zozocoin qt core #
 QT_TS = \
-  qt/locale/dash_bg.ts \
-  qt/locale/dash_de.ts \
-  qt/locale/dash_en.ts \
-  qt/locale/dash_es.ts \
-  qt/locale/dash_fi.ts \
-  qt/locale/dash_fr.ts \
-  qt/locale/dash_it.ts \
-  qt/locale/dash_ja.ts \
-  qt/locale/dash_pl.ts \
-  qt/locale/dash_pt.ts \
-  qt/locale/dash_ru.ts \
-  qt/locale/dash_sk.ts \
-  qt/locale/dash_sv.ts \
-  qt/locale/dash_vi.ts \
-  qt/locale/dash_zh_CN.ts \
-  qt/locale/dash_zh_TW.ts
+  qt/locale/zozocoin_bg.ts \
+  qt/locale/zozocoin_de.ts \
+  qt/locale/zozocoin_en.ts \
+  qt/locale/zozocoin_es.ts \
+  qt/locale/zozocoin_fi.ts \
+  qt/locale/zozocoin_fr.ts \
+  qt/locale/zozocoin_it.ts \
+  qt/locale/zozocoin_ja.ts \
+  qt/locale/zozocoin_pl.ts \
+  qt/locale/zozocoin_pt.ts \
+  qt/locale/zozocoin_ru.ts \
+  qt/locale/zozocoin_sk.ts \
+  qt/locale/zozocoin_sv.ts \
+  qt/locale/zozocoin_vi.ts \
+  qt/locale/zozocoin_zh_CN.ts \
+  qt/locale/zozocoin_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -2412,16 +2428,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/dash.moc \
+  qt/zozocoin.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_dash.cpp
-QT_QRC = qt/dash.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_dash_locale.cpp
-QT_QRC_LOCALE = qt/dash_locale.qrc
+QT_QRC_CPP = qt/qrc_zozocoin.cpp
+QT_QRC = qt/zozocoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_zozocoin_locale.cpp
+QT_QRC_LOCALE = qt/zozocoin_locale.qrc
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
@@ -2693,7 +2709,7 @@ RES_IMAGES = \
   qt/res/images/drkblue/about.png \
   qt/res/images/drkblue/splash.png \
   qt/res/images/drkblue/splash_testnet.png \
-  qt/res/images/drkblue/dash_logo_horizontal.png \
+  qt/res/images/drkblue/zozocoin_logo_horizontal.png \
   qt/res/images/drkblue/unchecked.png \
   qt/res/images/drkblue/checked.png \
   qt/res/images/drkblue/drkblue_downArrow.png \
@@ -2706,7 +2722,7 @@ RES_IMAGES = \
   qt/res/images/crownium/about.png \
   qt/res/images/crownium/splash.png \
   qt/res/images/crownium/splash_testnet.png \
-  qt/res/images/crownium/dash_logo_horizontal.png \
+  qt/res/images/crownium/zozocoin_logo_horizontal.png \
   qt/res/images/crownium/unchecked.png \
   qt/res/images/crownium/checked.png \
   qt/res/images/crownium/drkblue_downArrow.png \
@@ -2719,7 +2735,7 @@ RES_IMAGES = \
   qt/res/images/light/about.png \
   qt/res/images/light/splash.png \
   qt/res/images/light/splash_testnet.png \
-  qt/res/images/light/dash_logo_horizontal.png \
+  qt/res/images/light/zozocoin_logo_horizontal.png \
   qt/res/images/light/unchecked.png \
   qt/res/images/light/checked.png \
   qt/res/images/light/drkblue_downArrow.png \
@@ -2732,7 +2748,7 @@ RES_IMAGES = \
   qt/res/images/trad/about.png \
   qt/res/images/trad/splash.png \
   qt/res/images/trad/splash_testnet.png \
-  qt/res/images/trad/dash_logo_horizontal.png \
+  qt/res/images/trad/zozocoin_logo_horizontal.png \
   qt/res/images/trad/drkblue_downArrow.png \
   qt/res/images/trad/drkblue_downArrow_small.png \
   qt/res/images/trad/drkblue_upArrow_small.png \
@@ -2747,7 +2763,7 @@ RES_CSS = \
   qt/res/css/light.css
 
 RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
-BITCOIN_RC = qt/res/dash-qt-res.rc
+BITCOIN_RC = qt/res/zozocoin-qt-res.rc
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
@@ -2765,14 +2781,14 @@ nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
 # forms/foo.h -> forms/ui_foo.h
 QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
 
-# dash-qt binary #
-qt_dash_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# zozocoin-qt binary #
+qt_zozocoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-qt_dash_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_dash_qt_SOURCES = qt/dash.cpp $(am__append_36) \
-	$(am__append_37)
-qt_dash_qt_LDADD = qt/libbitcoinqt.a \
+qt_zozocoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_zozocoin_qt_SOURCES = qt/zozocoin.cpp \
+	$(am__append_36) $(am__append_37)
+qt_zozocoin_qt_LDADD = qt/libbitcoinqt.a \
 	$(LIBBITCOIN_SERVER) $(am__append_38) \
 	$(am__append_39) $(LIBBITCOIN_CLI) \
 	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -2783,8 +2799,8 @@ qt_dash_qt_LDADD = qt/libbitcoinqt.a \
 	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
 	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
 	$(EVENT_LIBS)
-qt_dash_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_dash_qt_LIBTOOLFLAGS = --tag CXX
+qt_zozocoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_zozocoin_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM = $(QT_TS:.ts=.qm)
@@ -2798,28 +2814,29 @@ TEST_QT_H = \
   qt/test/paymentrequestdata.h \
   qt/test/paymentservertests.h
 
-qt_test_test_dash_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_test_test_zozocoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
 
-qt_test_test_dash_qt_SOURCES =  \
+qt_test_test_zozocoin_qt_SOURCES =  \
 	qt/test/compattests.cpp \
 	qt/test/test_main.cpp \
 	qt/test/uritests.cpp $(TEST_QT_H) \
 	$(am__append_44)
-nodist_qt_test_test_dash_qt_SOURCES = $(TEST_QT_MOC_CPP)
-qt_test_test_dash_qt_LDADD = $(LIBBITCOINQT) \
-	$(LIBBITCOIN_SERVER) $(am__append_45) \
-	$(am__append_46) $(LIBBITCOIN_CLI) \
-	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
-	$(LIBLEVELDB) $(LIBMEMENV) $(BOOST_LIBS) \
+nodist_qt_test_test_zozocoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
+qt_test_test_zozocoin_qt_LDADD =  \
+	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
+	$(am__append_45) $(am__append_46) \
+	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+	$(LIBUNIVALUE) $(LIBLEVELDB) \
+	$(LIBMEMENV) $(BOOST_LIBS) \
 	$(QT_DBUS_LIBS) $(QT_TEST_LIBS) \
 	$(QT_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) \
 	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
 	$(MINIUPNPC_LIBS) $(LIBSECP256K1) \
 	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_test_test_dash_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_test_test_dash_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_test_test_zozocoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_test_test_zozocoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 all: all-recursive
 
@@ -3407,10 +3424,10 @@ qt/qt_libbitcoinqt_a-moc_walletview.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libbitcoinqt_a-paymentrequest.pb.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libbitcoinqt_a-qrc_dash.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libbitcoinqt_a-qrc_zozocoin.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libbitcoinqt_a-qrc_dash_locale.$(OBJEXT): qt/$(am__dirstamp) \
-	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.$(OBJEXT):  \
+	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 
 qt/libbitcoinqt.a: $(qt_libbitcoinqt_a_OBJECTS) $(qt_libbitcoinqt_a_DEPENDENCIES) $(EXTRA_qt_libbitcoinqt_a_DEPENDENCIES) qt/$(am__dirstamp)
 	$(AM_V_at)-rm -f qt/libbitcoinqt.a
@@ -3530,203 +3547,203 @@ bench/$(am__dirstamp):
 bench/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) bench/$(DEPDIR)
 	@: > bench/$(DEPDIR)/$(am__dirstamp)
-bench/bench_bench_dash-bench_dash.$(OBJEXT): bench/$(am__dirstamp) \
+bench/bench_bench_zozocoin-bench_zozocoin.$(OBJEXT):  \
+	bench/$(am__dirstamp) bench/$(DEPDIR)/$(am__dirstamp)
+bench/bench_bench_zozocoin-bench.$(OBJEXT): bench/$(am__dirstamp) \
 	bench/$(DEPDIR)/$(am__dirstamp)
-bench/bench_bench_dash-bench.$(OBJEXT): bench/$(am__dirstamp) \
-	bench/$(DEPDIR)/$(am__dirstamp)
-bench/bench_bench_dash-Examples.$(OBJEXT): bench/$(am__dirstamp) \
+bench/bench_bench_zozocoin-Examples.$(OBJEXT): bench/$(am__dirstamp) \
 	bench/$(DEPDIR)/$(am__dirstamp)
 
-bench/bench_dash$(EXEEXT): $(bench_bench_dash_OBJECTS) $(bench_bench_dash_DEPENDENCIES) $(EXTRA_bench_bench_dash_DEPENDENCIES) bench/$(am__dirstamp)
-	@rm -f bench/bench_dash$(EXEEXT)
-	$(AM_V_CXXLD)$(bench_bench_dash_LINK) $(bench_bench_dash_OBJECTS) $(bench_bench_dash_LDADD) $(LIBS)
-
-dash-cli$(EXEEXT): $(dash_cli_OBJECTS) $(dash_cli_DEPENDENCIES) $(EXTRA_dash_cli_DEPENDENCIES) 
-	@rm -f dash-cli$(EXEEXT)
-	$(AM_V_CXXLD)$(dash_cli_LINK) $(dash_cli_OBJECTS) $(dash_cli_LDADD) $(LIBS)
-
-dash-tx$(EXEEXT): $(dash_tx_OBJECTS) $(dash_tx_DEPENDENCIES) $(EXTRA_dash_tx_DEPENDENCIES) 
-	@rm -f dash-tx$(EXEEXT)
-	$(AM_V_CXXLD)$(dash_tx_LINK) $(dash_tx_OBJECTS) $(dash_tx_LDADD) $(LIBS)
-
-dashd$(EXEEXT): $(dashd_OBJECTS) $(dashd_DEPENDENCIES) $(EXTRA_dashd_DEPENDENCIES) 
-	@rm -f dashd$(EXEEXT)
-	$(AM_V_CXXLD)$(dashd_LINK) $(dashd_OBJECTS) $(dashd_LDADD) $(LIBS)
-qt/qt_dash_qt-dash.$(OBJEXT): qt/$(am__dirstamp) \
-	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_dash_qt-macdockiconhandler.$(OBJEXT): qt/$(am__dirstamp) \
-	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_dash_qt-macnotificationhandler.$(OBJEXT): qt/$(am__dirstamp) \
-	qt/$(DEPDIR)/$(am__dirstamp)
-qt/res/$(am__dirstamp):
-	@$(MKDIR_P) qt/res
-	@: > qt/res/$(am__dirstamp)
-qt/res/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) qt/res/$(DEPDIR)
-	@: > qt/res/$(DEPDIR)/$(am__dirstamp)
-qt/res/dash-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
-	qt/res/$(DEPDIR)/$(am__dirstamp)
-
-qt/dash-qt$(EXEEXT): $(qt_dash_qt_OBJECTS) $(qt_dash_qt_DEPENDENCIES) $(EXTRA_qt_dash_qt_DEPENDENCIES) qt/$(am__dirstamp)
-	@rm -f qt/dash-qt$(EXEEXT)
-	$(AM_V_OBJCXXLD)$(qt_dash_qt_LINK) $(qt_dash_qt_OBJECTS) $(qt_dash_qt_LDADD) $(LIBS)
+bench/bench_zozocoin$(EXEEXT): $(bench_bench_zozocoin_OBJECTS) $(bench_bench_zozocoin_DEPENDENCIES) $(EXTRA_bench_bench_zozocoin_DEPENDENCIES) bench/$(am__dirstamp)
+	@rm -f bench/bench_zozocoin$(EXEEXT)
+	$(AM_V_CXXLD)$(bench_bench_zozocoin_LINK) $(bench_bench_zozocoin_OBJECTS) $(bench_bench_zozocoin_LDADD) $(LIBS)
 qt/test/$(am__dirstamp):
 	@$(MKDIR_P) qt/test
 	@: > qt/test/$(am__dirstamp)
 qt/test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) qt/test/$(DEPDIR)
 	@: > qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-compattests.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-compattests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-test_main.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-test_main.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-uritests.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-uritests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-paymentservertests.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-paymentservertests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-moc_compattests.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-moc_compattests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-moc_uritests.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-moc_uritests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_dash_qt-moc_paymentservertests.$(OBJEXT):  \
+qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 
-qt/test/test_dash-qt$(EXEEXT): $(qt_test_test_dash_qt_OBJECTS) $(qt_test_test_dash_qt_DEPENDENCIES) $(EXTRA_qt_test_test_dash_qt_DEPENDENCIES) qt/test/$(am__dirstamp)
-	@rm -f qt/test/test_dash-qt$(EXEEXT)
-	$(AM_V_CXXLD)$(qt_test_test_dash_qt_LINK) $(qt_test_test_dash_qt_OBJECTS) $(qt_test_test_dash_qt_LDADD) $(LIBS)
+qt/test/test_zozocoin-qt$(EXEEXT): $(qt_test_test_zozocoin_qt_OBJECTS) $(qt_test_test_zozocoin_qt_DEPENDENCIES) $(EXTRA_qt_test_test_zozocoin_qt_DEPENDENCIES) qt/test/$(am__dirstamp)
+	@rm -f qt/test/test_zozocoin-qt$(EXEEXT)
+	$(AM_V_CXXLD)$(qt_test_test_zozocoin_qt_LINK) $(qt_test_test_zozocoin_qt_OBJECTS) $(qt_test_test_zozocoin_qt_LDADD) $(LIBS)
+qt/qt_zozocoin_qt-zozocoin.$(OBJEXT): qt/$(am__dirstamp) \
+	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_zozocoin_qt-macdockiconhandler.$(OBJEXT): qt/$(am__dirstamp) \
+	qt/$(DEPDIR)/$(am__dirstamp)
+qt/qt_zozocoin_qt-macnotificationhandler.$(OBJEXT):  \
+	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
+qt/res/$(am__dirstamp):
+	@$(MKDIR_P) qt/res
+	@: > qt/res/$(am__dirstamp)
+qt/res/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) qt/res/$(DEPDIR)
+	@: > qt/res/$(DEPDIR)/$(am__dirstamp)
+qt/res/zozocoin-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
+	qt/res/$(DEPDIR)/$(am__dirstamp)
+
+qt/zozocoin-qt$(EXEEXT): $(qt_zozocoin_qt_OBJECTS) $(qt_zozocoin_qt_DEPENDENCIES) $(EXTRA_qt_zozocoin_qt_DEPENDENCIES) qt/$(am__dirstamp)
+	@rm -f qt/zozocoin-qt$(EXEEXT)
+	$(AM_V_OBJCXXLD)$(qt_zozocoin_qt_LINK) $(qt_zozocoin_qt_OBJECTS) $(qt_zozocoin_qt_LDADD) $(LIBS)
 test/$(am__dirstamp):
 	@$(MKDIR_P) test
 	@: > test/$(am__dirstamp)
 test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) test/$(DEPDIR)
 	@: > test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-arith_uint256_tests.$(OBJEXT):  \
+test/test_test_zozocoin-arith_uint256_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-addrman_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-addrman_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-alert_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-alert_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-allocator_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-base32_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-base58_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-base64_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-bip32_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-bloom_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-bswap_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-cachemap_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-cachemultimap_tests.$(OBJEXT):  \
+test/test_test_zozocoin-allocator_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-checkblock_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-base32_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-Checkpoints_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-base58_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-coins_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-base64_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-compress_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-bip32_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-crypto_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-bloom_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-DoS_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-bswap_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-getarg_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-hash_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-key_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-limitedmap_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-dbwrapper_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-main_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-mempool_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-merkle_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-miner_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-multisig_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-netbase_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-pmt_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-policyestimator_tests.$(OBJEXT):  \
+test/test_test_zozocoin-cachemap_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-pow_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-prevector_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-ratecheck_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-reverselock_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-rpc_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-sanity_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-scheduler_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-script_P2SH_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-script_P2PKH_tests.$(OBJEXT):  \
+test/test_test_zozocoin-cachemultimap_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-script_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-scriptnum_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-serialize_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-sighash_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-sigopcount_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-skiplist_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-streams_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-test_dash.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-timedata_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-transaction_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-txvalidationcache_tests.$(OBJEXT):  \
+test/test_test_zozocoin-checkblock_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-versionbits_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-Checkpoints_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-coins_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-uint256_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-compress_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-crypto_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-univalue_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-DoS_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-util_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-getarg_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-accounting_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_zozocoin-hash_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-key_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-limitedmap_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-dbwrapper_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-main_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-mempool_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-merkle_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-miner_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-multisig_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-netbase_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-pmt_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-policyestimator_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-pow_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-prevector_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-ratecheck_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-reverselock_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-rpc_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-sanity_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-scheduler_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-script_P2SH_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-script_P2PKH_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-script_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-scriptnum_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-serialize_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-sighash_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-sigopcount_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-skiplist_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-streams_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-test_zozocoin.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-timedata_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-transaction_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-txvalidationcache_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-versionbits_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-uint256_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-univalue_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-util_tests.$(OBJEXT): test/$(am__dirstamp) \
+	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-accounting_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 wallet/test/$(am__dirstamp):
 	@$(MKDIR_P) wallet/test
 	@: > wallet/test/$(am__dirstamp)
 wallet/test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) wallet/test/$(DEPDIR)
 	@: > wallet/test/$(DEPDIR)/$(am__dirstamp)
-wallet/test/test_test_dash-wallet_tests.$(OBJEXT):  \
+wallet/test/test_test_zozocoin-wallet_tests.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_dash-rpc_wallet_tests.$(OBJEXT): test/$(am__dirstamp) \
-	test/$(DEPDIR)/$(am__dirstamp)
+test/test_test_zozocoin-rpc_wallet_tests.$(OBJEXT):  \
+	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 
-test/test_dash$(EXEEXT): $(test_test_dash_OBJECTS) $(test_test_dash_DEPENDENCIES) $(EXTRA_test_test_dash_DEPENDENCIES) test/$(am__dirstamp)
-	@rm -f test/test_dash$(EXEEXT)
-	$(AM_V_CXXLD)$(test_test_dash_LINK) $(test_test_dash_OBJECTS) $(test_test_dash_LDADD) $(LIBS)
+test/test_zozocoin$(EXEEXT): $(test_test_zozocoin_OBJECTS) $(test_test_zozocoin_DEPENDENCIES) $(EXTRA_test_test_zozocoin_DEPENDENCIES) test/$(am__dirstamp)
+	@rm -f test/test_zozocoin$(EXEEXT)
+	$(AM_V_CXXLD)$(test_test_zozocoin_LINK) $(test_test_zozocoin_OBJECTS) $(test_test_zozocoin_LDADD) $(LIBS)
+
+zozocoin-cli$(EXEEXT): $(zozocoin_cli_OBJECTS) $(zozocoin_cli_DEPENDENCIES) $(EXTRA_zozocoin_cli_DEPENDENCIES) 
+	@rm -f zozocoin-cli$(EXEEXT)
+	$(AM_V_CXXLD)$(zozocoin_cli_LINK) $(zozocoin_cli_OBJECTS) $(zozocoin_cli_LDADD) $(LIBS)
+
+zozocoin-tx$(EXEEXT): $(zozocoin_tx_OBJECTS) $(zozocoin_tx_DEPENDENCIES) $(EXTRA_zozocoin_tx_DEPENDENCIES) 
+	@rm -f zozocoin-tx$(EXEEXT)
+	$(AM_V_CXXLD)$(zozocoin_tx_LINK) $(zozocoin_tx_OBJECTS) $(zozocoin_tx_LDADD) $(LIBS)
+
+zozocoind$(EXEEXT): $(zozocoind_OBJECTS) $(zozocoind_DEPENDENCIES) $(EXTRA_zozocoind_DEPENDENCIES) 
+	@rm -f zozocoind$(EXEEXT)
+	$(AM_V_CXXLD)$(zozocoind_LINK) $(zozocoind_OBJECTS) $(zozocoind_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -3758,9 +3775,6 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/dash_cli-dash-cli.Po
-include ./$(DEPDIR)/dash_tx-dash-tx.Po
-include ./$(DEPDIR)/dashd-dashd.Po
 include ./$(DEPDIR)/libbitcoin_cli_a-rpcclient.Po
 include ./$(DEPDIR)/libbitcoin_common_a-amount.Po
 include ./$(DEPDIR)/libbitcoin_common_a-arith_uint256.Po
@@ -3840,9 +3854,12 @@ include ./$(DEPDIR)/libbitcoinconsensus_la-hash.Plo
 include ./$(DEPDIR)/libbitcoinconsensus_la-pubkey.Plo
 include ./$(DEPDIR)/libbitcoinconsensus_la-uint256.Plo
 include ./$(DEPDIR)/libbitcoinconsensus_la-utilstrencodings.Plo
-include bench/$(DEPDIR)/bench_bench_dash-Examples.Po
-include bench/$(DEPDIR)/bench_bench_dash-bench.Po
-include bench/$(DEPDIR)/bench_bench_dash-bench_dash.Po
+include ./$(DEPDIR)/zozocoin_cli-zozocoin-cli.Po
+include ./$(DEPDIR)/zozocoin_tx-zozocoin-tx.Po
+include ./$(DEPDIR)/zozocoind-zozocoind.Po
+include bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Po
+include bench/$(DEPDIR)/bench_bench_zozocoin-bench.Po
+include bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Po
 include compat/$(DEPDIR)/libbitcoin_util_a-glibc_compat.Po
 include compat/$(DEPDIR)/libbitcoin_util_a-glibc_sanity.Po
 include compat/$(DEPDIR)/libbitcoin_util_a-glibcxx_sanity.Po
@@ -3920,9 +3937,6 @@ include policy/$(DEPDIR)/libbitcoin_wallet_a-rbf.Po
 include primitives/$(DEPDIR)/libbitcoin_common_a-block.Po
 include primitives/$(DEPDIR)/libbitcoin_common_a-transaction.Po
 include primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Plo
-include qt/$(DEPDIR)/qt_dash_qt-dash.Po
-include qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Po
-include qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-addressbookpage.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-addresstablemodel.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-askpassphrasedialog.Po
@@ -3997,8 +4011,8 @@ include qt/$(DEPDIR)/qt_libbitcoinqt_a-paymentrequestplus.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-paymentserver.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-peertablemodel.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-platformstyle.Po
-include qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Po
-include qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Po
+include qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Po
+include qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-qvalidatedlineedit.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-qvaluecombobox.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-receivecoinsdialog.Po
@@ -4022,13 +4036,16 @@ include qt/$(DEPDIR)/qt_libbitcoinqt_a-walletmodel.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-walletmodeltransaction.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-walletview.Po
 include qt/$(DEPDIR)/qt_libbitcoinqt_a-winshutdownmonitor.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Po
-include qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Po
+include qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Po
+include qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Po
+include qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Po
+include qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Po
 include script/$(DEPDIR)/libbitcoin_common_a-interpreter.Po
 include script/$(DEPDIR)/libbitcoin_common_a-script.Po
 include script/$(DEPDIR)/libbitcoin_common_a-script_error.Po
@@ -4040,63 +4057,63 @@ include script/$(DEPDIR)/libbitcoinconsensus_la-interpreter.Plo
 include script/$(DEPDIR)/libbitcoinconsensus_la-script.Plo
 include support/$(DEPDIR)/libbitcoin_util_a-cleanse.Po
 include support/$(DEPDIR)/libbitcoin_util_a-pagelocker.Po
-include test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Po
-include test/$(DEPDIR)/test_test_dash-DoS_tests.Po
-include test/$(DEPDIR)/test_test_dash-accounting_tests.Po
-include test/$(DEPDIR)/test_test_dash-addrman_tests.Po
-include test/$(DEPDIR)/test_test_dash-alert_tests.Po
-include test/$(DEPDIR)/test_test_dash-allocator_tests.Po
-include test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Po
-include test/$(DEPDIR)/test_test_dash-base32_tests.Po
-include test/$(DEPDIR)/test_test_dash-base58_tests.Po
-include test/$(DEPDIR)/test_test_dash-base64_tests.Po
-include test/$(DEPDIR)/test_test_dash-bip32_tests.Po
-include test/$(DEPDIR)/test_test_dash-bloom_tests.Po
-include test/$(DEPDIR)/test_test_dash-bswap_tests.Po
-include test/$(DEPDIR)/test_test_dash-cachemap_tests.Po
-include test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Po
-include test/$(DEPDIR)/test_test_dash-checkblock_tests.Po
-include test/$(DEPDIR)/test_test_dash-coins_tests.Po
-include test/$(DEPDIR)/test_test_dash-compress_tests.Po
-include test/$(DEPDIR)/test_test_dash-crypto_tests.Po
-include test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Po
-include test/$(DEPDIR)/test_test_dash-getarg_tests.Po
-include test/$(DEPDIR)/test_test_dash-hash_tests.Po
-include test/$(DEPDIR)/test_test_dash-key_tests.Po
-include test/$(DEPDIR)/test_test_dash-limitedmap_tests.Po
-include test/$(DEPDIR)/test_test_dash-main_tests.Po
-include test/$(DEPDIR)/test_test_dash-mempool_tests.Po
-include test/$(DEPDIR)/test_test_dash-merkle_tests.Po
-include test/$(DEPDIR)/test_test_dash-miner_tests.Po
-include test/$(DEPDIR)/test_test_dash-multisig_tests.Po
-include test/$(DEPDIR)/test_test_dash-netbase_tests.Po
-include test/$(DEPDIR)/test_test_dash-pmt_tests.Po
-include test/$(DEPDIR)/test_test_dash-policyestimator_tests.Po
-include test/$(DEPDIR)/test_test_dash-pow_tests.Po
-include test/$(DEPDIR)/test_test_dash-prevector_tests.Po
-include test/$(DEPDIR)/test_test_dash-ratecheck_tests.Po
-include test/$(DEPDIR)/test_test_dash-reverselock_tests.Po
-include test/$(DEPDIR)/test_test_dash-rpc_tests.Po
-include test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Po
-include test/$(DEPDIR)/test_test_dash-sanity_tests.Po
-include test/$(DEPDIR)/test_test_dash-scheduler_tests.Po
-include test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Po
-include test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Po
-include test/$(DEPDIR)/test_test_dash-script_tests.Po
-include test/$(DEPDIR)/test_test_dash-scriptnum_tests.Po
-include test/$(DEPDIR)/test_test_dash-serialize_tests.Po
-include test/$(DEPDIR)/test_test_dash-sighash_tests.Po
-include test/$(DEPDIR)/test_test_dash-sigopcount_tests.Po
-include test/$(DEPDIR)/test_test_dash-skiplist_tests.Po
-include test/$(DEPDIR)/test_test_dash-streams_tests.Po
-include test/$(DEPDIR)/test_test_dash-test_dash.Po
-include test/$(DEPDIR)/test_test_dash-timedata_tests.Po
-include test/$(DEPDIR)/test_test_dash-transaction_tests.Po
-include test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Po
-include test/$(DEPDIR)/test_test_dash-uint256_tests.Po
-include test/$(DEPDIR)/test_test_dash-univalue_tests.Po
-include test/$(DEPDIR)/test_test_dash-util_tests.Po
-include test/$(DEPDIR)/test_test_dash-versionbits_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-alert_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-base32_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-base58_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-base64_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-coins_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-compress_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-hash_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-key_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-main_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-miner_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-pow_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-script_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-streams_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Po
+include test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-util_tests.Po
+include test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Po
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-crypter.Po
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-db.Po
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-rpcdump.Po
@@ -4104,7 +4121,7 @@ include wallet/$(DEPDIR)/libbitcoin_wallet_a-rpcwallet.Po
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-wallet.Po
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-wallet_ismine.Po
 include wallet/$(DEPDIR)/libbitcoin_wallet_a-walletdb.Po
-include wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Po
+include wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Po
 include zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqabstractnotifier.Po
 include zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqnotificationinterface.Po
 include zmq/$(DEPDIR)/libbitcoin_zmq_a-zmqpublishnotifier.Po
@@ -7797,33 +7814,33 @@ qt/qt_libbitcoinqt_a-paymentrequest.pb.obj: qt/paymentrequest.pb.cc
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-paymentrequest.pb.obj `if test -f 'qt/paymentrequest.pb.cc'; then $(CYGPATH_W) 'qt/paymentrequest.pb.cc'; else $(CYGPATH_W) '$(srcdir)/qt/paymentrequest.pb.cc'; fi`
 
-qt/qt_libbitcoinqt_a-qrc_dash.o: qt/qrc_dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_dash.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_dash.o `test -f 'qt/qrc_dash.cpp' || echo '$(srcdir)/'`qt/qrc_dash.cpp
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Po
-#	$(AM_V_CXX)source='qt/qrc_dash.cpp' object='qt/qt_libbitcoinqt_a-qrc_dash.o' libtool=no \
+qt/qt_libbitcoinqt_a-qrc_zozocoin.o: qt/qrc_zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_zozocoin.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin.o `test -f 'qt/qrc_zozocoin.cpp' || echo '$(srcdir)/'`qt/qrc_zozocoin.cpp
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Po
+#	$(AM_V_CXX)source='qt/qrc_zozocoin.cpp' object='qt/qt_libbitcoinqt_a-qrc_zozocoin.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_dash.o `test -f 'qt/qrc_dash.cpp' || echo '$(srcdir)/'`qt/qrc_dash.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin.o `test -f 'qt/qrc_zozocoin.cpp' || echo '$(srcdir)/'`qt/qrc_zozocoin.cpp
 
-qt/qt_libbitcoinqt_a-qrc_dash.obj: qt/qrc_dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_dash.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_dash.obj `if test -f 'qt/qrc_dash.cpp'; then $(CYGPATH_W) 'qt/qrc_dash.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_dash.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash.Po
-#	$(AM_V_CXX)source='qt/qrc_dash.cpp' object='qt/qt_libbitcoinqt_a-qrc_dash.obj' libtool=no \
+qt/qt_libbitcoinqt_a-qrc_zozocoin.obj: qt/qrc_zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_zozocoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin.obj `if test -f 'qt/qrc_zozocoin.cpp'; then $(CYGPATH_W) 'qt/qrc_zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_zozocoin.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin.Po
+#	$(AM_V_CXX)source='qt/qrc_zozocoin.cpp' object='qt/qt_libbitcoinqt_a-qrc_zozocoin.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_dash.obj `if test -f 'qt/qrc_dash.cpp'; then $(CYGPATH_W) 'qt/qrc_dash.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_dash.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin.obj `if test -f 'qt/qrc_zozocoin.cpp'; then $(CYGPATH_W) 'qt/qrc_zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_zozocoin.cpp'; fi`
 
-qt/qt_libbitcoinqt_a-qrc_dash_locale.o: qt/qrc_dash_locale.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_dash_locale.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_dash_locale.o `test -f 'qt/qrc_dash_locale.cpp' || echo '$(srcdir)/'`qt/qrc_dash_locale.cpp
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Po
-#	$(AM_V_CXX)source='qt/qrc_dash_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_dash_locale.o' libtool=no \
+qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.o: qt/qrc_zozocoin_locale.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.o -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.o `test -f 'qt/qrc_zozocoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_zozocoin_locale.cpp
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Po
+#	$(AM_V_CXX)source='qt/qrc_zozocoin_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_dash_locale.o `test -f 'qt/qrc_dash_locale.cpp' || echo '$(srcdir)/'`qt/qrc_dash_locale.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.o `test -f 'qt/qrc_zozocoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_zozocoin_locale.cpp
 
-qt/qt_libbitcoinqt_a-qrc_dash_locale.obj: qt/qrc_dash_locale.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_dash_locale.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_dash_locale.obj `if test -f 'qt/qrc_dash_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_dash_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_dash_locale.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_dash_locale.Po
-#	$(AM_V_CXX)source='qt/qrc_dash_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_dash_locale.obj' libtool=no \
+qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.obj: qt/qrc_zozocoin_locale.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.obj -MD -MP -MF qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Tpo -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.obj `if test -f 'qt/qrc_zozocoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_zozocoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_zozocoin_locale.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Tpo qt/$(DEPDIR)/qt_libbitcoinqt_a-qrc_zozocoin_locale.Po
+#	$(AM_V_CXX)source='qt/qrc_zozocoin_locale.cpp' object='qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_dash_locale.obj `if test -f 'qt/qrc_dash_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_dash_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_dash_locale.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libbitcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libbitcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libbitcoinqt_a-qrc_zozocoin_locale.obj `if test -f 'qt/qrc_zozocoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_zozocoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_zozocoin_locale.cpp'; fi`
 
 crypto/libbitcoinconsensus_la-hmac_sha512.lo: crypto/hmac_sha512.cpp
 	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-hmac_sha512.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Tpo -c -o crypto/libbitcoinconsensus_la-hmac_sha512.lo `test -f 'crypto/hmac_sha512.cpp' || echo '$(srcdir)/'`crypto/hmac_sha512.cpp
@@ -7923,1013 +7940,1013 @@ compat/libbitcoinconsensus_la-glibc_compat.lo: compat/glibc_compat.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o compat/libbitcoinconsensus_la-glibc_compat.lo `test -f 'compat/glibc_compat.cpp' || echo '$(srcdir)/'`compat/glibc_compat.cpp
 
-bench/bench_bench_dash-bench_dash.o: bench/bench_dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_dash-bench_dash.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_dash-bench_dash.Tpo -c -o bench/bench_bench_dash-bench_dash.o `test -f 'bench/bench_dash.cpp' || echo '$(srcdir)/'`bench/bench_dash.cpp
-	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_dash-bench_dash.Tpo bench/$(DEPDIR)/bench_bench_dash-bench_dash.Po
-#	$(AM_V_CXX)source='bench/bench_dash.cpp' object='bench/bench_bench_dash-bench_dash.o' libtool=no \
+bench/bench_bench_zozocoin-bench_zozocoin.o: bench/bench_zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_zozocoin-bench_zozocoin.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Tpo -c -o bench/bench_bench_zozocoin-bench_zozocoin.o `test -f 'bench/bench_zozocoin.cpp' || echo '$(srcdir)/'`bench/bench_zozocoin.cpp
+	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Tpo bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Po
+#	$(AM_V_CXX)source='bench/bench_zozocoin.cpp' object='bench/bench_bench_zozocoin-bench_zozocoin.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_dash-bench_dash.o `test -f 'bench/bench_dash.cpp' || echo '$(srcdir)/'`bench/bench_dash.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_zozocoin-bench_zozocoin.o `test -f 'bench/bench_zozocoin.cpp' || echo '$(srcdir)/'`bench/bench_zozocoin.cpp
 
-bench/bench_bench_dash-bench_dash.obj: bench/bench_dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_dash-bench_dash.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_dash-bench_dash.Tpo -c -o bench/bench_bench_dash-bench_dash.obj `if test -f 'bench/bench_dash.cpp'; then $(CYGPATH_W) 'bench/bench_dash.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_dash.cpp'; fi`
-	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_dash-bench_dash.Tpo bench/$(DEPDIR)/bench_bench_dash-bench_dash.Po
-#	$(AM_V_CXX)source='bench/bench_dash.cpp' object='bench/bench_bench_dash-bench_dash.obj' libtool=no \
+bench/bench_bench_zozocoin-bench_zozocoin.obj: bench/bench_zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_zozocoin-bench_zozocoin.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Tpo -c -o bench/bench_bench_zozocoin-bench_zozocoin.obj `if test -f 'bench/bench_zozocoin.cpp'; then $(CYGPATH_W) 'bench/bench_zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_zozocoin.cpp'; fi`
+	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Tpo bench/$(DEPDIR)/bench_bench_zozocoin-bench_zozocoin.Po
+#	$(AM_V_CXX)source='bench/bench_zozocoin.cpp' object='bench/bench_bench_zozocoin-bench_zozocoin.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_dash-bench_dash.obj `if test -f 'bench/bench_dash.cpp'; then $(CYGPATH_W) 'bench/bench_dash.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_dash.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_zozocoin-bench_zozocoin.obj `if test -f 'bench/bench_zozocoin.cpp'; then $(CYGPATH_W) 'bench/bench_zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_zozocoin.cpp'; fi`
 
-bench/bench_bench_dash-bench.o: bench/bench.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_dash-bench.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_dash-bench.Tpo -c -o bench/bench_bench_dash-bench.o `test -f 'bench/bench.cpp' || echo '$(srcdir)/'`bench/bench.cpp
-	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_dash-bench.Tpo bench/$(DEPDIR)/bench_bench_dash-bench.Po
-#	$(AM_V_CXX)source='bench/bench.cpp' object='bench/bench_bench_dash-bench.o' libtool=no \
+bench/bench_bench_zozocoin-bench.o: bench/bench.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_zozocoin-bench.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_zozocoin-bench.Tpo -c -o bench/bench_bench_zozocoin-bench.o `test -f 'bench/bench.cpp' || echo '$(srcdir)/'`bench/bench.cpp
+	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_zozocoin-bench.Tpo bench/$(DEPDIR)/bench_bench_zozocoin-bench.Po
+#	$(AM_V_CXX)source='bench/bench.cpp' object='bench/bench_bench_zozocoin-bench.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_dash-bench.o `test -f 'bench/bench.cpp' || echo '$(srcdir)/'`bench/bench.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_zozocoin-bench.o `test -f 'bench/bench.cpp' || echo '$(srcdir)/'`bench/bench.cpp
 
-bench/bench_bench_dash-bench.obj: bench/bench.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_dash-bench.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_dash-bench.Tpo -c -o bench/bench_bench_dash-bench.obj `if test -f 'bench/bench.cpp'; then $(CYGPATH_W) 'bench/bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench.cpp'; fi`
-	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_dash-bench.Tpo bench/$(DEPDIR)/bench_bench_dash-bench.Po
-#	$(AM_V_CXX)source='bench/bench.cpp' object='bench/bench_bench_dash-bench.obj' libtool=no \
+bench/bench_bench_zozocoin-bench.obj: bench/bench.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_zozocoin-bench.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_zozocoin-bench.Tpo -c -o bench/bench_bench_zozocoin-bench.obj `if test -f 'bench/bench.cpp'; then $(CYGPATH_W) 'bench/bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench.cpp'; fi`
+	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_zozocoin-bench.Tpo bench/$(DEPDIR)/bench_bench_zozocoin-bench.Po
+#	$(AM_V_CXX)source='bench/bench.cpp' object='bench/bench_bench_zozocoin-bench.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_dash-bench.obj `if test -f 'bench/bench.cpp'; then $(CYGPATH_W) 'bench/bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_zozocoin-bench.obj `if test -f 'bench/bench.cpp'; then $(CYGPATH_W) 'bench/bench.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench.cpp'; fi`
 
-bench/bench_bench_dash-Examples.o: bench/Examples.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_dash-Examples.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_dash-Examples.Tpo -c -o bench/bench_bench_dash-Examples.o `test -f 'bench/Examples.cpp' || echo '$(srcdir)/'`bench/Examples.cpp
-	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_dash-Examples.Tpo bench/$(DEPDIR)/bench_bench_dash-Examples.Po
-#	$(AM_V_CXX)source='bench/Examples.cpp' object='bench/bench_bench_dash-Examples.o' libtool=no \
+bench/bench_bench_zozocoin-Examples.o: bench/Examples.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_zozocoin-Examples.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Tpo -c -o bench/bench_bench_zozocoin-Examples.o `test -f 'bench/Examples.cpp' || echo '$(srcdir)/'`bench/Examples.cpp
+	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Tpo bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Po
+#	$(AM_V_CXX)source='bench/Examples.cpp' object='bench/bench_bench_zozocoin-Examples.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_dash-Examples.o `test -f 'bench/Examples.cpp' || echo '$(srcdir)/'`bench/Examples.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_zozocoin-Examples.o `test -f 'bench/Examples.cpp' || echo '$(srcdir)/'`bench/Examples.cpp
 
-bench/bench_bench_dash-Examples.obj: bench/Examples.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_dash-Examples.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_dash-Examples.Tpo -c -o bench/bench_bench_dash-Examples.obj `if test -f 'bench/Examples.cpp'; then $(CYGPATH_W) 'bench/Examples.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/Examples.cpp'; fi`
-	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_dash-Examples.Tpo bench/$(DEPDIR)/bench_bench_dash-Examples.Po
-#	$(AM_V_CXX)source='bench/Examples.cpp' object='bench/bench_bench_dash-Examples.obj' libtool=no \
+bench/bench_bench_zozocoin-Examples.obj: bench/Examples.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_zozocoin-Examples.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Tpo -c -o bench/bench_bench_zozocoin-Examples.obj `if test -f 'bench/Examples.cpp'; then $(CYGPATH_W) 'bench/Examples.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/Examples.cpp'; fi`
+	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Tpo bench/$(DEPDIR)/bench_bench_zozocoin-Examples.Po
+#	$(AM_V_CXX)source='bench/Examples.cpp' object='bench/bench_bench_zozocoin-Examples.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_dash_CPPFLAGS) $(CPPFLAGS) $(bench_bench_dash_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_dash-Examples.obj `if test -f 'bench/Examples.cpp'; then $(CYGPATH_W) 'bench/Examples.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/Examples.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_zozocoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_zozocoin-Examples.obj `if test -f 'bench/Examples.cpp'; then $(CYGPATH_W) 'bench/Examples.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/Examples.cpp'; fi`
 
-dash_cli-dash-cli.o: dash-cli.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_cli_CPPFLAGS) $(CPPFLAGS) $(dash_cli_CXXFLAGS) $(CXXFLAGS) -MT dash_cli-dash-cli.o -MD -MP -MF $(DEPDIR)/dash_cli-dash-cli.Tpo -c -o dash_cli-dash-cli.o `test -f 'dash-cli.cpp' || echo '$(srcdir)/'`dash-cli.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/dash_cli-dash-cli.Tpo $(DEPDIR)/dash_cli-dash-cli.Po
-#	$(AM_V_CXX)source='dash-cli.cpp' object='dash_cli-dash-cli.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-compattests.o: qt/test/compattests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Po
+#	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_zozocoin_qt-compattests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_cli_CPPFLAGS) $(CPPFLAGS) $(dash_cli_CXXFLAGS) $(CXXFLAGS) -c -o dash_cli-dash-cli.o `test -f 'dash-cli.cpp' || echo '$(srcdir)/'`dash-cli.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
 
-dash_cli-dash-cli.obj: dash-cli.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_cli_CPPFLAGS) $(CPPFLAGS) $(dash_cli_CXXFLAGS) $(CXXFLAGS) -MT dash_cli-dash-cli.obj -MD -MP -MF $(DEPDIR)/dash_cli-dash-cli.Tpo -c -o dash_cli-dash-cli.obj `if test -f 'dash-cli.cpp'; then $(CYGPATH_W) 'dash-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/dash-cli.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/dash_cli-dash-cli.Tpo $(DEPDIR)/dash_cli-dash-cli.Po
-#	$(AM_V_CXX)source='dash-cli.cpp' object='dash_cli-dash-cli.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-compattests.obj: qt/test/compattests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-compattests.Po
+#	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_zozocoin_qt-compattests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_cli_CPPFLAGS) $(CPPFLAGS) $(dash_cli_CXXFLAGS) $(CXXFLAGS) -c -o dash_cli-dash-cli.obj `if test -f 'dash-cli.cpp'; then $(CYGPATH_W) 'dash-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/dash-cli.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
 
-dash_tx-dash-tx.o: dash-tx.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_tx_CPPFLAGS) $(CPPFLAGS) $(dash_tx_CXXFLAGS) $(CXXFLAGS) -MT dash_tx-dash-tx.o -MD -MP -MF $(DEPDIR)/dash_tx-dash-tx.Tpo -c -o dash_tx-dash-tx.o `test -f 'dash-tx.cpp' || echo '$(srcdir)/'`dash-tx.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/dash_tx-dash-tx.Tpo $(DEPDIR)/dash_tx-dash-tx.Po
-#	$(AM_V_CXX)source='dash-tx.cpp' object='dash_tx-dash-tx.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-test_main.o: qt/test/test_main.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-test_main.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Po
+#	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_zozocoin_qt-test_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_tx_CPPFLAGS) $(CPPFLAGS) $(dash_tx_CXXFLAGS) $(CXXFLAGS) -c -o dash_tx-dash-tx.o `test -f 'dash-tx.cpp' || echo '$(srcdir)/'`dash-tx.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
 
-dash_tx-dash-tx.obj: dash-tx.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_tx_CPPFLAGS) $(CPPFLAGS) $(dash_tx_CXXFLAGS) $(CXXFLAGS) -MT dash_tx-dash-tx.obj -MD -MP -MF $(DEPDIR)/dash_tx-dash-tx.Tpo -c -o dash_tx-dash-tx.obj `if test -f 'dash-tx.cpp'; then $(CYGPATH_W) 'dash-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/dash-tx.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/dash_tx-dash-tx.Tpo $(DEPDIR)/dash_tx-dash-tx.Po
-#	$(AM_V_CXX)source='dash-tx.cpp' object='dash_tx-dash-tx.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-test_main.obj: qt/test/test_main.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-test_main.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-test_main.Po
+#	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_zozocoin_qt-test_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dash_tx_CPPFLAGS) $(CPPFLAGS) $(dash_tx_CXXFLAGS) $(CXXFLAGS) -c -o dash_tx-dash-tx.obj `if test -f 'dash-tx.cpp'; then $(CYGPATH_W) 'dash-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/dash-tx.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
 
-dashd-dashd.o: dashd.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dashd_CPPFLAGS) $(CPPFLAGS) $(dashd_CXXFLAGS) $(CXXFLAGS) -MT dashd-dashd.o -MD -MP -MF $(DEPDIR)/dashd-dashd.Tpo -c -o dashd-dashd.o `test -f 'dashd.cpp' || echo '$(srcdir)/'`dashd.cpp
-	$(AM_V_at)$(am__mv) $(DEPDIR)/dashd-dashd.Tpo $(DEPDIR)/dashd-dashd.Po
-#	$(AM_V_CXX)source='dashd.cpp' object='dashd-dashd.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-uritests.o: qt/test/uritests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Po
+#	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_zozocoin_qt-uritests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dashd_CPPFLAGS) $(CPPFLAGS) $(dashd_CXXFLAGS) $(CXXFLAGS) -c -o dashd-dashd.o `test -f 'dashd.cpp' || echo '$(srcdir)/'`dashd.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
 
-dashd-dashd.obj: dashd.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dashd_CPPFLAGS) $(CPPFLAGS) $(dashd_CXXFLAGS) $(CXXFLAGS) -MT dashd-dashd.obj -MD -MP -MF $(DEPDIR)/dashd-dashd.Tpo -c -o dashd-dashd.obj `if test -f 'dashd.cpp'; then $(CYGPATH_W) 'dashd.cpp'; else $(CYGPATH_W) '$(srcdir)/dashd.cpp'; fi`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/dashd-dashd.Tpo $(DEPDIR)/dashd-dashd.Po
-#	$(AM_V_CXX)source='dashd.cpp' object='dashd-dashd.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-uritests.obj: qt/test/uritests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-uritests.Po
+#	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_zozocoin_qt-uritests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(dashd_CPPFLAGS) $(CPPFLAGS) $(dashd_CXXFLAGS) $(CXXFLAGS) -c -o dashd-dashd.obj `if test -f 'dashd.cpp'; then $(CYGPATH_W) 'dashd.cpp'; else $(CYGPATH_W) '$(srcdir)/dashd.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
 
-qt/qt_dash_qt-dash.o: qt/dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_dash_qt-dash.o -MD -MP -MF qt/$(DEPDIR)/qt_dash_qt-dash.Tpo -c -o qt/qt_dash_qt-dash.o `test -f 'qt/dash.cpp' || echo '$(srcdir)/'`qt/dash.cpp
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_dash_qt-dash.Tpo qt/$(DEPDIR)/qt_dash_qt-dash.Po
-#	$(AM_V_CXX)source='qt/dash.cpp' object='qt/qt_dash_qt-dash.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-paymentservertests.o: qt/test/paymentservertests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Po
+#	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_zozocoin_qt-paymentservertests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_dash_qt-dash.o `test -f 'qt/dash.cpp' || echo '$(srcdir)/'`qt/dash.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
 
-qt/qt_dash_qt-dash.obj: qt/dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_dash_qt-dash.obj -MD -MP -MF qt/$(DEPDIR)/qt_dash_qt-dash.Tpo -c -o qt/qt_dash_qt-dash.obj `if test -f 'qt/dash.cpp'; then $(CYGPATH_W) 'qt/dash.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/dash.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_dash_qt-dash.Tpo qt/$(DEPDIR)/qt_dash_qt-dash.Po
-#	$(AM_V_CXX)source='qt/dash.cpp' object='qt/qt_dash_qt-dash.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-paymentservertests.obj: qt/test/paymentservertests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-paymentservertests.Po
+#	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_zozocoin_qt-paymentservertests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_dash_qt-dash.obj `if test -f 'qt/dash.cpp'; then $(CYGPATH_W) 'qt/dash.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/dash.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-compattests.o: qt/test/compattests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Tpo -c -o qt/test/qt_test_test_dash_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Po
-#	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_dash_qt-compattests.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-moc_compattests.o: qt/test/moc_compattests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-moc_compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Po
+#	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_zozocoin_qt-moc_compattests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
 
-qt/test/qt_test_test_dash_qt-compattests.obj: qt/test/compattests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Tpo -c -o qt/test/qt_test_test_dash_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-compattests.Po
-#	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_dash_qt-compattests.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-moc_compattests.obj: qt/test/moc_compattests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-moc_compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_compattests.Po
+#	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_zozocoin_qt-moc_compattests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-test_main.o: qt/test/test_main.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-test_main.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Tpo -c -o qt/test/qt_test_test_dash_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Po
-#	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_dash_qt-test_main.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-moc_uritests.o: qt/test/moc_uritests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-moc_uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Po
+#	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_zozocoin_qt-moc_uritests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
 
-qt/test/qt_test_test_dash_qt-test_main.obj: qt/test/test_main.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-test_main.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Tpo -c -o qt/test/qt_test_test_dash_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-test_main.Po
-#	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_dash_qt-test_main.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-moc_uritests.obj: qt/test/moc_uritests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-moc_uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_uritests.Po
+#	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_zozocoin_qt-moc_uritests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-uritests.o: qt/test/uritests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Tpo -c -o qt/test/qt_test_test_dash_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Po
-#	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_dash_qt-uritests.o' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.o: qt/test/moc_paymentservertests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Po
+#	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
 
-qt/test/qt_test_test_dash_qt-uritests.obj: qt/test/uritests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Tpo -c -o qt/test/qt_test_test_dash_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-uritests.Po
-#	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_dash_qt-uritests.obj' libtool=no \
+qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.obj: qt/test/moc_paymentservertests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_zozocoin_qt-moc_paymentservertests.Po
+#	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_zozocoin_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-paymentservertests.o: qt/test/paymentservertests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_dash_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Po
-#	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_dash_qt-paymentservertests.o' libtool=no \
+qt/qt_zozocoin_qt-zozocoin.o: qt/zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_zozocoin_qt-zozocoin.o -MD -MP -MF qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Tpo -c -o qt/qt_zozocoin_qt-zozocoin.o `test -f 'qt/zozocoin.cpp' || echo '$(srcdir)/'`qt/zozocoin.cpp
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Tpo qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Po
+#	$(AM_V_CXX)source='qt/zozocoin.cpp' object='qt/qt_zozocoin_qt-zozocoin.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_zozocoin_qt-zozocoin.o `test -f 'qt/zozocoin.cpp' || echo '$(srcdir)/'`qt/zozocoin.cpp
 
-qt/test/qt_test_test_dash_qt-paymentservertests.obj: qt/test/paymentservertests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_dash_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-paymentservertests.Po
-#	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_dash_qt-paymentservertests.obj' libtool=no \
+qt/qt_zozocoin_qt-zozocoin.obj: qt/zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_zozocoin_qt-zozocoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Tpo -c -o qt/qt_zozocoin_qt-zozocoin.obj `if test -f 'qt/zozocoin.cpp'; then $(CYGPATH_W) 'qt/zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zozocoin.cpp'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Tpo qt/$(DEPDIR)/qt_zozocoin_qt-zozocoin.Po
+#	$(AM_V_CXX)source='qt/zozocoin.cpp' object='qt/qt_zozocoin_qt-zozocoin.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_zozocoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_zozocoin_qt-zozocoin.obj `if test -f 'qt/zozocoin.cpp'; then $(CYGPATH_W) 'qt/zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/zozocoin.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-moc_compattests.o: qt/test/moc_compattests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-moc_compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_dash_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Po
-#	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_dash_qt-moc_compattests.o' libtool=no \
+test/test_test_zozocoin-arith_uint256_tests.o: test/arith_uint256_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-arith_uint256_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Tpo -c -o test/test_test_zozocoin-arith_uint256_tests.o `test -f 'test/arith_uint256_tests.cpp' || echo '$(srcdir)/'`test/arith_uint256_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Po
+#	$(AM_V_CXX)source='test/arith_uint256_tests.cpp' object='test/test_test_zozocoin-arith_uint256_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-arith_uint256_tests.o `test -f 'test/arith_uint256_tests.cpp' || echo '$(srcdir)/'`test/arith_uint256_tests.cpp
 
-qt/test/qt_test_test_dash_qt-moc_compattests.obj: qt/test/moc_compattests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-moc_compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_dash_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_compattests.Po
-#	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_dash_qt-moc_compattests.obj' libtool=no \
+test/test_test_zozocoin-arith_uint256_tests.obj: test/arith_uint256_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-arith_uint256_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Tpo -c -o test/test_test_zozocoin-arith_uint256_tests.obj `if test -f 'test/arith_uint256_tests.cpp'; then $(CYGPATH_W) 'test/arith_uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/arith_uint256_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-arith_uint256_tests.Po
+#	$(AM_V_CXX)source='test/arith_uint256_tests.cpp' object='test/test_test_zozocoin-arith_uint256_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-arith_uint256_tests.obj `if test -f 'test/arith_uint256_tests.cpp'; then $(CYGPATH_W) 'test/arith_uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/arith_uint256_tests.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-moc_uritests.o: qt/test/moc_uritests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-moc_uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_dash_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Po
-#	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_dash_qt-moc_uritests.o' libtool=no \
+test/test_test_zozocoin-addrman_tests.o: test/addrman_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-addrman_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Tpo -c -o test/test_test_zozocoin-addrman_tests.o `test -f 'test/addrman_tests.cpp' || echo '$(srcdir)/'`test/addrman_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Po
+#	$(AM_V_CXX)source='test/addrman_tests.cpp' object='test/test_test_zozocoin-addrman_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-addrman_tests.o `test -f 'test/addrman_tests.cpp' || echo '$(srcdir)/'`test/addrman_tests.cpp
 
-qt/test/qt_test_test_dash_qt-moc_uritests.obj: qt/test/moc_uritests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-moc_uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_dash_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_uritests.Po
-#	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_dash_qt-moc_uritests.obj' libtool=no \
+test/test_test_zozocoin-addrman_tests.obj: test/addrman_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-addrman_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Tpo -c -o test/test_test_zozocoin-addrman_tests.obj `if test -f 'test/addrman_tests.cpp'; then $(CYGPATH_W) 'test/addrman_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/addrman_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-addrman_tests.Po
+#	$(AM_V_CXX)source='test/addrman_tests.cpp' object='test/test_test_zozocoin-addrman_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-addrman_tests.obj `if test -f 'test/addrman_tests.cpp'; then $(CYGPATH_W) 'test/addrman_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/addrman_tests.cpp'; fi`
 
-qt/test/qt_test_test_dash_qt-moc_paymentservertests.o: qt/test/moc_paymentservertests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-moc_paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_dash_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Po
-#	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_dash_qt-moc_paymentservertests.o' libtool=no \
+test/test_test_zozocoin-alert_tests.o: test/alert_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-alert_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-alert_tests.Tpo -c -o test/test_test_zozocoin-alert_tests.o `test -f 'test/alert_tests.cpp' || echo '$(srcdir)/'`test/alert_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-alert_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-alert_tests.Po
+#	$(AM_V_CXX)source='test/alert_tests.cpp' object='test/test_test_zozocoin-alert_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-alert_tests.o `test -f 'test/alert_tests.cpp' || echo '$(srcdir)/'`test/alert_tests.cpp
 
-qt/test/qt_test_test_dash_qt-moc_paymentservertests.obj: qt/test/moc_paymentservertests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_dash_qt-moc_paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_dash_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
-	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_dash_qt-moc_paymentservertests.Po
-#	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_dash_qt-moc_paymentservertests.obj' libtool=no \
+test/test_test_zozocoin-alert_tests.obj: test/alert_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-alert_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-alert_tests.Tpo -c -o test/test_test_zozocoin-alert_tests.obj `if test -f 'test/alert_tests.cpp'; then $(CYGPATH_W) 'test/alert_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/alert_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-alert_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-alert_tests.Po
+#	$(AM_V_CXX)source='test/alert_tests.cpp' object='test/test_test_zozocoin-alert_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_dash_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_dash_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_dash_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-alert_tests.obj `if test -f 'test/alert_tests.cpp'; then $(CYGPATH_W) 'test/alert_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/alert_tests.cpp'; fi`
 
-test/test_test_dash-arith_uint256_tests.o: test/arith_uint256_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-arith_uint256_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Tpo -c -o test/test_test_dash-arith_uint256_tests.o `test -f 'test/arith_uint256_tests.cpp' || echo '$(srcdir)/'`test/arith_uint256_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Tpo test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Po
-#	$(AM_V_CXX)source='test/arith_uint256_tests.cpp' object='test/test_test_dash-arith_uint256_tests.o' libtool=no \
+test/test_test_zozocoin-allocator_tests.o: test/allocator_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-allocator_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Tpo -c -o test/test_test_zozocoin-allocator_tests.o `test -f 'test/allocator_tests.cpp' || echo '$(srcdir)/'`test/allocator_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Po
+#	$(AM_V_CXX)source='test/allocator_tests.cpp' object='test/test_test_zozocoin-allocator_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-arith_uint256_tests.o `test -f 'test/arith_uint256_tests.cpp' || echo '$(srcdir)/'`test/arith_uint256_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-allocator_tests.o `test -f 'test/allocator_tests.cpp' || echo '$(srcdir)/'`test/allocator_tests.cpp
 
-test/test_test_dash-arith_uint256_tests.obj: test/arith_uint256_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-arith_uint256_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Tpo -c -o test/test_test_dash-arith_uint256_tests.obj `if test -f 'test/arith_uint256_tests.cpp'; then $(CYGPATH_W) 'test/arith_uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/arith_uint256_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Tpo test/$(DEPDIR)/test_test_dash-arith_uint256_tests.Po
-#	$(AM_V_CXX)source='test/arith_uint256_tests.cpp' object='test/test_test_dash-arith_uint256_tests.obj' libtool=no \
+test/test_test_zozocoin-allocator_tests.obj: test/allocator_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-allocator_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Tpo -c -o test/test_test_zozocoin-allocator_tests.obj `if test -f 'test/allocator_tests.cpp'; then $(CYGPATH_W) 'test/allocator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/allocator_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-allocator_tests.Po
+#	$(AM_V_CXX)source='test/allocator_tests.cpp' object='test/test_test_zozocoin-allocator_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-arith_uint256_tests.obj `if test -f 'test/arith_uint256_tests.cpp'; then $(CYGPATH_W) 'test/arith_uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/arith_uint256_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-allocator_tests.obj `if test -f 'test/allocator_tests.cpp'; then $(CYGPATH_W) 'test/allocator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/allocator_tests.cpp'; fi`
 
-test/test_test_dash-addrman_tests.o: test/addrman_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-addrman_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-addrman_tests.Tpo -c -o test/test_test_dash-addrman_tests.o `test -f 'test/addrman_tests.cpp' || echo '$(srcdir)/'`test/addrman_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-addrman_tests.Tpo test/$(DEPDIR)/test_test_dash-addrman_tests.Po
-#	$(AM_V_CXX)source='test/addrman_tests.cpp' object='test/test_test_dash-addrman_tests.o' libtool=no \
+test/test_test_zozocoin-base32_tests.o: test/base32_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-base32_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-base32_tests.Tpo -c -o test/test_test_zozocoin-base32_tests.o `test -f 'test/base32_tests.cpp' || echo '$(srcdir)/'`test/base32_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-base32_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-base32_tests.Po
+#	$(AM_V_CXX)source='test/base32_tests.cpp' object='test/test_test_zozocoin-base32_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-addrman_tests.o `test -f 'test/addrman_tests.cpp' || echo '$(srcdir)/'`test/addrman_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-base32_tests.o `test -f 'test/base32_tests.cpp' || echo '$(srcdir)/'`test/base32_tests.cpp
 
-test/test_test_dash-addrman_tests.obj: test/addrman_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-addrman_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-addrman_tests.Tpo -c -o test/test_test_dash-addrman_tests.obj `if test -f 'test/addrman_tests.cpp'; then $(CYGPATH_W) 'test/addrman_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/addrman_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-addrman_tests.Tpo test/$(DEPDIR)/test_test_dash-addrman_tests.Po
-#	$(AM_V_CXX)source='test/addrman_tests.cpp' object='test/test_test_dash-addrman_tests.obj' libtool=no \
+test/test_test_zozocoin-base32_tests.obj: test/base32_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-base32_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-base32_tests.Tpo -c -o test/test_test_zozocoin-base32_tests.obj `if test -f 'test/base32_tests.cpp'; then $(CYGPATH_W) 'test/base32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base32_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-base32_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-base32_tests.Po
+#	$(AM_V_CXX)source='test/base32_tests.cpp' object='test/test_test_zozocoin-base32_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-addrman_tests.obj `if test -f 'test/addrman_tests.cpp'; then $(CYGPATH_W) 'test/addrman_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/addrman_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-base32_tests.obj `if test -f 'test/base32_tests.cpp'; then $(CYGPATH_W) 'test/base32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base32_tests.cpp'; fi`
 
-test/test_test_dash-alert_tests.o: test/alert_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-alert_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-alert_tests.Tpo -c -o test/test_test_dash-alert_tests.o `test -f 'test/alert_tests.cpp' || echo '$(srcdir)/'`test/alert_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-alert_tests.Tpo test/$(DEPDIR)/test_test_dash-alert_tests.Po
-#	$(AM_V_CXX)source='test/alert_tests.cpp' object='test/test_test_dash-alert_tests.o' libtool=no \
+test/test_test_zozocoin-base58_tests.o: test/base58_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-base58_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-base58_tests.Tpo -c -o test/test_test_zozocoin-base58_tests.o `test -f 'test/base58_tests.cpp' || echo '$(srcdir)/'`test/base58_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-base58_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-base58_tests.Po
+#	$(AM_V_CXX)source='test/base58_tests.cpp' object='test/test_test_zozocoin-base58_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-alert_tests.o `test -f 'test/alert_tests.cpp' || echo '$(srcdir)/'`test/alert_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-base58_tests.o `test -f 'test/base58_tests.cpp' || echo '$(srcdir)/'`test/base58_tests.cpp
 
-test/test_test_dash-alert_tests.obj: test/alert_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-alert_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-alert_tests.Tpo -c -o test/test_test_dash-alert_tests.obj `if test -f 'test/alert_tests.cpp'; then $(CYGPATH_W) 'test/alert_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/alert_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-alert_tests.Tpo test/$(DEPDIR)/test_test_dash-alert_tests.Po
-#	$(AM_V_CXX)source='test/alert_tests.cpp' object='test/test_test_dash-alert_tests.obj' libtool=no \
+test/test_test_zozocoin-base58_tests.obj: test/base58_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-base58_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-base58_tests.Tpo -c -o test/test_test_zozocoin-base58_tests.obj `if test -f 'test/base58_tests.cpp'; then $(CYGPATH_W) 'test/base58_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base58_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-base58_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-base58_tests.Po
+#	$(AM_V_CXX)source='test/base58_tests.cpp' object='test/test_test_zozocoin-base58_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-alert_tests.obj `if test -f 'test/alert_tests.cpp'; then $(CYGPATH_W) 'test/alert_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/alert_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-base58_tests.obj `if test -f 'test/base58_tests.cpp'; then $(CYGPATH_W) 'test/base58_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base58_tests.cpp'; fi`
 
-test/test_test_dash-allocator_tests.o: test/allocator_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-allocator_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-allocator_tests.Tpo -c -o test/test_test_dash-allocator_tests.o `test -f 'test/allocator_tests.cpp' || echo '$(srcdir)/'`test/allocator_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-allocator_tests.Tpo test/$(DEPDIR)/test_test_dash-allocator_tests.Po
-#	$(AM_V_CXX)source='test/allocator_tests.cpp' object='test/test_test_dash-allocator_tests.o' libtool=no \
+test/test_test_zozocoin-base64_tests.o: test/base64_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-base64_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-base64_tests.Tpo -c -o test/test_test_zozocoin-base64_tests.o `test -f 'test/base64_tests.cpp' || echo '$(srcdir)/'`test/base64_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-base64_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-base64_tests.Po
+#	$(AM_V_CXX)source='test/base64_tests.cpp' object='test/test_test_zozocoin-base64_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-allocator_tests.o `test -f 'test/allocator_tests.cpp' || echo '$(srcdir)/'`test/allocator_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-base64_tests.o `test -f 'test/base64_tests.cpp' || echo '$(srcdir)/'`test/base64_tests.cpp
 
-test/test_test_dash-allocator_tests.obj: test/allocator_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-allocator_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-allocator_tests.Tpo -c -o test/test_test_dash-allocator_tests.obj `if test -f 'test/allocator_tests.cpp'; then $(CYGPATH_W) 'test/allocator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/allocator_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-allocator_tests.Tpo test/$(DEPDIR)/test_test_dash-allocator_tests.Po
-#	$(AM_V_CXX)source='test/allocator_tests.cpp' object='test/test_test_dash-allocator_tests.obj' libtool=no \
+test/test_test_zozocoin-base64_tests.obj: test/base64_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-base64_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-base64_tests.Tpo -c -o test/test_test_zozocoin-base64_tests.obj `if test -f 'test/base64_tests.cpp'; then $(CYGPATH_W) 'test/base64_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base64_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-base64_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-base64_tests.Po
+#	$(AM_V_CXX)source='test/base64_tests.cpp' object='test/test_test_zozocoin-base64_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-allocator_tests.obj `if test -f 'test/allocator_tests.cpp'; then $(CYGPATH_W) 'test/allocator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/allocator_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-base64_tests.obj `if test -f 'test/base64_tests.cpp'; then $(CYGPATH_W) 'test/base64_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base64_tests.cpp'; fi`
 
-test/test_test_dash-base32_tests.o: test/base32_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-base32_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-base32_tests.Tpo -c -o test/test_test_dash-base32_tests.o `test -f 'test/base32_tests.cpp' || echo '$(srcdir)/'`test/base32_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-base32_tests.Tpo test/$(DEPDIR)/test_test_dash-base32_tests.Po
-#	$(AM_V_CXX)source='test/base32_tests.cpp' object='test/test_test_dash-base32_tests.o' libtool=no \
+test/test_test_zozocoin-bip32_tests.o: test/bip32_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-bip32_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Tpo -c -o test/test_test_zozocoin-bip32_tests.o `test -f 'test/bip32_tests.cpp' || echo '$(srcdir)/'`test/bip32_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Po
+#	$(AM_V_CXX)source='test/bip32_tests.cpp' object='test/test_test_zozocoin-bip32_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-base32_tests.o `test -f 'test/base32_tests.cpp' || echo '$(srcdir)/'`test/base32_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-bip32_tests.o `test -f 'test/bip32_tests.cpp' || echo '$(srcdir)/'`test/bip32_tests.cpp
 
-test/test_test_dash-base32_tests.obj: test/base32_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-base32_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-base32_tests.Tpo -c -o test/test_test_dash-base32_tests.obj `if test -f 'test/base32_tests.cpp'; then $(CYGPATH_W) 'test/base32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base32_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-base32_tests.Tpo test/$(DEPDIR)/test_test_dash-base32_tests.Po
-#	$(AM_V_CXX)source='test/base32_tests.cpp' object='test/test_test_dash-base32_tests.obj' libtool=no \
+test/test_test_zozocoin-bip32_tests.obj: test/bip32_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-bip32_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Tpo -c -o test/test_test_zozocoin-bip32_tests.obj `if test -f 'test/bip32_tests.cpp'; then $(CYGPATH_W) 'test/bip32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bip32_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-bip32_tests.Po
+#	$(AM_V_CXX)source='test/bip32_tests.cpp' object='test/test_test_zozocoin-bip32_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-base32_tests.obj `if test -f 'test/base32_tests.cpp'; then $(CYGPATH_W) 'test/base32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base32_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-bip32_tests.obj `if test -f 'test/bip32_tests.cpp'; then $(CYGPATH_W) 'test/bip32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bip32_tests.cpp'; fi`
 
-test/test_test_dash-base58_tests.o: test/base58_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-base58_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-base58_tests.Tpo -c -o test/test_test_dash-base58_tests.o `test -f 'test/base58_tests.cpp' || echo '$(srcdir)/'`test/base58_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-base58_tests.Tpo test/$(DEPDIR)/test_test_dash-base58_tests.Po
-#	$(AM_V_CXX)source='test/base58_tests.cpp' object='test/test_test_dash-base58_tests.o' libtool=no \
+test/test_test_zozocoin-bloom_tests.o: test/bloom_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-bloom_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Tpo -c -o test/test_test_zozocoin-bloom_tests.o `test -f 'test/bloom_tests.cpp' || echo '$(srcdir)/'`test/bloom_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Po
+#	$(AM_V_CXX)source='test/bloom_tests.cpp' object='test/test_test_zozocoin-bloom_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-base58_tests.o `test -f 'test/base58_tests.cpp' || echo '$(srcdir)/'`test/base58_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-bloom_tests.o `test -f 'test/bloom_tests.cpp' || echo '$(srcdir)/'`test/bloom_tests.cpp
 
-test/test_test_dash-base58_tests.obj: test/base58_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-base58_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-base58_tests.Tpo -c -o test/test_test_dash-base58_tests.obj `if test -f 'test/base58_tests.cpp'; then $(CYGPATH_W) 'test/base58_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base58_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-base58_tests.Tpo test/$(DEPDIR)/test_test_dash-base58_tests.Po
-#	$(AM_V_CXX)source='test/base58_tests.cpp' object='test/test_test_dash-base58_tests.obj' libtool=no \
+test/test_test_zozocoin-bloom_tests.obj: test/bloom_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-bloom_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Tpo -c -o test/test_test_zozocoin-bloom_tests.obj `if test -f 'test/bloom_tests.cpp'; then $(CYGPATH_W) 'test/bloom_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bloom_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-bloom_tests.Po
+#	$(AM_V_CXX)source='test/bloom_tests.cpp' object='test/test_test_zozocoin-bloom_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-base58_tests.obj `if test -f 'test/base58_tests.cpp'; then $(CYGPATH_W) 'test/base58_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base58_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-bloom_tests.obj `if test -f 'test/bloom_tests.cpp'; then $(CYGPATH_W) 'test/bloom_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bloom_tests.cpp'; fi`
 
-test/test_test_dash-base64_tests.o: test/base64_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-base64_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-base64_tests.Tpo -c -o test/test_test_dash-base64_tests.o `test -f 'test/base64_tests.cpp' || echo '$(srcdir)/'`test/base64_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-base64_tests.Tpo test/$(DEPDIR)/test_test_dash-base64_tests.Po
-#	$(AM_V_CXX)source='test/base64_tests.cpp' object='test/test_test_dash-base64_tests.o' libtool=no \
+test/test_test_zozocoin-bswap_tests.o: test/bswap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-bswap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Tpo -c -o test/test_test_zozocoin-bswap_tests.o `test -f 'test/bswap_tests.cpp' || echo '$(srcdir)/'`test/bswap_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Po
+#	$(AM_V_CXX)source='test/bswap_tests.cpp' object='test/test_test_zozocoin-bswap_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-base64_tests.o `test -f 'test/base64_tests.cpp' || echo '$(srcdir)/'`test/base64_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-bswap_tests.o `test -f 'test/bswap_tests.cpp' || echo '$(srcdir)/'`test/bswap_tests.cpp
 
-test/test_test_dash-base64_tests.obj: test/base64_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-base64_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-base64_tests.Tpo -c -o test/test_test_dash-base64_tests.obj `if test -f 'test/base64_tests.cpp'; then $(CYGPATH_W) 'test/base64_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base64_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-base64_tests.Tpo test/$(DEPDIR)/test_test_dash-base64_tests.Po
-#	$(AM_V_CXX)source='test/base64_tests.cpp' object='test/test_test_dash-base64_tests.obj' libtool=no \
+test/test_test_zozocoin-bswap_tests.obj: test/bswap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-bswap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Tpo -c -o test/test_test_zozocoin-bswap_tests.obj `if test -f 'test/bswap_tests.cpp'; then $(CYGPATH_W) 'test/bswap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bswap_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-bswap_tests.Po
+#	$(AM_V_CXX)source='test/bswap_tests.cpp' object='test/test_test_zozocoin-bswap_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-base64_tests.obj `if test -f 'test/base64_tests.cpp'; then $(CYGPATH_W) 'test/base64_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/base64_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-bswap_tests.obj `if test -f 'test/bswap_tests.cpp'; then $(CYGPATH_W) 'test/bswap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bswap_tests.cpp'; fi`
 
-test/test_test_dash-bip32_tests.o: test/bip32_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-bip32_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-bip32_tests.Tpo -c -o test/test_test_dash-bip32_tests.o `test -f 'test/bip32_tests.cpp' || echo '$(srcdir)/'`test/bip32_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-bip32_tests.Tpo test/$(DEPDIR)/test_test_dash-bip32_tests.Po
-#	$(AM_V_CXX)source='test/bip32_tests.cpp' object='test/test_test_dash-bip32_tests.o' libtool=no \
+test/test_test_zozocoin-cachemap_tests.o: test/cachemap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-cachemap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Tpo -c -o test/test_test_zozocoin-cachemap_tests.o `test -f 'test/cachemap_tests.cpp' || echo '$(srcdir)/'`test/cachemap_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Po
+#	$(AM_V_CXX)source='test/cachemap_tests.cpp' object='test/test_test_zozocoin-cachemap_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-bip32_tests.o `test -f 'test/bip32_tests.cpp' || echo '$(srcdir)/'`test/bip32_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-cachemap_tests.o `test -f 'test/cachemap_tests.cpp' || echo '$(srcdir)/'`test/cachemap_tests.cpp
 
-test/test_test_dash-bip32_tests.obj: test/bip32_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-bip32_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-bip32_tests.Tpo -c -o test/test_test_dash-bip32_tests.obj `if test -f 'test/bip32_tests.cpp'; then $(CYGPATH_W) 'test/bip32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bip32_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-bip32_tests.Tpo test/$(DEPDIR)/test_test_dash-bip32_tests.Po
-#	$(AM_V_CXX)source='test/bip32_tests.cpp' object='test/test_test_dash-bip32_tests.obj' libtool=no \
+test/test_test_zozocoin-cachemap_tests.obj: test/cachemap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-cachemap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Tpo -c -o test/test_test_zozocoin-cachemap_tests.obj `if test -f 'test/cachemap_tests.cpp'; then $(CYGPATH_W) 'test/cachemap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemap_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-cachemap_tests.Po
+#	$(AM_V_CXX)source='test/cachemap_tests.cpp' object='test/test_test_zozocoin-cachemap_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-bip32_tests.obj `if test -f 'test/bip32_tests.cpp'; then $(CYGPATH_W) 'test/bip32_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bip32_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-cachemap_tests.obj `if test -f 'test/cachemap_tests.cpp'; then $(CYGPATH_W) 'test/cachemap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemap_tests.cpp'; fi`
 
-test/test_test_dash-bloom_tests.o: test/bloom_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-bloom_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-bloom_tests.Tpo -c -o test/test_test_dash-bloom_tests.o `test -f 'test/bloom_tests.cpp' || echo '$(srcdir)/'`test/bloom_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-bloom_tests.Tpo test/$(DEPDIR)/test_test_dash-bloom_tests.Po
-#	$(AM_V_CXX)source='test/bloom_tests.cpp' object='test/test_test_dash-bloom_tests.o' libtool=no \
+test/test_test_zozocoin-cachemultimap_tests.o: test/cachemultimap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-cachemultimap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Tpo -c -o test/test_test_zozocoin-cachemultimap_tests.o `test -f 'test/cachemultimap_tests.cpp' || echo '$(srcdir)/'`test/cachemultimap_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Po
+#	$(AM_V_CXX)source='test/cachemultimap_tests.cpp' object='test/test_test_zozocoin-cachemultimap_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-bloom_tests.o `test -f 'test/bloom_tests.cpp' || echo '$(srcdir)/'`test/bloom_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-cachemultimap_tests.o `test -f 'test/cachemultimap_tests.cpp' || echo '$(srcdir)/'`test/cachemultimap_tests.cpp
 
-test/test_test_dash-bloom_tests.obj: test/bloom_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-bloom_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-bloom_tests.Tpo -c -o test/test_test_dash-bloom_tests.obj `if test -f 'test/bloom_tests.cpp'; then $(CYGPATH_W) 'test/bloom_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bloom_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-bloom_tests.Tpo test/$(DEPDIR)/test_test_dash-bloom_tests.Po
-#	$(AM_V_CXX)source='test/bloom_tests.cpp' object='test/test_test_dash-bloom_tests.obj' libtool=no \
+test/test_test_zozocoin-cachemultimap_tests.obj: test/cachemultimap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-cachemultimap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Tpo -c -o test/test_test_zozocoin-cachemultimap_tests.obj `if test -f 'test/cachemultimap_tests.cpp'; then $(CYGPATH_W) 'test/cachemultimap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemultimap_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-cachemultimap_tests.Po
+#	$(AM_V_CXX)source='test/cachemultimap_tests.cpp' object='test/test_test_zozocoin-cachemultimap_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-bloom_tests.obj `if test -f 'test/bloom_tests.cpp'; then $(CYGPATH_W) 'test/bloom_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bloom_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-cachemultimap_tests.obj `if test -f 'test/cachemultimap_tests.cpp'; then $(CYGPATH_W) 'test/cachemultimap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemultimap_tests.cpp'; fi`
 
-test/test_test_dash-bswap_tests.o: test/bswap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-bswap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-bswap_tests.Tpo -c -o test/test_test_dash-bswap_tests.o `test -f 'test/bswap_tests.cpp' || echo '$(srcdir)/'`test/bswap_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-bswap_tests.Tpo test/$(DEPDIR)/test_test_dash-bswap_tests.Po
-#	$(AM_V_CXX)source='test/bswap_tests.cpp' object='test/test_test_dash-bswap_tests.o' libtool=no \
+test/test_test_zozocoin-checkblock_tests.o: test/checkblock_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-checkblock_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Tpo -c -o test/test_test_zozocoin-checkblock_tests.o `test -f 'test/checkblock_tests.cpp' || echo '$(srcdir)/'`test/checkblock_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Po
+#	$(AM_V_CXX)source='test/checkblock_tests.cpp' object='test/test_test_zozocoin-checkblock_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-bswap_tests.o `test -f 'test/bswap_tests.cpp' || echo '$(srcdir)/'`test/bswap_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-checkblock_tests.o `test -f 'test/checkblock_tests.cpp' || echo '$(srcdir)/'`test/checkblock_tests.cpp
 
-test/test_test_dash-bswap_tests.obj: test/bswap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-bswap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-bswap_tests.Tpo -c -o test/test_test_dash-bswap_tests.obj `if test -f 'test/bswap_tests.cpp'; then $(CYGPATH_W) 'test/bswap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bswap_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-bswap_tests.Tpo test/$(DEPDIR)/test_test_dash-bswap_tests.Po
-#	$(AM_V_CXX)source='test/bswap_tests.cpp' object='test/test_test_dash-bswap_tests.obj' libtool=no \
+test/test_test_zozocoin-checkblock_tests.obj: test/checkblock_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-checkblock_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Tpo -c -o test/test_test_zozocoin-checkblock_tests.obj `if test -f 'test/checkblock_tests.cpp'; then $(CYGPATH_W) 'test/checkblock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/checkblock_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-checkblock_tests.Po
+#	$(AM_V_CXX)source='test/checkblock_tests.cpp' object='test/test_test_zozocoin-checkblock_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-bswap_tests.obj `if test -f 'test/bswap_tests.cpp'; then $(CYGPATH_W) 'test/bswap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/bswap_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-checkblock_tests.obj `if test -f 'test/checkblock_tests.cpp'; then $(CYGPATH_W) 'test/checkblock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/checkblock_tests.cpp'; fi`
 
-test/test_test_dash-cachemap_tests.o: test/cachemap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-cachemap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-cachemap_tests.Tpo -c -o test/test_test_dash-cachemap_tests.o `test -f 'test/cachemap_tests.cpp' || echo '$(srcdir)/'`test/cachemap_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-cachemap_tests.Tpo test/$(DEPDIR)/test_test_dash-cachemap_tests.Po
-#	$(AM_V_CXX)source='test/cachemap_tests.cpp' object='test/test_test_dash-cachemap_tests.o' libtool=no \
+test/test_test_zozocoin-Checkpoints_tests.o: test/Checkpoints_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-Checkpoints_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Tpo -c -o test/test_test_zozocoin-Checkpoints_tests.o `test -f 'test/Checkpoints_tests.cpp' || echo '$(srcdir)/'`test/Checkpoints_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Po
+#	$(AM_V_CXX)source='test/Checkpoints_tests.cpp' object='test/test_test_zozocoin-Checkpoints_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-cachemap_tests.o `test -f 'test/cachemap_tests.cpp' || echo '$(srcdir)/'`test/cachemap_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-Checkpoints_tests.o `test -f 'test/Checkpoints_tests.cpp' || echo '$(srcdir)/'`test/Checkpoints_tests.cpp
 
-test/test_test_dash-cachemap_tests.obj: test/cachemap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-cachemap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-cachemap_tests.Tpo -c -o test/test_test_dash-cachemap_tests.obj `if test -f 'test/cachemap_tests.cpp'; then $(CYGPATH_W) 'test/cachemap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemap_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-cachemap_tests.Tpo test/$(DEPDIR)/test_test_dash-cachemap_tests.Po
-#	$(AM_V_CXX)source='test/cachemap_tests.cpp' object='test/test_test_dash-cachemap_tests.obj' libtool=no \
+test/test_test_zozocoin-Checkpoints_tests.obj: test/Checkpoints_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-Checkpoints_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Tpo -c -o test/test_test_zozocoin-Checkpoints_tests.obj `if test -f 'test/Checkpoints_tests.cpp'; then $(CYGPATH_W) 'test/Checkpoints_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/Checkpoints_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-Checkpoints_tests.Po
+#	$(AM_V_CXX)source='test/Checkpoints_tests.cpp' object='test/test_test_zozocoin-Checkpoints_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-cachemap_tests.obj `if test -f 'test/cachemap_tests.cpp'; then $(CYGPATH_W) 'test/cachemap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemap_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-Checkpoints_tests.obj `if test -f 'test/Checkpoints_tests.cpp'; then $(CYGPATH_W) 'test/Checkpoints_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/Checkpoints_tests.cpp'; fi`
 
-test/test_test_dash-cachemultimap_tests.o: test/cachemultimap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-cachemultimap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Tpo -c -o test/test_test_dash-cachemultimap_tests.o `test -f 'test/cachemultimap_tests.cpp' || echo '$(srcdir)/'`test/cachemultimap_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Tpo test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Po
-#	$(AM_V_CXX)source='test/cachemultimap_tests.cpp' object='test/test_test_dash-cachemultimap_tests.o' libtool=no \
+test/test_test_zozocoin-coins_tests.o: test/coins_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-coins_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-coins_tests.Tpo -c -o test/test_test_zozocoin-coins_tests.o `test -f 'test/coins_tests.cpp' || echo '$(srcdir)/'`test/coins_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-coins_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-coins_tests.Po
+#	$(AM_V_CXX)source='test/coins_tests.cpp' object='test/test_test_zozocoin-coins_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-cachemultimap_tests.o `test -f 'test/cachemultimap_tests.cpp' || echo '$(srcdir)/'`test/cachemultimap_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-coins_tests.o `test -f 'test/coins_tests.cpp' || echo '$(srcdir)/'`test/coins_tests.cpp
 
-test/test_test_dash-cachemultimap_tests.obj: test/cachemultimap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-cachemultimap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Tpo -c -o test/test_test_dash-cachemultimap_tests.obj `if test -f 'test/cachemultimap_tests.cpp'; then $(CYGPATH_W) 'test/cachemultimap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemultimap_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Tpo test/$(DEPDIR)/test_test_dash-cachemultimap_tests.Po
-#	$(AM_V_CXX)source='test/cachemultimap_tests.cpp' object='test/test_test_dash-cachemultimap_tests.obj' libtool=no \
+test/test_test_zozocoin-coins_tests.obj: test/coins_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-coins_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-coins_tests.Tpo -c -o test/test_test_zozocoin-coins_tests.obj `if test -f 'test/coins_tests.cpp'; then $(CYGPATH_W) 'test/coins_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/coins_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-coins_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-coins_tests.Po
+#	$(AM_V_CXX)source='test/coins_tests.cpp' object='test/test_test_zozocoin-coins_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-cachemultimap_tests.obj `if test -f 'test/cachemultimap_tests.cpp'; then $(CYGPATH_W) 'test/cachemultimap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/cachemultimap_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-coins_tests.obj `if test -f 'test/coins_tests.cpp'; then $(CYGPATH_W) 'test/coins_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/coins_tests.cpp'; fi`
 
-test/test_test_dash-checkblock_tests.o: test/checkblock_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-checkblock_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-checkblock_tests.Tpo -c -o test/test_test_dash-checkblock_tests.o `test -f 'test/checkblock_tests.cpp' || echo '$(srcdir)/'`test/checkblock_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-checkblock_tests.Tpo test/$(DEPDIR)/test_test_dash-checkblock_tests.Po
-#	$(AM_V_CXX)source='test/checkblock_tests.cpp' object='test/test_test_dash-checkblock_tests.o' libtool=no \
+test/test_test_zozocoin-compress_tests.o: test/compress_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-compress_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-compress_tests.Tpo -c -o test/test_test_zozocoin-compress_tests.o `test -f 'test/compress_tests.cpp' || echo '$(srcdir)/'`test/compress_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-compress_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-compress_tests.Po
+#	$(AM_V_CXX)source='test/compress_tests.cpp' object='test/test_test_zozocoin-compress_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-checkblock_tests.o `test -f 'test/checkblock_tests.cpp' || echo '$(srcdir)/'`test/checkblock_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-compress_tests.o `test -f 'test/compress_tests.cpp' || echo '$(srcdir)/'`test/compress_tests.cpp
 
-test/test_test_dash-checkblock_tests.obj: test/checkblock_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-checkblock_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-checkblock_tests.Tpo -c -o test/test_test_dash-checkblock_tests.obj `if test -f 'test/checkblock_tests.cpp'; then $(CYGPATH_W) 'test/checkblock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/checkblock_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-checkblock_tests.Tpo test/$(DEPDIR)/test_test_dash-checkblock_tests.Po
-#	$(AM_V_CXX)source='test/checkblock_tests.cpp' object='test/test_test_dash-checkblock_tests.obj' libtool=no \
+test/test_test_zozocoin-compress_tests.obj: test/compress_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-compress_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-compress_tests.Tpo -c -o test/test_test_zozocoin-compress_tests.obj `if test -f 'test/compress_tests.cpp'; then $(CYGPATH_W) 'test/compress_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/compress_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-compress_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-compress_tests.Po
+#	$(AM_V_CXX)source='test/compress_tests.cpp' object='test/test_test_zozocoin-compress_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-checkblock_tests.obj `if test -f 'test/checkblock_tests.cpp'; then $(CYGPATH_W) 'test/checkblock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/checkblock_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-compress_tests.obj `if test -f 'test/compress_tests.cpp'; then $(CYGPATH_W) 'test/compress_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/compress_tests.cpp'; fi`
 
-test/test_test_dash-Checkpoints_tests.o: test/Checkpoints_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-Checkpoints_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Tpo -c -o test/test_test_dash-Checkpoints_tests.o `test -f 'test/Checkpoints_tests.cpp' || echo '$(srcdir)/'`test/Checkpoints_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Tpo test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Po
-#	$(AM_V_CXX)source='test/Checkpoints_tests.cpp' object='test/test_test_dash-Checkpoints_tests.o' libtool=no \
+test/test_test_zozocoin-crypto_tests.o: test/crypto_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-crypto_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Tpo -c -o test/test_test_zozocoin-crypto_tests.o `test -f 'test/crypto_tests.cpp' || echo '$(srcdir)/'`test/crypto_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Po
+#	$(AM_V_CXX)source='test/crypto_tests.cpp' object='test/test_test_zozocoin-crypto_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-Checkpoints_tests.o `test -f 'test/Checkpoints_tests.cpp' || echo '$(srcdir)/'`test/Checkpoints_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-crypto_tests.o `test -f 'test/crypto_tests.cpp' || echo '$(srcdir)/'`test/crypto_tests.cpp
 
-test/test_test_dash-Checkpoints_tests.obj: test/Checkpoints_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-Checkpoints_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Tpo -c -o test/test_test_dash-Checkpoints_tests.obj `if test -f 'test/Checkpoints_tests.cpp'; then $(CYGPATH_W) 'test/Checkpoints_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/Checkpoints_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Tpo test/$(DEPDIR)/test_test_dash-Checkpoints_tests.Po
-#	$(AM_V_CXX)source='test/Checkpoints_tests.cpp' object='test/test_test_dash-Checkpoints_tests.obj' libtool=no \
+test/test_test_zozocoin-crypto_tests.obj: test/crypto_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-crypto_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Tpo -c -o test/test_test_zozocoin-crypto_tests.obj `if test -f 'test/crypto_tests.cpp'; then $(CYGPATH_W) 'test/crypto_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/crypto_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-crypto_tests.Po
+#	$(AM_V_CXX)source='test/crypto_tests.cpp' object='test/test_test_zozocoin-crypto_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-Checkpoints_tests.obj `if test -f 'test/Checkpoints_tests.cpp'; then $(CYGPATH_W) 'test/Checkpoints_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/Checkpoints_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-crypto_tests.obj `if test -f 'test/crypto_tests.cpp'; then $(CYGPATH_W) 'test/crypto_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/crypto_tests.cpp'; fi`
 
-test/test_test_dash-coins_tests.o: test/coins_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-coins_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-coins_tests.Tpo -c -o test/test_test_dash-coins_tests.o `test -f 'test/coins_tests.cpp' || echo '$(srcdir)/'`test/coins_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-coins_tests.Tpo test/$(DEPDIR)/test_test_dash-coins_tests.Po
-#	$(AM_V_CXX)source='test/coins_tests.cpp' object='test/test_test_dash-coins_tests.o' libtool=no \
+test/test_test_zozocoin-DoS_tests.o: test/DoS_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-DoS_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Tpo -c -o test/test_test_zozocoin-DoS_tests.o `test -f 'test/DoS_tests.cpp' || echo '$(srcdir)/'`test/DoS_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Po
+#	$(AM_V_CXX)source='test/DoS_tests.cpp' object='test/test_test_zozocoin-DoS_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-coins_tests.o `test -f 'test/coins_tests.cpp' || echo '$(srcdir)/'`test/coins_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-DoS_tests.o `test -f 'test/DoS_tests.cpp' || echo '$(srcdir)/'`test/DoS_tests.cpp
 
-test/test_test_dash-coins_tests.obj: test/coins_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-coins_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-coins_tests.Tpo -c -o test/test_test_dash-coins_tests.obj `if test -f 'test/coins_tests.cpp'; then $(CYGPATH_W) 'test/coins_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/coins_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-coins_tests.Tpo test/$(DEPDIR)/test_test_dash-coins_tests.Po
-#	$(AM_V_CXX)source='test/coins_tests.cpp' object='test/test_test_dash-coins_tests.obj' libtool=no \
+test/test_test_zozocoin-DoS_tests.obj: test/DoS_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-DoS_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Tpo -c -o test/test_test_zozocoin-DoS_tests.obj `if test -f 'test/DoS_tests.cpp'; then $(CYGPATH_W) 'test/DoS_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/DoS_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-DoS_tests.Po
+#	$(AM_V_CXX)source='test/DoS_tests.cpp' object='test/test_test_zozocoin-DoS_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-coins_tests.obj `if test -f 'test/coins_tests.cpp'; then $(CYGPATH_W) 'test/coins_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/coins_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-DoS_tests.obj `if test -f 'test/DoS_tests.cpp'; then $(CYGPATH_W) 'test/DoS_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/DoS_tests.cpp'; fi`
 
-test/test_test_dash-compress_tests.o: test/compress_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-compress_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-compress_tests.Tpo -c -o test/test_test_dash-compress_tests.o `test -f 'test/compress_tests.cpp' || echo '$(srcdir)/'`test/compress_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-compress_tests.Tpo test/$(DEPDIR)/test_test_dash-compress_tests.Po
-#	$(AM_V_CXX)source='test/compress_tests.cpp' object='test/test_test_dash-compress_tests.o' libtool=no \
+test/test_test_zozocoin-getarg_tests.o: test/getarg_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-getarg_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Tpo -c -o test/test_test_zozocoin-getarg_tests.o `test -f 'test/getarg_tests.cpp' || echo '$(srcdir)/'`test/getarg_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Po
+#	$(AM_V_CXX)source='test/getarg_tests.cpp' object='test/test_test_zozocoin-getarg_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-compress_tests.o `test -f 'test/compress_tests.cpp' || echo '$(srcdir)/'`test/compress_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-getarg_tests.o `test -f 'test/getarg_tests.cpp' || echo '$(srcdir)/'`test/getarg_tests.cpp
 
-test/test_test_dash-compress_tests.obj: test/compress_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-compress_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-compress_tests.Tpo -c -o test/test_test_dash-compress_tests.obj `if test -f 'test/compress_tests.cpp'; then $(CYGPATH_W) 'test/compress_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/compress_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-compress_tests.Tpo test/$(DEPDIR)/test_test_dash-compress_tests.Po
-#	$(AM_V_CXX)source='test/compress_tests.cpp' object='test/test_test_dash-compress_tests.obj' libtool=no \
+test/test_test_zozocoin-getarg_tests.obj: test/getarg_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-getarg_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Tpo -c -o test/test_test_zozocoin-getarg_tests.obj `if test -f 'test/getarg_tests.cpp'; then $(CYGPATH_W) 'test/getarg_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/getarg_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-getarg_tests.Po
+#	$(AM_V_CXX)source='test/getarg_tests.cpp' object='test/test_test_zozocoin-getarg_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-compress_tests.obj `if test -f 'test/compress_tests.cpp'; then $(CYGPATH_W) 'test/compress_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/compress_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-getarg_tests.obj `if test -f 'test/getarg_tests.cpp'; then $(CYGPATH_W) 'test/getarg_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/getarg_tests.cpp'; fi`
 
-test/test_test_dash-crypto_tests.o: test/crypto_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-crypto_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-crypto_tests.Tpo -c -o test/test_test_dash-crypto_tests.o `test -f 'test/crypto_tests.cpp' || echo '$(srcdir)/'`test/crypto_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-crypto_tests.Tpo test/$(DEPDIR)/test_test_dash-crypto_tests.Po
-#	$(AM_V_CXX)source='test/crypto_tests.cpp' object='test/test_test_dash-crypto_tests.o' libtool=no \
+test/test_test_zozocoin-hash_tests.o: test/hash_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-hash_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-hash_tests.Tpo -c -o test/test_test_zozocoin-hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-hash_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-hash_tests.Po
+#	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_zozocoin-hash_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-crypto_tests.o `test -f 'test/crypto_tests.cpp' || echo '$(srcdir)/'`test/crypto_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
 
-test/test_test_dash-crypto_tests.obj: test/crypto_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-crypto_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-crypto_tests.Tpo -c -o test/test_test_dash-crypto_tests.obj `if test -f 'test/crypto_tests.cpp'; then $(CYGPATH_W) 'test/crypto_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/crypto_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-crypto_tests.Tpo test/$(DEPDIR)/test_test_dash-crypto_tests.Po
-#	$(AM_V_CXX)source='test/crypto_tests.cpp' object='test/test_test_dash-crypto_tests.obj' libtool=no \
+test/test_test_zozocoin-hash_tests.obj: test/hash_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-hash_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-hash_tests.Tpo -c -o test/test_test_zozocoin-hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-hash_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-hash_tests.Po
+#	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_zozocoin-hash_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-crypto_tests.obj `if test -f 'test/crypto_tests.cpp'; then $(CYGPATH_W) 'test/crypto_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/crypto_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
 
-test/test_test_dash-DoS_tests.o: test/DoS_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-DoS_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-DoS_tests.Tpo -c -o test/test_test_dash-DoS_tests.o `test -f 'test/DoS_tests.cpp' || echo '$(srcdir)/'`test/DoS_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-DoS_tests.Tpo test/$(DEPDIR)/test_test_dash-DoS_tests.Po
-#	$(AM_V_CXX)source='test/DoS_tests.cpp' object='test/test_test_dash-DoS_tests.o' libtool=no \
+test/test_test_zozocoin-key_tests.o: test/key_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-key_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-key_tests.Tpo -c -o test/test_test_zozocoin-key_tests.o `test -f 'test/key_tests.cpp' || echo '$(srcdir)/'`test/key_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-key_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-key_tests.Po
+#	$(AM_V_CXX)source='test/key_tests.cpp' object='test/test_test_zozocoin-key_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-DoS_tests.o `test -f 'test/DoS_tests.cpp' || echo '$(srcdir)/'`test/DoS_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-key_tests.o `test -f 'test/key_tests.cpp' || echo '$(srcdir)/'`test/key_tests.cpp
 
-test/test_test_dash-DoS_tests.obj: test/DoS_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-DoS_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-DoS_tests.Tpo -c -o test/test_test_dash-DoS_tests.obj `if test -f 'test/DoS_tests.cpp'; then $(CYGPATH_W) 'test/DoS_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/DoS_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-DoS_tests.Tpo test/$(DEPDIR)/test_test_dash-DoS_tests.Po
-#	$(AM_V_CXX)source='test/DoS_tests.cpp' object='test/test_test_dash-DoS_tests.obj' libtool=no \
+test/test_test_zozocoin-key_tests.obj: test/key_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-key_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-key_tests.Tpo -c -o test/test_test_zozocoin-key_tests.obj `if test -f 'test/key_tests.cpp'; then $(CYGPATH_W) 'test/key_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/key_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-key_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-key_tests.Po
+#	$(AM_V_CXX)source='test/key_tests.cpp' object='test/test_test_zozocoin-key_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-DoS_tests.obj `if test -f 'test/DoS_tests.cpp'; then $(CYGPATH_W) 'test/DoS_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/DoS_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-key_tests.obj `if test -f 'test/key_tests.cpp'; then $(CYGPATH_W) 'test/key_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/key_tests.cpp'; fi`
 
-test/test_test_dash-getarg_tests.o: test/getarg_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-getarg_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-getarg_tests.Tpo -c -o test/test_test_dash-getarg_tests.o `test -f 'test/getarg_tests.cpp' || echo '$(srcdir)/'`test/getarg_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-getarg_tests.Tpo test/$(DEPDIR)/test_test_dash-getarg_tests.Po
-#	$(AM_V_CXX)source='test/getarg_tests.cpp' object='test/test_test_dash-getarg_tests.o' libtool=no \
+test/test_test_zozocoin-limitedmap_tests.o: test/limitedmap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-limitedmap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Tpo -c -o test/test_test_zozocoin-limitedmap_tests.o `test -f 'test/limitedmap_tests.cpp' || echo '$(srcdir)/'`test/limitedmap_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Po
+#	$(AM_V_CXX)source='test/limitedmap_tests.cpp' object='test/test_test_zozocoin-limitedmap_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-getarg_tests.o `test -f 'test/getarg_tests.cpp' || echo '$(srcdir)/'`test/getarg_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-limitedmap_tests.o `test -f 'test/limitedmap_tests.cpp' || echo '$(srcdir)/'`test/limitedmap_tests.cpp
 
-test/test_test_dash-getarg_tests.obj: test/getarg_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-getarg_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-getarg_tests.Tpo -c -o test/test_test_dash-getarg_tests.obj `if test -f 'test/getarg_tests.cpp'; then $(CYGPATH_W) 'test/getarg_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/getarg_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-getarg_tests.Tpo test/$(DEPDIR)/test_test_dash-getarg_tests.Po
-#	$(AM_V_CXX)source='test/getarg_tests.cpp' object='test/test_test_dash-getarg_tests.obj' libtool=no \
+test/test_test_zozocoin-limitedmap_tests.obj: test/limitedmap_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-limitedmap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Tpo -c -o test/test_test_zozocoin-limitedmap_tests.obj `if test -f 'test/limitedmap_tests.cpp'; then $(CYGPATH_W) 'test/limitedmap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/limitedmap_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-limitedmap_tests.Po
+#	$(AM_V_CXX)source='test/limitedmap_tests.cpp' object='test/test_test_zozocoin-limitedmap_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-getarg_tests.obj `if test -f 'test/getarg_tests.cpp'; then $(CYGPATH_W) 'test/getarg_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/getarg_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-limitedmap_tests.obj `if test -f 'test/limitedmap_tests.cpp'; then $(CYGPATH_W) 'test/limitedmap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/limitedmap_tests.cpp'; fi`
 
-test/test_test_dash-hash_tests.o: test/hash_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-hash_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-hash_tests.Tpo -c -o test/test_test_dash-hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-hash_tests.Tpo test/$(DEPDIR)/test_test_dash-hash_tests.Po
-#	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_dash-hash_tests.o' libtool=no \
+test/test_test_zozocoin-dbwrapper_tests.o: test/dbwrapper_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-dbwrapper_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Tpo -c -o test/test_test_zozocoin-dbwrapper_tests.o `test -f 'test/dbwrapper_tests.cpp' || echo '$(srcdir)/'`test/dbwrapper_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Po
+#	$(AM_V_CXX)source='test/dbwrapper_tests.cpp' object='test/test_test_zozocoin-dbwrapper_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-dbwrapper_tests.o `test -f 'test/dbwrapper_tests.cpp' || echo '$(srcdir)/'`test/dbwrapper_tests.cpp
 
-test/test_test_dash-hash_tests.obj: test/hash_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-hash_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-hash_tests.Tpo -c -o test/test_test_dash-hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-hash_tests.Tpo test/$(DEPDIR)/test_test_dash-hash_tests.Po
-#	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_dash-hash_tests.obj' libtool=no \
+test/test_test_zozocoin-dbwrapper_tests.obj: test/dbwrapper_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-dbwrapper_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Tpo -c -o test/test_test_zozocoin-dbwrapper_tests.obj `if test -f 'test/dbwrapper_tests.cpp'; then $(CYGPATH_W) 'test/dbwrapper_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/dbwrapper_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-dbwrapper_tests.Po
+#	$(AM_V_CXX)source='test/dbwrapper_tests.cpp' object='test/test_test_zozocoin-dbwrapper_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-dbwrapper_tests.obj `if test -f 'test/dbwrapper_tests.cpp'; then $(CYGPATH_W) 'test/dbwrapper_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/dbwrapper_tests.cpp'; fi`
 
-test/test_test_dash-key_tests.o: test/key_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-key_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-key_tests.Tpo -c -o test/test_test_dash-key_tests.o `test -f 'test/key_tests.cpp' || echo '$(srcdir)/'`test/key_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-key_tests.Tpo test/$(DEPDIR)/test_test_dash-key_tests.Po
-#	$(AM_V_CXX)source='test/key_tests.cpp' object='test/test_test_dash-key_tests.o' libtool=no \
+test/test_test_zozocoin-main_tests.o: test/main_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-main_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-main_tests.Tpo -c -o test/test_test_zozocoin-main_tests.o `test -f 'test/main_tests.cpp' || echo '$(srcdir)/'`test/main_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-main_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-main_tests.Po
+#	$(AM_V_CXX)source='test/main_tests.cpp' object='test/test_test_zozocoin-main_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-key_tests.o `test -f 'test/key_tests.cpp' || echo '$(srcdir)/'`test/key_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-main_tests.o `test -f 'test/main_tests.cpp' || echo '$(srcdir)/'`test/main_tests.cpp
 
-test/test_test_dash-key_tests.obj: test/key_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-key_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-key_tests.Tpo -c -o test/test_test_dash-key_tests.obj `if test -f 'test/key_tests.cpp'; then $(CYGPATH_W) 'test/key_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/key_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-key_tests.Tpo test/$(DEPDIR)/test_test_dash-key_tests.Po
-#	$(AM_V_CXX)source='test/key_tests.cpp' object='test/test_test_dash-key_tests.obj' libtool=no \
+test/test_test_zozocoin-main_tests.obj: test/main_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-main_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-main_tests.Tpo -c -o test/test_test_zozocoin-main_tests.obj `if test -f 'test/main_tests.cpp'; then $(CYGPATH_W) 'test/main_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/main_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-main_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-main_tests.Po
+#	$(AM_V_CXX)source='test/main_tests.cpp' object='test/test_test_zozocoin-main_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-key_tests.obj `if test -f 'test/key_tests.cpp'; then $(CYGPATH_W) 'test/key_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/key_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-main_tests.obj `if test -f 'test/main_tests.cpp'; then $(CYGPATH_W) 'test/main_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/main_tests.cpp'; fi`
 
-test/test_test_dash-limitedmap_tests.o: test/limitedmap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-limitedmap_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-limitedmap_tests.Tpo -c -o test/test_test_dash-limitedmap_tests.o `test -f 'test/limitedmap_tests.cpp' || echo '$(srcdir)/'`test/limitedmap_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-limitedmap_tests.Tpo test/$(DEPDIR)/test_test_dash-limitedmap_tests.Po
-#	$(AM_V_CXX)source='test/limitedmap_tests.cpp' object='test/test_test_dash-limitedmap_tests.o' libtool=no \
+test/test_test_zozocoin-mempool_tests.o: test/mempool_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-mempool_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Tpo -c -o test/test_test_zozocoin-mempool_tests.o `test -f 'test/mempool_tests.cpp' || echo '$(srcdir)/'`test/mempool_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Po
+#	$(AM_V_CXX)source='test/mempool_tests.cpp' object='test/test_test_zozocoin-mempool_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-limitedmap_tests.o `test -f 'test/limitedmap_tests.cpp' || echo '$(srcdir)/'`test/limitedmap_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-mempool_tests.o `test -f 'test/mempool_tests.cpp' || echo '$(srcdir)/'`test/mempool_tests.cpp
 
-test/test_test_dash-limitedmap_tests.obj: test/limitedmap_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-limitedmap_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-limitedmap_tests.Tpo -c -o test/test_test_dash-limitedmap_tests.obj `if test -f 'test/limitedmap_tests.cpp'; then $(CYGPATH_W) 'test/limitedmap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/limitedmap_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-limitedmap_tests.Tpo test/$(DEPDIR)/test_test_dash-limitedmap_tests.Po
-#	$(AM_V_CXX)source='test/limitedmap_tests.cpp' object='test/test_test_dash-limitedmap_tests.obj' libtool=no \
+test/test_test_zozocoin-mempool_tests.obj: test/mempool_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-mempool_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Tpo -c -o test/test_test_zozocoin-mempool_tests.obj `if test -f 'test/mempool_tests.cpp'; then $(CYGPATH_W) 'test/mempool_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/mempool_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-mempool_tests.Po
+#	$(AM_V_CXX)source='test/mempool_tests.cpp' object='test/test_test_zozocoin-mempool_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-limitedmap_tests.obj `if test -f 'test/limitedmap_tests.cpp'; then $(CYGPATH_W) 'test/limitedmap_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/limitedmap_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-mempool_tests.obj `if test -f 'test/mempool_tests.cpp'; then $(CYGPATH_W) 'test/mempool_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/mempool_tests.cpp'; fi`
 
-test/test_test_dash-dbwrapper_tests.o: test/dbwrapper_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-dbwrapper_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Tpo -c -o test/test_test_dash-dbwrapper_tests.o `test -f 'test/dbwrapper_tests.cpp' || echo '$(srcdir)/'`test/dbwrapper_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Tpo test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Po
-#	$(AM_V_CXX)source='test/dbwrapper_tests.cpp' object='test/test_test_dash-dbwrapper_tests.o' libtool=no \
+test/test_test_zozocoin-merkle_tests.o: test/merkle_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-merkle_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Tpo -c -o test/test_test_zozocoin-merkle_tests.o `test -f 'test/merkle_tests.cpp' || echo '$(srcdir)/'`test/merkle_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Po
+#	$(AM_V_CXX)source='test/merkle_tests.cpp' object='test/test_test_zozocoin-merkle_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-dbwrapper_tests.o `test -f 'test/dbwrapper_tests.cpp' || echo '$(srcdir)/'`test/dbwrapper_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-merkle_tests.o `test -f 'test/merkle_tests.cpp' || echo '$(srcdir)/'`test/merkle_tests.cpp
 
-test/test_test_dash-dbwrapper_tests.obj: test/dbwrapper_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-dbwrapper_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Tpo -c -o test/test_test_dash-dbwrapper_tests.obj `if test -f 'test/dbwrapper_tests.cpp'; then $(CYGPATH_W) 'test/dbwrapper_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/dbwrapper_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Tpo test/$(DEPDIR)/test_test_dash-dbwrapper_tests.Po
-#	$(AM_V_CXX)source='test/dbwrapper_tests.cpp' object='test/test_test_dash-dbwrapper_tests.obj' libtool=no \
+test/test_test_zozocoin-merkle_tests.obj: test/merkle_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-merkle_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Tpo -c -o test/test_test_zozocoin-merkle_tests.obj `if test -f 'test/merkle_tests.cpp'; then $(CYGPATH_W) 'test/merkle_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/merkle_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-merkle_tests.Po
+#	$(AM_V_CXX)source='test/merkle_tests.cpp' object='test/test_test_zozocoin-merkle_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-dbwrapper_tests.obj `if test -f 'test/dbwrapper_tests.cpp'; then $(CYGPATH_W) 'test/dbwrapper_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/dbwrapper_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-merkle_tests.obj `if test -f 'test/merkle_tests.cpp'; then $(CYGPATH_W) 'test/merkle_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/merkle_tests.cpp'; fi`
 
-test/test_test_dash-main_tests.o: test/main_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-main_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-main_tests.Tpo -c -o test/test_test_dash-main_tests.o `test -f 'test/main_tests.cpp' || echo '$(srcdir)/'`test/main_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-main_tests.Tpo test/$(DEPDIR)/test_test_dash-main_tests.Po
-#	$(AM_V_CXX)source='test/main_tests.cpp' object='test/test_test_dash-main_tests.o' libtool=no \
+test/test_test_zozocoin-miner_tests.o: test/miner_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-miner_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-miner_tests.Tpo -c -o test/test_test_zozocoin-miner_tests.o `test -f 'test/miner_tests.cpp' || echo '$(srcdir)/'`test/miner_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-miner_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-miner_tests.Po
+#	$(AM_V_CXX)source='test/miner_tests.cpp' object='test/test_test_zozocoin-miner_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-main_tests.o `test -f 'test/main_tests.cpp' || echo '$(srcdir)/'`test/main_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-miner_tests.o `test -f 'test/miner_tests.cpp' || echo '$(srcdir)/'`test/miner_tests.cpp
 
-test/test_test_dash-main_tests.obj: test/main_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-main_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-main_tests.Tpo -c -o test/test_test_dash-main_tests.obj `if test -f 'test/main_tests.cpp'; then $(CYGPATH_W) 'test/main_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/main_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-main_tests.Tpo test/$(DEPDIR)/test_test_dash-main_tests.Po
-#	$(AM_V_CXX)source='test/main_tests.cpp' object='test/test_test_dash-main_tests.obj' libtool=no \
+test/test_test_zozocoin-miner_tests.obj: test/miner_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-miner_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-miner_tests.Tpo -c -o test/test_test_zozocoin-miner_tests.obj `if test -f 'test/miner_tests.cpp'; then $(CYGPATH_W) 'test/miner_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/miner_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-miner_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-miner_tests.Po
+#	$(AM_V_CXX)source='test/miner_tests.cpp' object='test/test_test_zozocoin-miner_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-main_tests.obj `if test -f 'test/main_tests.cpp'; then $(CYGPATH_W) 'test/main_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/main_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-miner_tests.obj `if test -f 'test/miner_tests.cpp'; then $(CYGPATH_W) 'test/miner_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/miner_tests.cpp'; fi`
 
-test/test_test_dash-mempool_tests.o: test/mempool_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-mempool_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-mempool_tests.Tpo -c -o test/test_test_dash-mempool_tests.o `test -f 'test/mempool_tests.cpp' || echo '$(srcdir)/'`test/mempool_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-mempool_tests.Tpo test/$(DEPDIR)/test_test_dash-mempool_tests.Po
-#	$(AM_V_CXX)source='test/mempool_tests.cpp' object='test/test_test_dash-mempool_tests.o' libtool=no \
+test/test_test_zozocoin-multisig_tests.o: test/multisig_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-multisig_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Tpo -c -o test/test_test_zozocoin-multisig_tests.o `test -f 'test/multisig_tests.cpp' || echo '$(srcdir)/'`test/multisig_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Po
+#	$(AM_V_CXX)source='test/multisig_tests.cpp' object='test/test_test_zozocoin-multisig_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-mempool_tests.o `test -f 'test/mempool_tests.cpp' || echo '$(srcdir)/'`test/mempool_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-multisig_tests.o `test -f 'test/multisig_tests.cpp' || echo '$(srcdir)/'`test/multisig_tests.cpp
 
-test/test_test_dash-mempool_tests.obj: test/mempool_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-mempool_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-mempool_tests.Tpo -c -o test/test_test_dash-mempool_tests.obj `if test -f 'test/mempool_tests.cpp'; then $(CYGPATH_W) 'test/mempool_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/mempool_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-mempool_tests.Tpo test/$(DEPDIR)/test_test_dash-mempool_tests.Po
-#	$(AM_V_CXX)source='test/mempool_tests.cpp' object='test/test_test_dash-mempool_tests.obj' libtool=no \
+test/test_test_zozocoin-multisig_tests.obj: test/multisig_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-multisig_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Tpo -c -o test/test_test_zozocoin-multisig_tests.obj `if test -f 'test/multisig_tests.cpp'; then $(CYGPATH_W) 'test/multisig_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/multisig_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-multisig_tests.Po
+#	$(AM_V_CXX)source='test/multisig_tests.cpp' object='test/test_test_zozocoin-multisig_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-mempool_tests.obj `if test -f 'test/mempool_tests.cpp'; then $(CYGPATH_W) 'test/mempool_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/mempool_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-multisig_tests.obj `if test -f 'test/multisig_tests.cpp'; then $(CYGPATH_W) 'test/multisig_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/multisig_tests.cpp'; fi`
 
-test/test_test_dash-merkle_tests.o: test/merkle_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-merkle_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-merkle_tests.Tpo -c -o test/test_test_dash-merkle_tests.o `test -f 'test/merkle_tests.cpp' || echo '$(srcdir)/'`test/merkle_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-merkle_tests.Tpo test/$(DEPDIR)/test_test_dash-merkle_tests.Po
-#	$(AM_V_CXX)source='test/merkle_tests.cpp' object='test/test_test_dash-merkle_tests.o' libtool=no \
+test/test_test_zozocoin-netbase_tests.o: test/netbase_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-netbase_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Tpo -c -o test/test_test_zozocoin-netbase_tests.o `test -f 'test/netbase_tests.cpp' || echo '$(srcdir)/'`test/netbase_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Po
+#	$(AM_V_CXX)source='test/netbase_tests.cpp' object='test/test_test_zozocoin-netbase_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-merkle_tests.o `test -f 'test/merkle_tests.cpp' || echo '$(srcdir)/'`test/merkle_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-netbase_tests.o `test -f 'test/netbase_tests.cpp' || echo '$(srcdir)/'`test/netbase_tests.cpp
 
-test/test_test_dash-merkle_tests.obj: test/merkle_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-merkle_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-merkle_tests.Tpo -c -o test/test_test_dash-merkle_tests.obj `if test -f 'test/merkle_tests.cpp'; then $(CYGPATH_W) 'test/merkle_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/merkle_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-merkle_tests.Tpo test/$(DEPDIR)/test_test_dash-merkle_tests.Po
-#	$(AM_V_CXX)source='test/merkle_tests.cpp' object='test/test_test_dash-merkle_tests.obj' libtool=no \
+test/test_test_zozocoin-netbase_tests.obj: test/netbase_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-netbase_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Tpo -c -o test/test_test_zozocoin-netbase_tests.obj `if test -f 'test/netbase_tests.cpp'; then $(CYGPATH_W) 'test/netbase_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/netbase_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-netbase_tests.Po
+#	$(AM_V_CXX)source='test/netbase_tests.cpp' object='test/test_test_zozocoin-netbase_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-merkle_tests.obj `if test -f 'test/merkle_tests.cpp'; then $(CYGPATH_W) 'test/merkle_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/merkle_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-netbase_tests.obj `if test -f 'test/netbase_tests.cpp'; then $(CYGPATH_W) 'test/netbase_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/netbase_tests.cpp'; fi`
 
-test/test_test_dash-miner_tests.o: test/miner_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-miner_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-miner_tests.Tpo -c -o test/test_test_dash-miner_tests.o `test -f 'test/miner_tests.cpp' || echo '$(srcdir)/'`test/miner_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-miner_tests.Tpo test/$(DEPDIR)/test_test_dash-miner_tests.Po
-#	$(AM_V_CXX)source='test/miner_tests.cpp' object='test/test_test_dash-miner_tests.o' libtool=no \
+test/test_test_zozocoin-pmt_tests.o: test/pmt_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-pmt_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Tpo -c -o test/test_test_zozocoin-pmt_tests.o `test -f 'test/pmt_tests.cpp' || echo '$(srcdir)/'`test/pmt_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Po
+#	$(AM_V_CXX)source='test/pmt_tests.cpp' object='test/test_test_zozocoin-pmt_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-miner_tests.o `test -f 'test/miner_tests.cpp' || echo '$(srcdir)/'`test/miner_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-pmt_tests.o `test -f 'test/pmt_tests.cpp' || echo '$(srcdir)/'`test/pmt_tests.cpp
 
-test/test_test_dash-miner_tests.obj: test/miner_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-miner_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-miner_tests.Tpo -c -o test/test_test_dash-miner_tests.obj `if test -f 'test/miner_tests.cpp'; then $(CYGPATH_W) 'test/miner_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/miner_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-miner_tests.Tpo test/$(DEPDIR)/test_test_dash-miner_tests.Po
-#	$(AM_V_CXX)source='test/miner_tests.cpp' object='test/test_test_dash-miner_tests.obj' libtool=no \
+test/test_test_zozocoin-pmt_tests.obj: test/pmt_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-pmt_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Tpo -c -o test/test_test_zozocoin-pmt_tests.obj `if test -f 'test/pmt_tests.cpp'; then $(CYGPATH_W) 'test/pmt_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pmt_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-pmt_tests.Po
+#	$(AM_V_CXX)source='test/pmt_tests.cpp' object='test/test_test_zozocoin-pmt_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-miner_tests.obj `if test -f 'test/miner_tests.cpp'; then $(CYGPATH_W) 'test/miner_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/miner_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-pmt_tests.obj `if test -f 'test/pmt_tests.cpp'; then $(CYGPATH_W) 'test/pmt_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pmt_tests.cpp'; fi`
 
-test/test_test_dash-multisig_tests.o: test/multisig_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-multisig_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-multisig_tests.Tpo -c -o test/test_test_dash-multisig_tests.o `test -f 'test/multisig_tests.cpp' || echo '$(srcdir)/'`test/multisig_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-multisig_tests.Tpo test/$(DEPDIR)/test_test_dash-multisig_tests.Po
-#	$(AM_V_CXX)source='test/multisig_tests.cpp' object='test/test_test_dash-multisig_tests.o' libtool=no \
+test/test_test_zozocoin-policyestimator_tests.o: test/policyestimator_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-policyestimator_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Tpo -c -o test/test_test_zozocoin-policyestimator_tests.o `test -f 'test/policyestimator_tests.cpp' || echo '$(srcdir)/'`test/policyestimator_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Po
+#	$(AM_V_CXX)source='test/policyestimator_tests.cpp' object='test/test_test_zozocoin-policyestimator_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-multisig_tests.o `test -f 'test/multisig_tests.cpp' || echo '$(srcdir)/'`test/multisig_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-policyestimator_tests.o `test -f 'test/policyestimator_tests.cpp' || echo '$(srcdir)/'`test/policyestimator_tests.cpp
 
-test/test_test_dash-multisig_tests.obj: test/multisig_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-multisig_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-multisig_tests.Tpo -c -o test/test_test_dash-multisig_tests.obj `if test -f 'test/multisig_tests.cpp'; then $(CYGPATH_W) 'test/multisig_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/multisig_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-multisig_tests.Tpo test/$(DEPDIR)/test_test_dash-multisig_tests.Po
-#	$(AM_V_CXX)source='test/multisig_tests.cpp' object='test/test_test_dash-multisig_tests.obj' libtool=no \
+test/test_test_zozocoin-policyestimator_tests.obj: test/policyestimator_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-policyestimator_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Tpo -c -o test/test_test_zozocoin-policyestimator_tests.obj `if test -f 'test/policyestimator_tests.cpp'; then $(CYGPATH_W) 'test/policyestimator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/policyestimator_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-policyestimator_tests.Po
+#	$(AM_V_CXX)source='test/policyestimator_tests.cpp' object='test/test_test_zozocoin-policyestimator_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-multisig_tests.obj `if test -f 'test/multisig_tests.cpp'; then $(CYGPATH_W) 'test/multisig_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/multisig_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-policyestimator_tests.obj `if test -f 'test/policyestimator_tests.cpp'; then $(CYGPATH_W) 'test/policyestimator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/policyestimator_tests.cpp'; fi`
 
-test/test_test_dash-netbase_tests.o: test/netbase_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-netbase_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-netbase_tests.Tpo -c -o test/test_test_dash-netbase_tests.o `test -f 'test/netbase_tests.cpp' || echo '$(srcdir)/'`test/netbase_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-netbase_tests.Tpo test/$(DEPDIR)/test_test_dash-netbase_tests.Po
-#	$(AM_V_CXX)source='test/netbase_tests.cpp' object='test/test_test_dash-netbase_tests.o' libtool=no \
+test/test_test_zozocoin-pow_tests.o: test/pow_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-pow_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-pow_tests.Tpo -c -o test/test_test_zozocoin-pow_tests.o `test -f 'test/pow_tests.cpp' || echo '$(srcdir)/'`test/pow_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-pow_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-pow_tests.Po
+#	$(AM_V_CXX)source='test/pow_tests.cpp' object='test/test_test_zozocoin-pow_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-netbase_tests.o `test -f 'test/netbase_tests.cpp' || echo '$(srcdir)/'`test/netbase_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-pow_tests.o `test -f 'test/pow_tests.cpp' || echo '$(srcdir)/'`test/pow_tests.cpp
 
-test/test_test_dash-netbase_tests.obj: test/netbase_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-netbase_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-netbase_tests.Tpo -c -o test/test_test_dash-netbase_tests.obj `if test -f 'test/netbase_tests.cpp'; then $(CYGPATH_W) 'test/netbase_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/netbase_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-netbase_tests.Tpo test/$(DEPDIR)/test_test_dash-netbase_tests.Po
-#	$(AM_V_CXX)source='test/netbase_tests.cpp' object='test/test_test_dash-netbase_tests.obj' libtool=no \
+test/test_test_zozocoin-pow_tests.obj: test/pow_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-pow_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-pow_tests.Tpo -c -o test/test_test_zozocoin-pow_tests.obj `if test -f 'test/pow_tests.cpp'; then $(CYGPATH_W) 'test/pow_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pow_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-pow_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-pow_tests.Po
+#	$(AM_V_CXX)source='test/pow_tests.cpp' object='test/test_test_zozocoin-pow_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-netbase_tests.obj `if test -f 'test/netbase_tests.cpp'; then $(CYGPATH_W) 'test/netbase_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/netbase_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-pow_tests.obj `if test -f 'test/pow_tests.cpp'; then $(CYGPATH_W) 'test/pow_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pow_tests.cpp'; fi`
 
-test/test_test_dash-pmt_tests.o: test/pmt_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-pmt_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-pmt_tests.Tpo -c -o test/test_test_dash-pmt_tests.o `test -f 'test/pmt_tests.cpp' || echo '$(srcdir)/'`test/pmt_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-pmt_tests.Tpo test/$(DEPDIR)/test_test_dash-pmt_tests.Po
-#	$(AM_V_CXX)source='test/pmt_tests.cpp' object='test/test_test_dash-pmt_tests.o' libtool=no \
+test/test_test_zozocoin-prevector_tests.o: test/prevector_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-prevector_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Tpo -c -o test/test_test_zozocoin-prevector_tests.o `test -f 'test/prevector_tests.cpp' || echo '$(srcdir)/'`test/prevector_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Po
+#	$(AM_V_CXX)source='test/prevector_tests.cpp' object='test/test_test_zozocoin-prevector_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-pmt_tests.o `test -f 'test/pmt_tests.cpp' || echo '$(srcdir)/'`test/pmt_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-prevector_tests.o `test -f 'test/prevector_tests.cpp' || echo '$(srcdir)/'`test/prevector_tests.cpp
 
-test/test_test_dash-pmt_tests.obj: test/pmt_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-pmt_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-pmt_tests.Tpo -c -o test/test_test_dash-pmt_tests.obj `if test -f 'test/pmt_tests.cpp'; then $(CYGPATH_W) 'test/pmt_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pmt_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-pmt_tests.Tpo test/$(DEPDIR)/test_test_dash-pmt_tests.Po
-#	$(AM_V_CXX)source='test/pmt_tests.cpp' object='test/test_test_dash-pmt_tests.obj' libtool=no \
+test/test_test_zozocoin-prevector_tests.obj: test/prevector_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-prevector_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Tpo -c -o test/test_test_zozocoin-prevector_tests.obj `if test -f 'test/prevector_tests.cpp'; then $(CYGPATH_W) 'test/prevector_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/prevector_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-prevector_tests.Po
+#	$(AM_V_CXX)source='test/prevector_tests.cpp' object='test/test_test_zozocoin-prevector_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-pmt_tests.obj `if test -f 'test/pmt_tests.cpp'; then $(CYGPATH_W) 'test/pmt_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pmt_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-prevector_tests.obj `if test -f 'test/prevector_tests.cpp'; then $(CYGPATH_W) 'test/prevector_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/prevector_tests.cpp'; fi`
 
-test/test_test_dash-policyestimator_tests.o: test/policyestimator_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-policyestimator_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-policyestimator_tests.Tpo -c -o test/test_test_dash-policyestimator_tests.o `test -f 'test/policyestimator_tests.cpp' || echo '$(srcdir)/'`test/policyestimator_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-policyestimator_tests.Tpo test/$(DEPDIR)/test_test_dash-policyestimator_tests.Po
-#	$(AM_V_CXX)source='test/policyestimator_tests.cpp' object='test/test_test_dash-policyestimator_tests.o' libtool=no \
+test/test_test_zozocoin-ratecheck_tests.o: test/ratecheck_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-ratecheck_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Tpo -c -o test/test_test_zozocoin-ratecheck_tests.o `test -f 'test/ratecheck_tests.cpp' || echo '$(srcdir)/'`test/ratecheck_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Po
+#	$(AM_V_CXX)source='test/ratecheck_tests.cpp' object='test/test_test_zozocoin-ratecheck_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-policyestimator_tests.o `test -f 'test/policyestimator_tests.cpp' || echo '$(srcdir)/'`test/policyestimator_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-ratecheck_tests.o `test -f 'test/ratecheck_tests.cpp' || echo '$(srcdir)/'`test/ratecheck_tests.cpp
 
-test/test_test_dash-policyestimator_tests.obj: test/policyestimator_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-policyestimator_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-policyestimator_tests.Tpo -c -o test/test_test_dash-policyestimator_tests.obj `if test -f 'test/policyestimator_tests.cpp'; then $(CYGPATH_W) 'test/policyestimator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/policyestimator_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-policyestimator_tests.Tpo test/$(DEPDIR)/test_test_dash-policyestimator_tests.Po
-#	$(AM_V_CXX)source='test/policyestimator_tests.cpp' object='test/test_test_dash-policyestimator_tests.obj' libtool=no \
+test/test_test_zozocoin-ratecheck_tests.obj: test/ratecheck_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-ratecheck_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Tpo -c -o test/test_test_zozocoin-ratecheck_tests.obj `if test -f 'test/ratecheck_tests.cpp'; then $(CYGPATH_W) 'test/ratecheck_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/ratecheck_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-ratecheck_tests.Po
+#	$(AM_V_CXX)source='test/ratecheck_tests.cpp' object='test/test_test_zozocoin-ratecheck_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-policyestimator_tests.obj `if test -f 'test/policyestimator_tests.cpp'; then $(CYGPATH_W) 'test/policyestimator_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/policyestimator_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-ratecheck_tests.obj `if test -f 'test/ratecheck_tests.cpp'; then $(CYGPATH_W) 'test/ratecheck_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/ratecheck_tests.cpp'; fi`
 
-test/test_test_dash-pow_tests.o: test/pow_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-pow_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-pow_tests.Tpo -c -o test/test_test_dash-pow_tests.o `test -f 'test/pow_tests.cpp' || echo '$(srcdir)/'`test/pow_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-pow_tests.Tpo test/$(DEPDIR)/test_test_dash-pow_tests.Po
-#	$(AM_V_CXX)source='test/pow_tests.cpp' object='test/test_test_dash-pow_tests.o' libtool=no \
+test/test_test_zozocoin-reverselock_tests.o: test/reverselock_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-reverselock_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Tpo -c -o test/test_test_zozocoin-reverselock_tests.o `test -f 'test/reverselock_tests.cpp' || echo '$(srcdir)/'`test/reverselock_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Po
+#	$(AM_V_CXX)source='test/reverselock_tests.cpp' object='test/test_test_zozocoin-reverselock_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-pow_tests.o `test -f 'test/pow_tests.cpp' || echo '$(srcdir)/'`test/pow_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-reverselock_tests.o `test -f 'test/reverselock_tests.cpp' || echo '$(srcdir)/'`test/reverselock_tests.cpp
 
-test/test_test_dash-pow_tests.obj: test/pow_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-pow_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-pow_tests.Tpo -c -o test/test_test_dash-pow_tests.obj `if test -f 'test/pow_tests.cpp'; then $(CYGPATH_W) 'test/pow_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pow_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-pow_tests.Tpo test/$(DEPDIR)/test_test_dash-pow_tests.Po
-#	$(AM_V_CXX)source='test/pow_tests.cpp' object='test/test_test_dash-pow_tests.obj' libtool=no \
+test/test_test_zozocoin-reverselock_tests.obj: test/reverselock_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-reverselock_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Tpo -c -o test/test_test_zozocoin-reverselock_tests.obj `if test -f 'test/reverselock_tests.cpp'; then $(CYGPATH_W) 'test/reverselock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/reverselock_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-reverselock_tests.Po
+#	$(AM_V_CXX)source='test/reverselock_tests.cpp' object='test/test_test_zozocoin-reverselock_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-pow_tests.obj `if test -f 'test/pow_tests.cpp'; then $(CYGPATH_W) 'test/pow_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/pow_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-reverselock_tests.obj `if test -f 'test/reverselock_tests.cpp'; then $(CYGPATH_W) 'test/reverselock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/reverselock_tests.cpp'; fi`
 
-test/test_test_dash-prevector_tests.o: test/prevector_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-prevector_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-prevector_tests.Tpo -c -o test/test_test_dash-prevector_tests.o `test -f 'test/prevector_tests.cpp' || echo '$(srcdir)/'`test/prevector_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-prevector_tests.Tpo test/$(DEPDIR)/test_test_dash-prevector_tests.Po
-#	$(AM_V_CXX)source='test/prevector_tests.cpp' object='test/test_test_dash-prevector_tests.o' libtool=no \
+test/test_test_zozocoin-rpc_tests.o: test/rpc_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-rpc_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Tpo -c -o test/test_test_zozocoin-rpc_tests.o `test -f 'test/rpc_tests.cpp' || echo '$(srcdir)/'`test/rpc_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Po
+#	$(AM_V_CXX)source='test/rpc_tests.cpp' object='test/test_test_zozocoin-rpc_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-prevector_tests.o `test -f 'test/prevector_tests.cpp' || echo '$(srcdir)/'`test/prevector_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-rpc_tests.o `test -f 'test/rpc_tests.cpp' || echo '$(srcdir)/'`test/rpc_tests.cpp
 
-test/test_test_dash-prevector_tests.obj: test/prevector_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-prevector_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-prevector_tests.Tpo -c -o test/test_test_dash-prevector_tests.obj `if test -f 'test/prevector_tests.cpp'; then $(CYGPATH_W) 'test/prevector_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/prevector_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-prevector_tests.Tpo test/$(DEPDIR)/test_test_dash-prevector_tests.Po
-#	$(AM_V_CXX)source='test/prevector_tests.cpp' object='test/test_test_dash-prevector_tests.obj' libtool=no \
+test/test_test_zozocoin-rpc_tests.obj: test/rpc_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-rpc_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Tpo -c -o test/test_test_zozocoin-rpc_tests.obj `if test -f 'test/rpc_tests.cpp'; then $(CYGPATH_W) 'test/rpc_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-rpc_tests.Po
+#	$(AM_V_CXX)source='test/rpc_tests.cpp' object='test/test_test_zozocoin-rpc_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-prevector_tests.obj `if test -f 'test/prevector_tests.cpp'; then $(CYGPATH_W) 'test/prevector_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/prevector_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-rpc_tests.obj `if test -f 'test/rpc_tests.cpp'; then $(CYGPATH_W) 'test/rpc_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_tests.cpp'; fi`
 
-test/test_test_dash-ratecheck_tests.o: test/ratecheck_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-ratecheck_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-ratecheck_tests.Tpo -c -o test/test_test_dash-ratecheck_tests.o `test -f 'test/ratecheck_tests.cpp' || echo '$(srcdir)/'`test/ratecheck_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-ratecheck_tests.Tpo test/$(DEPDIR)/test_test_dash-ratecheck_tests.Po
-#	$(AM_V_CXX)source='test/ratecheck_tests.cpp' object='test/test_test_dash-ratecheck_tests.o' libtool=no \
+test/test_test_zozocoin-sanity_tests.o: test/sanity_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-sanity_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Tpo -c -o test/test_test_zozocoin-sanity_tests.o `test -f 'test/sanity_tests.cpp' || echo '$(srcdir)/'`test/sanity_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Po
+#	$(AM_V_CXX)source='test/sanity_tests.cpp' object='test/test_test_zozocoin-sanity_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-ratecheck_tests.o `test -f 'test/ratecheck_tests.cpp' || echo '$(srcdir)/'`test/ratecheck_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-sanity_tests.o `test -f 'test/sanity_tests.cpp' || echo '$(srcdir)/'`test/sanity_tests.cpp
 
-test/test_test_dash-ratecheck_tests.obj: test/ratecheck_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-ratecheck_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-ratecheck_tests.Tpo -c -o test/test_test_dash-ratecheck_tests.obj `if test -f 'test/ratecheck_tests.cpp'; then $(CYGPATH_W) 'test/ratecheck_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/ratecheck_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-ratecheck_tests.Tpo test/$(DEPDIR)/test_test_dash-ratecheck_tests.Po
-#	$(AM_V_CXX)source='test/ratecheck_tests.cpp' object='test/test_test_dash-ratecheck_tests.obj' libtool=no \
+test/test_test_zozocoin-sanity_tests.obj: test/sanity_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-sanity_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Tpo -c -o test/test_test_zozocoin-sanity_tests.obj `if test -f 'test/sanity_tests.cpp'; then $(CYGPATH_W) 'test/sanity_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sanity_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-sanity_tests.Po
+#	$(AM_V_CXX)source='test/sanity_tests.cpp' object='test/test_test_zozocoin-sanity_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-ratecheck_tests.obj `if test -f 'test/ratecheck_tests.cpp'; then $(CYGPATH_W) 'test/ratecheck_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/ratecheck_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-sanity_tests.obj `if test -f 'test/sanity_tests.cpp'; then $(CYGPATH_W) 'test/sanity_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sanity_tests.cpp'; fi`
 
-test/test_test_dash-reverselock_tests.o: test/reverselock_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-reverselock_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-reverselock_tests.Tpo -c -o test/test_test_dash-reverselock_tests.o `test -f 'test/reverselock_tests.cpp' || echo '$(srcdir)/'`test/reverselock_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-reverselock_tests.Tpo test/$(DEPDIR)/test_test_dash-reverselock_tests.Po
-#	$(AM_V_CXX)source='test/reverselock_tests.cpp' object='test/test_test_dash-reverselock_tests.o' libtool=no \
+test/test_test_zozocoin-scheduler_tests.o: test/scheduler_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-scheduler_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Tpo -c -o test/test_test_zozocoin-scheduler_tests.o `test -f 'test/scheduler_tests.cpp' || echo '$(srcdir)/'`test/scheduler_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Po
+#	$(AM_V_CXX)source='test/scheduler_tests.cpp' object='test/test_test_zozocoin-scheduler_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-reverselock_tests.o `test -f 'test/reverselock_tests.cpp' || echo '$(srcdir)/'`test/reverselock_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-scheduler_tests.o `test -f 'test/scheduler_tests.cpp' || echo '$(srcdir)/'`test/scheduler_tests.cpp
 
-test/test_test_dash-reverselock_tests.obj: test/reverselock_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-reverselock_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-reverselock_tests.Tpo -c -o test/test_test_dash-reverselock_tests.obj `if test -f 'test/reverselock_tests.cpp'; then $(CYGPATH_W) 'test/reverselock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/reverselock_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-reverselock_tests.Tpo test/$(DEPDIR)/test_test_dash-reverselock_tests.Po
-#	$(AM_V_CXX)source='test/reverselock_tests.cpp' object='test/test_test_dash-reverselock_tests.obj' libtool=no \
+test/test_test_zozocoin-scheduler_tests.obj: test/scheduler_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-scheduler_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Tpo -c -o test/test_test_zozocoin-scheduler_tests.obj `if test -f 'test/scheduler_tests.cpp'; then $(CYGPATH_W) 'test/scheduler_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scheduler_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-scheduler_tests.Po
+#	$(AM_V_CXX)source='test/scheduler_tests.cpp' object='test/test_test_zozocoin-scheduler_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-reverselock_tests.obj `if test -f 'test/reverselock_tests.cpp'; then $(CYGPATH_W) 'test/reverselock_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/reverselock_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-scheduler_tests.obj `if test -f 'test/scheduler_tests.cpp'; then $(CYGPATH_W) 'test/scheduler_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scheduler_tests.cpp'; fi`
 
-test/test_test_dash-rpc_tests.o: test/rpc_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-rpc_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-rpc_tests.Tpo -c -o test/test_test_dash-rpc_tests.o `test -f 'test/rpc_tests.cpp' || echo '$(srcdir)/'`test/rpc_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-rpc_tests.Tpo test/$(DEPDIR)/test_test_dash-rpc_tests.Po
-#	$(AM_V_CXX)source='test/rpc_tests.cpp' object='test/test_test_dash-rpc_tests.o' libtool=no \
+test/test_test_zozocoin-script_P2SH_tests.o: test/script_P2SH_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-script_P2SH_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Tpo -c -o test/test_test_zozocoin-script_P2SH_tests.o `test -f 'test/script_P2SH_tests.cpp' || echo '$(srcdir)/'`test/script_P2SH_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Po
+#	$(AM_V_CXX)source='test/script_P2SH_tests.cpp' object='test/test_test_zozocoin-script_P2SH_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-rpc_tests.o `test -f 'test/rpc_tests.cpp' || echo '$(srcdir)/'`test/rpc_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-script_P2SH_tests.o `test -f 'test/script_P2SH_tests.cpp' || echo '$(srcdir)/'`test/script_P2SH_tests.cpp
 
-test/test_test_dash-rpc_tests.obj: test/rpc_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-rpc_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-rpc_tests.Tpo -c -o test/test_test_dash-rpc_tests.obj `if test -f 'test/rpc_tests.cpp'; then $(CYGPATH_W) 'test/rpc_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-rpc_tests.Tpo test/$(DEPDIR)/test_test_dash-rpc_tests.Po
-#	$(AM_V_CXX)source='test/rpc_tests.cpp' object='test/test_test_dash-rpc_tests.obj' libtool=no \
+test/test_test_zozocoin-script_P2SH_tests.obj: test/script_P2SH_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-script_P2SH_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Tpo -c -o test/test_test_zozocoin-script_P2SH_tests.obj `if test -f 'test/script_P2SH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2SH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2SH_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-script_P2SH_tests.Po
+#	$(AM_V_CXX)source='test/script_P2SH_tests.cpp' object='test/test_test_zozocoin-script_P2SH_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-rpc_tests.obj `if test -f 'test/rpc_tests.cpp'; then $(CYGPATH_W) 'test/rpc_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-script_P2SH_tests.obj `if test -f 'test/script_P2SH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2SH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2SH_tests.cpp'; fi`
 
-test/test_test_dash-sanity_tests.o: test/sanity_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-sanity_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-sanity_tests.Tpo -c -o test/test_test_dash-sanity_tests.o `test -f 'test/sanity_tests.cpp' || echo '$(srcdir)/'`test/sanity_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-sanity_tests.Tpo test/$(DEPDIR)/test_test_dash-sanity_tests.Po
-#	$(AM_V_CXX)source='test/sanity_tests.cpp' object='test/test_test_dash-sanity_tests.o' libtool=no \
+test/test_test_zozocoin-script_P2PKH_tests.o: test/script_P2PKH_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-script_P2PKH_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Tpo -c -o test/test_test_zozocoin-script_P2PKH_tests.o `test -f 'test/script_P2PKH_tests.cpp' || echo '$(srcdir)/'`test/script_P2PKH_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Po
+#	$(AM_V_CXX)source='test/script_P2PKH_tests.cpp' object='test/test_test_zozocoin-script_P2PKH_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-sanity_tests.o `test -f 'test/sanity_tests.cpp' || echo '$(srcdir)/'`test/sanity_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-script_P2PKH_tests.o `test -f 'test/script_P2PKH_tests.cpp' || echo '$(srcdir)/'`test/script_P2PKH_tests.cpp
 
-test/test_test_dash-sanity_tests.obj: test/sanity_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-sanity_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-sanity_tests.Tpo -c -o test/test_test_dash-sanity_tests.obj `if test -f 'test/sanity_tests.cpp'; then $(CYGPATH_W) 'test/sanity_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sanity_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-sanity_tests.Tpo test/$(DEPDIR)/test_test_dash-sanity_tests.Po
-#	$(AM_V_CXX)source='test/sanity_tests.cpp' object='test/test_test_dash-sanity_tests.obj' libtool=no \
+test/test_test_zozocoin-script_P2PKH_tests.obj: test/script_P2PKH_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-script_P2PKH_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Tpo -c -o test/test_test_zozocoin-script_P2PKH_tests.obj `if test -f 'test/script_P2PKH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2PKH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2PKH_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-script_P2PKH_tests.Po
+#	$(AM_V_CXX)source='test/script_P2PKH_tests.cpp' object='test/test_test_zozocoin-script_P2PKH_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-sanity_tests.obj `if test -f 'test/sanity_tests.cpp'; then $(CYGPATH_W) 'test/sanity_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sanity_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-script_P2PKH_tests.obj `if test -f 'test/script_P2PKH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2PKH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2PKH_tests.cpp'; fi`
 
-test/test_test_dash-scheduler_tests.o: test/scheduler_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-scheduler_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-scheduler_tests.Tpo -c -o test/test_test_dash-scheduler_tests.o `test -f 'test/scheduler_tests.cpp' || echo '$(srcdir)/'`test/scheduler_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-scheduler_tests.Tpo test/$(DEPDIR)/test_test_dash-scheduler_tests.Po
-#	$(AM_V_CXX)source='test/scheduler_tests.cpp' object='test/test_test_dash-scheduler_tests.o' libtool=no \
+test/test_test_zozocoin-script_tests.o: test/script_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-script_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-script_tests.Tpo -c -o test/test_test_zozocoin-script_tests.o `test -f 'test/script_tests.cpp' || echo '$(srcdir)/'`test/script_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-script_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-script_tests.Po
+#	$(AM_V_CXX)source='test/script_tests.cpp' object='test/test_test_zozocoin-script_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-scheduler_tests.o `test -f 'test/scheduler_tests.cpp' || echo '$(srcdir)/'`test/scheduler_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-script_tests.o `test -f 'test/script_tests.cpp' || echo '$(srcdir)/'`test/script_tests.cpp
 
-test/test_test_dash-scheduler_tests.obj: test/scheduler_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-scheduler_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-scheduler_tests.Tpo -c -o test/test_test_dash-scheduler_tests.obj `if test -f 'test/scheduler_tests.cpp'; then $(CYGPATH_W) 'test/scheduler_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scheduler_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-scheduler_tests.Tpo test/$(DEPDIR)/test_test_dash-scheduler_tests.Po
-#	$(AM_V_CXX)source='test/scheduler_tests.cpp' object='test/test_test_dash-scheduler_tests.obj' libtool=no \
+test/test_test_zozocoin-script_tests.obj: test/script_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-script_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-script_tests.Tpo -c -o test/test_test_zozocoin-script_tests.obj `if test -f 'test/script_tests.cpp'; then $(CYGPATH_W) 'test/script_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-script_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-script_tests.Po
+#	$(AM_V_CXX)source='test/script_tests.cpp' object='test/test_test_zozocoin-script_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-scheduler_tests.obj `if test -f 'test/scheduler_tests.cpp'; then $(CYGPATH_W) 'test/scheduler_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scheduler_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-script_tests.obj `if test -f 'test/script_tests.cpp'; then $(CYGPATH_W) 'test/script_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_tests.cpp'; fi`
 
-test/test_test_dash-script_P2SH_tests.o: test/script_P2SH_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-script_P2SH_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Tpo -c -o test/test_test_dash-script_P2SH_tests.o `test -f 'test/script_P2SH_tests.cpp' || echo '$(srcdir)/'`test/script_P2SH_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Tpo test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Po
-#	$(AM_V_CXX)source='test/script_P2SH_tests.cpp' object='test/test_test_dash-script_P2SH_tests.o' libtool=no \
+test/test_test_zozocoin-scriptnum_tests.o: test/scriptnum_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-scriptnum_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Tpo -c -o test/test_test_zozocoin-scriptnum_tests.o `test -f 'test/scriptnum_tests.cpp' || echo '$(srcdir)/'`test/scriptnum_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Po
+#	$(AM_V_CXX)source='test/scriptnum_tests.cpp' object='test/test_test_zozocoin-scriptnum_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-script_P2SH_tests.o `test -f 'test/script_P2SH_tests.cpp' || echo '$(srcdir)/'`test/script_P2SH_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-scriptnum_tests.o `test -f 'test/scriptnum_tests.cpp' || echo '$(srcdir)/'`test/scriptnum_tests.cpp
 
-test/test_test_dash-script_P2SH_tests.obj: test/script_P2SH_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-script_P2SH_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Tpo -c -o test/test_test_dash-script_P2SH_tests.obj `if test -f 'test/script_P2SH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2SH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2SH_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Tpo test/$(DEPDIR)/test_test_dash-script_P2SH_tests.Po
-#	$(AM_V_CXX)source='test/script_P2SH_tests.cpp' object='test/test_test_dash-script_P2SH_tests.obj' libtool=no \
+test/test_test_zozocoin-scriptnum_tests.obj: test/scriptnum_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-scriptnum_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Tpo -c -o test/test_test_zozocoin-scriptnum_tests.obj `if test -f 'test/scriptnum_tests.cpp'; then $(CYGPATH_W) 'test/scriptnum_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scriptnum_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-scriptnum_tests.Po
+#	$(AM_V_CXX)source='test/scriptnum_tests.cpp' object='test/test_test_zozocoin-scriptnum_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-script_P2SH_tests.obj `if test -f 'test/script_P2SH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2SH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2SH_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-scriptnum_tests.obj `if test -f 'test/scriptnum_tests.cpp'; then $(CYGPATH_W) 'test/scriptnum_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scriptnum_tests.cpp'; fi`
 
-test/test_test_dash-script_P2PKH_tests.o: test/script_P2PKH_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-script_P2PKH_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Tpo -c -o test/test_test_dash-script_P2PKH_tests.o `test -f 'test/script_P2PKH_tests.cpp' || echo '$(srcdir)/'`test/script_P2PKH_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Tpo test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Po
-#	$(AM_V_CXX)source='test/script_P2PKH_tests.cpp' object='test/test_test_dash-script_P2PKH_tests.o' libtool=no \
+test/test_test_zozocoin-serialize_tests.o: test/serialize_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-serialize_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Tpo -c -o test/test_test_zozocoin-serialize_tests.o `test -f 'test/serialize_tests.cpp' || echo '$(srcdir)/'`test/serialize_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Po
+#	$(AM_V_CXX)source='test/serialize_tests.cpp' object='test/test_test_zozocoin-serialize_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-script_P2PKH_tests.o `test -f 'test/script_P2PKH_tests.cpp' || echo '$(srcdir)/'`test/script_P2PKH_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-serialize_tests.o `test -f 'test/serialize_tests.cpp' || echo '$(srcdir)/'`test/serialize_tests.cpp
 
-test/test_test_dash-script_P2PKH_tests.obj: test/script_P2PKH_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-script_P2PKH_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Tpo -c -o test/test_test_dash-script_P2PKH_tests.obj `if test -f 'test/script_P2PKH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2PKH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2PKH_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Tpo test/$(DEPDIR)/test_test_dash-script_P2PKH_tests.Po
-#	$(AM_V_CXX)source='test/script_P2PKH_tests.cpp' object='test/test_test_dash-script_P2PKH_tests.obj' libtool=no \
+test/test_test_zozocoin-serialize_tests.obj: test/serialize_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-serialize_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Tpo -c -o test/test_test_zozocoin-serialize_tests.obj `if test -f 'test/serialize_tests.cpp'; then $(CYGPATH_W) 'test/serialize_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/serialize_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-serialize_tests.Po
+#	$(AM_V_CXX)source='test/serialize_tests.cpp' object='test/test_test_zozocoin-serialize_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-script_P2PKH_tests.obj `if test -f 'test/script_P2PKH_tests.cpp'; then $(CYGPATH_W) 'test/script_P2PKH_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_P2PKH_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-serialize_tests.obj `if test -f 'test/serialize_tests.cpp'; then $(CYGPATH_W) 'test/serialize_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/serialize_tests.cpp'; fi`
 
-test/test_test_dash-script_tests.o: test/script_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-script_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-script_tests.Tpo -c -o test/test_test_dash-script_tests.o `test -f 'test/script_tests.cpp' || echo '$(srcdir)/'`test/script_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-script_tests.Tpo test/$(DEPDIR)/test_test_dash-script_tests.Po
-#	$(AM_V_CXX)source='test/script_tests.cpp' object='test/test_test_dash-script_tests.o' libtool=no \
+test/test_test_zozocoin-sighash_tests.o: test/sighash_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-sighash_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Tpo -c -o test/test_test_zozocoin-sighash_tests.o `test -f 'test/sighash_tests.cpp' || echo '$(srcdir)/'`test/sighash_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Po
+#	$(AM_V_CXX)source='test/sighash_tests.cpp' object='test/test_test_zozocoin-sighash_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-script_tests.o `test -f 'test/script_tests.cpp' || echo '$(srcdir)/'`test/script_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-sighash_tests.o `test -f 'test/sighash_tests.cpp' || echo '$(srcdir)/'`test/sighash_tests.cpp
 
-test/test_test_dash-script_tests.obj: test/script_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-script_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-script_tests.Tpo -c -o test/test_test_dash-script_tests.obj `if test -f 'test/script_tests.cpp'; then $(CYGPATH_W) 'test/script_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-script_tests.Tpo test/$(DEPDIR)/test_test_dash-script_tests.Po
-#	$(AM_V_CXX)source='test/script_tests.cpp' object='test/test_test_dash-script_tests.obj' libtool=no \
+test/test_test_zozocoin-sighash_tests.obj: test/sighash_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-sighash_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Tpo -c -o test/test_test_zozocoin-sighash_tests.obj `if test -f 'test/sighash_tests.cpp'; then $(CYGPATH_W) 'test/sighash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sighash_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-sighash_tests.Po
+#	$(AM_V_CXX)source='test/sighash_tests.cpp' object='test/test_test_zozocoin-sighash_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-script_tests.obj `if test -f 'test/script_tests.cpp'; then $(CYGPATH_W) 'test/script_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/script_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-sighash_tests.obj `if test -f 'test/sighash_tests.cpp'; then $(CYGPATH_W) 'test/sighash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sighash_tests.cpp'; fi`
 
-test/test_test_dash-scriptnum_tests.o: test/scriptnum_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-scriptnum_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-scriptnum_tests.Tpo -c -o test/test_test_dash-scriptnum_tests.o `test -f 'test/scriptnum_tests.cpp' || echo '$(srcdir)/'`test/scriptnum_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-scriptnum_tests.Tpo test/$(DEPDIR)/test_test_dash-scriptnum_tests.Po
-#	$(AM_V_CXX)source='test/scriptnum_tests.cpp' object='test/test_test_dash-scriptnum_tests.o' libtool=no \
+test/test_test_zozocoin-sigopcount_tests.o: test/sigopcount_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-sigopcount_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Tpo -c -o test/test_test_zozocoin-sigopcount_tests.o `test -f 'test/sigopcount_tests.cpp' || echo '$(srcdir)/'`test/sigopcount_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Po
+#	$(AM_V_CXX)source='test/sigopcount_tests.cpp' object='test/test_test_zozocoin-sigopcount_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-scriptnum_tests.o `test -f 'test/scriptnum_tests.cpp' || echo '$(srcdir)/'`test/scriptnum_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-sigopcount_tests.o `test -f 'test/sigopcount_tests.cpp' || echo '$(srcdir)/'`test/sigopcount_tests.cpp
 
-test/test_test_dash-scriptnum_tests.obj: test/scriptnum_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-scriptnum_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-scriptnum_tests.Tpo -c -o test/test_test_dash-scriptnum_tests.obj `if test -f 'test/scriptnum_tests.cpp'; then $(CYGPATH_W) 'test/scriptnum_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scriptnum_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-scriptnum_tests.Tpo test/$(DEPDIR)/test_test_dash-scriptnum_tests.Po
-#	$(AM_V_CXX)source='test/scriptnum_tests.cpp' object='test/test_test_dash-scriptnum_tests.obj' libtool=no \
+test/test_test_zozocoin-sigopcount_tests.obj: test/sigopcount_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-sigopcount_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Tpo -c -o test/test_test_zozocoin-sigopcount_tests.obj `if test -f 'test/sigopcount_tests.cpp'; then $(CYGPATH_W) 'test/sigopcount_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sigopcount_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-sigopcount_tests.Po
+#	$(AM_V_CXX)source='test/sigopcount_tests.cpp' object='test/test_test_zozocoin-sigopcount_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-scriptnum_tests.obj `if test -f 'test/scriptnum_tests.cpp'; then $(CYGPATH_W) 'test/scriptnum_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/scriptnum_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-sigopcount_tests.obj `if test -f 'test/sigopcount_tests.cpp'; then $(CYGPATH_W) 'test/sigopcount_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sigopcount_tests.cpp'; fi`
 
-test/test_test_dash-serialize_tests.o: test/serialize_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-serialize_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-serialize_tests.Tpo -c -o test/test_test_dash-serialize_tests.o `test -f 'test/serialize_tests.cpp' || echo '$(srcdir)/'`test/serialize_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-serialize_tests.Tpo test/$(DEPDIR)/test_test_dash-serialize_tests.Po
-#	$(AM_V_CXX)source='test/serialize_tests.cpp' object='test/test_test_dash-serialize_tests.o' libtool=no \
+test/test_test_zozocoin-skiplist_tests.o: test/skiplist_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-skiplist_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Tpo -c -o test/test_test_zozocoin-skiplist_tests.o `test -f 'test/skiplist_tests.cpp' || echo '$(srcdir)/'`test/skiplist_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Po
+#	$(AM_V_CXX)source='test/skiplist_tests.cpp' object='test/test_test_zozocoin-skiplist_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-serialize_tests.o `test -f 'test/serialize_tests.cpp' || echo '$(srcdir)/'`test/serialize_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-skiplist_tests.o `test -f 'test/skiplist_tests.cpp' || echo '$(srcdir)/'`test/skiplist_tests.cpp
 
-test/test_test_dash-serialize_tests.obj: test/serialize_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-serialize_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-serialize_tests.Tpo -c -o test/test_test_dash-serialize_tests.obj `if test -f 'test/serialize_tests.cpp'; then $(CYGPATH_W) 'test/serialize_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/serialize_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-serialize_tests.Tpo test/$(DEPDIR)/test_test_dash-serialize_tests.Po
-#	$(AM_V_CXX)source='test/serialize_tests.cpp' object='test/test_test_dash-serialize_tests.obj' libtool=no \
+test/test_test_zozocoin-skiplist_tests.obj: test/skiplist_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-skiplist_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Tpo -c -o test/test_test_zozocoin-skiplist_tests.obj `if test -f 'test/skiplist_tests.cpp'; then $(CYGPATH_W) 'test/skiplist_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/skiplist_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-skiplist_tests.Po
+#	$(AM_V_CXX)source='test/skiplist_tests.cpp' object='test/test_test_zozocoin-skiplist_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-serialize_tests.obj `if test -f 'test/serialize_tests.cpp'; then $(CYGPATH_W) 'test/serialize_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/serialize_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-skiplist_tests.obj `if test -f 'test/skiplist_tests.cpp'; then $(CYGPATH_W) 'test/skiplist_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/skiplist_tests.cpp'; fi`
 
-test/test_test_dash-sighash_tests.o: test/sighash_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-sighash_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-sighash_tests.Tpo -c -o test/test_test_dash-sighash_tests.o `test -f 'test/sighash_tests.cpp' || echo '$(srcdir)/'`test/sighash_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-sighash_tests.Tpo test/$(DEPDIR)/test_test_dash-sighash_tests.Po
-#	$(AM_V_CXX)source='test/sighash_tests.cpp' object='test/test_test_dash-sighash_tests.o' libtool=no \
+test/test_test_zozocoin-streams_tests.o: test/streams_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-streams_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-streams_tests.Tpo -c -o test/test_test_zozocoin-streams_tests.o `test -f 'test/streams_tests.cpp' || echo '$(srcdir)/'`test/streams_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-streams_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-streams_tests.Po
+#	$(AM_V_CXX)source='test/streams_tests.cpp' object='test/test_test_zozocoin-streams_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-sighash_tests.o `test -f 'test/sighash_tests.cpp' || echo '$(srcdir)/'`test/sighash_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-streams_tests.o `test -f 'test/streams_tests.cpp' || echo '$(srcdir)/'`test/streams_tests.cpp
 
-test/test_test_dash-sighash_tests.obj: test/sighash_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-sighash_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-sighash_tests.Tpo -c -o test/test_test_dash-sighash_tests.obj `if test -f 'test/sighash_tests.cpp'; then $(CYGPATH_W) 'test/sighash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sighash_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-sighash_tests.Tpo test/$(DEPDIR)/test_test_dash-sighash_tests.Po
-#	$(AM_V_CXX)source='test/sighash_tests.cpp' object='test/test_test_dash-sighash_tests.obj' libtool=no \
+test/test_test_zozocoin-streams_tests.obj: test/streams_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-streams_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-streams_tests.Tpo -c -o test/test_test_zozocoin-streams_tests.obj `if test -f 'test/streams_tests.cpp'; then $(CYGPATH_W) 'test/streams_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/streams_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-streams_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-streams_tests.Po
+#	$(AM_V_CXX)source='test/streams_tests.cpp' object='test/test_test_zozocoin-streams_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-sighash_tests.obj `if test -f 'test/sighash_tests.cpp'; then $(CYGPATH_W) 'test/sighash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sighash_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-streams_tests.obj `if test -f 'test/streams_tests.cpp'; then $(CYGPATH_W) 'test/streams_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/streams_tests.cpp'; fi`
 
-test/test_test_dash-sigopcount_tests.o: test/sigopcount_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-sigopcount_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-sigopcount_tests.Tpo -c -o test/test_test_dash-sigopcount_tests.o `test -f 'test/sigopcount_tests.cpp' || echo '$(srcdir)/'`test/sigopcount_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-sigopcount_tests.Tpo test/$(DEPDIR)/test_test_dash-sigopcount_tests.Po
-#	$(AM_V_CXX)source='test/sigopcount_tests.cpp' object='test/test_test_dash-sigopcount_tests.o' libtool=no \
+test/test_test_zozocoin-test_zozocoin.o: test/test_zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-test_zozocoin.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Tpo -c -o test/test_test_zozocoin-test_zozocoin.o `test -f 'test/test_zozocoin.cpp' || echo '$(srcdir)/'`test/test_zozocoin.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Tpo test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Po
+#	$(AM_V_CXX)source='test/test_zozocoin.cpp' object='test/test_test_zozocoin-test_zozocoin.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-sigopcount_tests.o `test -f 'test/sigopcount_tests.cpp' || echo '$(srcdir)/'`test/sigopcount_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-test_zozocoin.o `test -f 'test/test_zozocoin.cpp' || echo '$(srcdir)/'`test/test_zozocoin.cpp
 
-test/test_test_dash-sigopcount_tests.obj: test/sigopcount_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-sigopcount_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-sigopcount_tests.Tpo -c -o test/test_test_dash-sigopcount_tests.obj `if test -f 'test/sigopcount_tests.cpp'; then $(CYGPATH_W) 'test/sigopcount_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sigopcount_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-sigopcount_tests.Tpo test/$(DEPDIR)/test_test_dash-sigopcount_tests.Po
-#	$(AM_V_CXX)source='test/sigopcount_tests.cpp' object='test/test_test_dash-sigopcount_tests.obj' libtool=no \
+test/test_test_zozocoin-test_zozocoin.obj: test/test_zozocoin.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-test_zozocoin.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Tpo -c -o test/test_test_zozocoin-test_zozocoin.obj `if test -f 'test/test_zozocoin.cpp'; then $(CYGPATH_W) 'test/test_zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_zozocoin.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Tpo test/$(DEPDIR)/test_test_zozocoin-test_zozocoin.Po
+#	$(AM_V_CXX)source='test/test_zozocoin.cpp' object='test/test_test_zozocoin-test_zozocoin.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-sigopcount_tests.obj `if test -f 'test/sigopcount_tests.cpp'; then $(CYGPATH_W) 'test/sigopcount_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/sigopcount_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-test_zozocoin.obj `if test -f 'test/test_zozocoin.cpp'; then $(CYGPATH_W) 'test/test_zozocoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_zozocoin.cpp'; fi`
 
-test/test_test_dash-skiplist_tests.o: test/skiplist_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-skiplist_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-skiplist_tests.Tpo -c -o test/test_test_dash-skiplist_tests.o `test -f 'test/skiplist_tests.cpp' || echo '$(srcdir)/'`test/skiplist_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-skiplist_tests.Tpo test/$(DEPDIR)/test_test_dash-skiplist_tests.Po
-#	$(AM_V_CXX)source='test/skiplist_tests.cpp' object='test/test_test_dash-skiplist_tests.o' libtool=no \
+test/test_test_zozocoin-timedata_tests.o: test/timedata_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-timedata_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Tpo -c -o test/test_test_zozocoin-timedata_tests.o `test -f 'test/timedata_tests.cpp' || echo '$(srcdir)/'`test/timedata_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Po
+#	$(AM_V_CXX)source='test/timedata_tests.cpp' object='test/test_test_zozocoin-timedata_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-skiplist_tests.o `test -f 'test/skiplist_tests.cpp' || echo '$(srcdir)/'`test/skiplist_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-timedata_tests.o `test -f 'test/timedata_tests.cpp' || echo '$(srcdir)/'`test/timedata_tests.cpp
 
-test/test_test_dash-skiplist_tests.obj: test/skiplist_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-skiplist_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-skiplist_tests.Tpo -c -o test/test_test_dash-skiplist_tests.obj `if test -f 'test/skiplist_tests.cpp'; then $(CYGPATH_W) 'test/skiplist_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/skiplist_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-skiplist_tests.Tpo test/$(DEPDIR)/test_test_dash-skiplist_tests.Po
-#	$(AM_V_CXX)source='test/skiplist_tests.cpp' object='test/test_test_dash-skiplist_tests.obj' libtool=no \
+test/test_test_zozocoin-timedata_tests.obj: test/timedata_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-timedata_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Tpo -c -o test/test_test_zozocoin-timedata_tests.obj `if test -f 'test/timedata_tests.cpp'; then $(CYGPATH_W) 'test/timedata_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/timedata_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-timedata_tests.Po
+#	$(AM_V_CXX)source='test/timedata_tests.cpp' object='test/test_test_zozocoin-timedata_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-skiplist_tests.obj `if test -f 'test/skiplist_tests.cpp'; then $(CYGPATH_W) 'test/skiplist_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/skiplist_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-timedata_tests.obj `if test -f 'test/timedata_tests.cpp'; then $(CYGPATH_W) 'test/timedata_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/timedata_tests.cpp'; fi`
 
-test/test_test_dash-streams_tests.o: test/streams_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-streams_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-streams_tests.Tpo -c -o test/test_test_dash-streams_tests.o `test -f 'test/streams_tests.cpp' || echo '$(srcdir)/'`test/streams_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-streams_tests.Tpo test/$(DEPDIR)/test_test_dash-streams_tests.Po
-#	$(AM_V_CXX)source='test/streams_tests.cpp' object='test/test_test_dash-streams_tests.o' libtool=no \
+test/test_test_zozocoin-transaction_tests.o: test/transaction_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-transaction_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Tpo -c -o test/test_test_zozocoin-transaction_tests.o `test -f 'test/transaction_tests.cpp' || echo '$(srcdir)/'`test/transaction_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Po
+#	$(AM_V_CXX)source='test/transaction_tests.cpp' object='test/test_test_zozocoin-transaction_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-streams_tests.o `test -f 'test/streams_tests.cpp' || echo '$(srcdir)/'`test/streams_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-transaction_tests.o `test -f 'test/transaction_tests.cpp' || echo '$(srcdir)/'`test/transaction_tests.cpp
 
-test/test_test_dash-streams_tests.obj: test/streams_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-streams_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-streams_tests.Tpo -c -o test/test_test_dash-streams_tests.obj `if test -f 'test/streams_tests.cpp'; then $(CYGPATH_W) 'test/streams_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/streams_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-streams_tests.Tpo test/$(DEPDIR)/test_test_dash-streams_tests.Po
-#	$(AM_V_CXX)source='test/streams_tests.cpp' object='test/test_test_dash-streams_tests.obj' libtool=no \
+test/test_test_zozocoin-transaction_tests.obj: test/transaction_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-transaction_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Tpo -c -o test/test_test_zozocoin-transaction_tests.obj `if test -f 'test/transaction_tests.cpp'; then $(CYGPATH_W) 'test/transaction_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/transaction_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-transaction_tests.Po
+#	$(AM_V_CXX)source='test/transaction_tests.cpp' object='test/test_test_zozocoin-transaction_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-streams_tests.obj `if test -f 'test/streams_tests.cpp'; then $(CYGPATH_W) 'test/streams_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/streams_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-transaction_tests.obj `if test -f 'test/transaction_tests.cpp'; then $(CYGPATH_W) 'test/transaction_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/transaction_tests.cpp'; fi`
 
-test/test_test_dash-test_dash.o: test/test_dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-test_dash.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-test_dash.Tpo -c -o test/test_test_dash-test_dash.o `test -f 'test/test_dash.cpp' || echo '$(srcdir)/'`test/test_dash.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-test_dash.Tpo test/$(DEPDIR)/test_test_dash-test_dash.Po
-#	$(AM_V_CXX)source='test/test_dash.cpp' object='test/test_test_dash-test_dash.o' libtool=no \
+test/test_test_zozocoin-txvalidationcache_tests.o: test/txvalidationcache_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-txvalidationcache_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Tpo -c -o test/test_test_zozocoin-txvalidationcache_tests.o `test -f 'test/txvalidationcache_tests.cpp' || echo '$(srcdir)/'`test/txvalidationcache_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Po
+#	$(AM_V_CXX)source='test/txvalidationcache_tests.cpp' object='test/test_test_zozocoin-txvalidationcache_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-test_dash.o `test -f 'test/test_dash.cpp' || echo '$(srcdir)/'`test/test_dash.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-txvalidationcache_tests.o `test -f 'test/txvalidationcache_tests.cpp' || echo '$(srcdir)/'`test/txvalidationcache_tests.cpp
 
-test/test_test_dash-test_dash.obj: test/test_dash.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-test_dash.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-test_dash.Tpo -c -o test/test_test_dash-test_dash.obj `if test -f 'test/test_dash.cpp'; then $(CYGPATH_W) 'test/test_dash.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_dash.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-test_dash.Tpo test/$(DEPDIR)/test_test_dash-test_dash.Po
-#	$(AM_V_CXX)source='test/test_dash.cpp' object='test/test_test_dash-test_dash.obj' libtool=no \
+test/test_test_zozocoin-txvalidationcache_tests.obj: test/txvalidationcache_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-txvalidationcache_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Tpo -c -o test/test_test_zozocoin-txvalidationcache_tests.obj `if test -f 'test/txvalidationcache_tests.cpp'; then $(CYGPATH_W) 'test/txvalidationcache_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/txvalidationcache_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-txvalidationcache_tests.Po
+#	$(AM_V_CXX)source='test/txvalidationcache_tests.cpp' object='test/test_test_zozocoin-txvalidationcache_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-test_dash.obj `if test -f 'test/test_dash.cpp'; then $(CYGPATH_W) 'test/test_dash.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_dash.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-txvalidationcache_tests.obj `if test -f 'test/txvalidationcache_tests.cpp'; then $(CYGPATH_W) 'test/txvalidationcache_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/txvalidationcache_tests.cpp'; fi`
 
-test/test_test_dash-timedata_tests.o: test/timedata_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-timedata_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-timedata_tests.Tpo -c -o test/test_test_dash-timedata_tests.o `test -f 'test/timedata_tests.cpp' || echo '$(srcdir)/'`test/timedata_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-timedata_tests.Tpo test/$(DEPDIR)/test_test_dash-timedata_tests.Po
-#	$(AM_V_CXX)source='test/timedata_tests.cpp' object='test/test_test_dash-timedata_tests.o' libtool=no \
+test/test_test_zozocoin-versionbits_tests.o: test/versionbits_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-versionbits_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Tpo -c -o test/test_test_zozocoin-versionbits_tests.o `test -f 'test/versionbits_tests.cpp' || echo '$(srcdir)/'`test/versionbits_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Po
+#	$(AM_V_CXX)source='test/versionbits_tests.cpp' object='test/test_test_zozocoin-versionbits_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-timedata_tests.o `test -f 'test/timedata_tests.cpp' || echo '$(srcdir)/'`test/timedata_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-versionbits_tests.o `test -f 'test/versionbits_tests.cpp' || echo '$(srcdir)/'`test/versionbits_tests.cpp
 
-test/test_test_dash-timedata_tests.obj: test/timedata_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-timedata_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-timedata_tests.Tpo -c -o test/test_test_dash-timedata_tests.obj `if test -f 'test/timedata_tests.cpp'; then $(CYGPATH_W) 'test/timedata_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/timedata_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-timedata_tests.Tpo test/$(DEPDIR)/test_test_dash-timedata_tests.Po
-#	$(AM_V_CXX)source='test/timedata_tests.cpp' object='test/test_test_dash-timedata_tests.obj' libtool=no \
+test/test_test_zozocoin-versionbits_tests.obj: test/versionbits_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-versionbits_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Tpo -c -o test/test_test_zozocoin-versionbits_tests.obj `if test -f 'test/versionbits_tests.cpp'; then $(CYGPATH_W) 'test/versionbits_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/versionbits_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-versionbits_tests.Po
+#	$(AM_V_CXX)source='test/versionbits_tests.cpp' object='test/test_test_zozocoin-versionbits_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-timedata_tests.obj `if test -f 'test/timedata_tests.cpp'; then $(CYGPATH_W) 'test/timedata_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/timedata_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-versionbits_tests.obj `if test -f 'test/versionbits_tests.cpp'; then $(CYGPATH_W) 'test/versionbits_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/versionbits_tests.cpp'; fi`
 
-test/test_test_dash-transaction_tests.o: test/transaction_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-transaction_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-transaction_tests.Tpo -c -o test/test_test_dash-transaction_tests.o `test -f 'test/transaction_tests.cpp' || echo '$(srcdir)/'`test/transaction_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-transaction_tests.Tpo test/$(DEPDIR)/test_test_dash-transaction_tests.Po
-#	$(AM_V_CXX)source='test/transaction_tests.cpp' object='test/test_test_dash-transaction_tests.o' libtool=no \
+test/test_test_zozocoin-uint256_tests.o: test/uint256_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-uint256_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Tpo -c -o test/test_test_zozocoin-uint256_tests.o `test -f 'test/uint256_tests.cpp' || echo '$(srcdir)/'`test/uint256_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Po
+#	$(AM_V_CXX)source='test/uint256_tests.cpp' object='test/test_test_zozocoin-uint256_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-transaction_tests.o `test -f 'test/transaction_tests.cpp' || echo '$(srcdir)/'`test/transaction_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-uint256_tests.o `test -f 'test/uint256_tests.cpp' || echo '$(srcdir)/'`test/uint256_tests.cpp
 
-test/test_test_dash-transaction_tests.obj: test/transaction_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-transaction_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-transaction_tests.Tpo -c -o test/test_test_dash-transaction_tests.obj `if test -f 'test/transaction_tests.cpp'; then $(CYGPATH_W) 'test/transaction_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/transaction_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-transaction_tests.Tpo test/$(DEPDIR)/test_test_dash-transaction_tests.Po
-#	$(AM_V_CXX)source='test/transaction_tests.cpp' object='test/test_test_dash-transaction_tests.obj' libtool=no \
+test/test_test_zozocoin-uint256_tests.obj: test/uint256_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-uint256_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Tpo -c -o test/test_test_zozocoin-uint256_tests.obj `if test -f 'test/uint256_tests.cpp'; then $(CYGPATH_W) 'test/uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/uint256_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-uint256_tests.Po
+#	$(AM_V_CXX)source='test/uint256_tests.cpp' object='test/test_test_zozocoin-uint256_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-transaction_tests.obj `if test -f 'test/transaction_tests.cpp'; then $(CYGPATH_W) 'test/transaction_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/transaction_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-uint256_tests.obj `if test -f 'test/uint256_tests.cpp'; then $(CYGPATH_W) 'test/uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/uint256_tests.cpp'; fi`
 
-test/test_test_dash-txvalidationcache_tests.o: test/txvalidationcache_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-txvalidationcache_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Tpo -c -o test/test_test_dash-txvalidationcache_tests.o `test -f 'test/txvalidationcache_tests.cpp' || echo '$(srcdir)/'`test/txvalidationcache_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Tpo test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Po
-#	$(AM_V_CXX)source='test/txvalidationcache_tests.cpp' object='test/test_test_dash-txvalidationcache_tests.o' libtool=no \
+test/test_test_zozocoin-univalue_tests.o: test/univalue_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-univalue_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Tpo -c -o test/test_test_zozocoin-univalue_tests.o `test -f 'test/univalue_tests.cpp' || echo '$(srcdir)/'`test/univalue_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Po
+#	$(AM_V_CXX)source='test/univalue_tests.cpp' object='test/test_test_zozocoin-univalue_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-txvalidationcache_tests.o `test -f 'test/txvalidationcache_tests.cpp' || echo '$(srcdir)/'`test/txvalidationcache_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-univalue_tests.o `test -f 'test/univalue_tests.cpp' || echo '$(srcdir)/'`test/univalue_tests.cpp
 
-test/test_test_dash-txvalidationcache_tests.obj: test/txvalidationcache_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-txvalidationcache_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Tpo -c -o test/test_test_dash-txvalidationcache_tests.obj `if test -f 'test/txvalidationcache_tests.cpp'; then $(CYGPATH_W) 'test/txvalidationcache_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/txvalidationcache_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Tpo test/$(DEPDIR)/test_test_dash-txvalidationcache_tests.Po
-#	$(AM_V_CXX)source='test/txvalidationcache_tests.cpp' object='test/test_test_dash-txvalidationcache_tests.obj' libtool=no \
+test/test_test_zozocoin-univalue_tests.obj: test/univalue_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-univalue_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Tpo -c -o test/test_test_zozocoin-univalue_tests.obj `if test -f 'test/univalue_tests.cpp'; then $(CYGPATH_W) 'test/univalue_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/univalue_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-univalue_tests.Po
+#	$(AM_V_CXX)source='test/univalue_tests.cpp' object='test/test_test_zozocoin-univalue_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-txvalidationcache_tests.obj `if test -f 'test/txvalidationcache_tests.cpp'; then $(CYGPATH_W) 'test/txvalidationcache_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/txvalidationcache_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-univalue_tests.obj `if test -f 'test/univalue_tests.cpp'; then $(CYGPATH_W) 'test/univalue_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/univalue_tests.cpp'; fi`
 
-test/test_test_dash-versionbits_tests.o: test/versionbits_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-versionbits_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-versionbits_tests.Tpo -c -o test/test_test_dash-versionbits_tests.o `test -f 'test/versionbits_tests.cpp' || echo '$(srcdir)/'`test/versionbits_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-versionbits_tests.Tpo test/$(DEPDIR)/test_test_dash-versionbits_tests.Po
-#	$(AM_V_CXX)source='test/versionbits_tests.cpp' object='test/test_test_dash-versionbits_tests.o' libtool=no \
+test/test_test_zozocoin-util_tests.o: test/util_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-util_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-util_tests.Tpo -c -o test/test_test_zozocoin-util_tests.o `test -f 'test/util_tests.cpp' || echo '$(srcdir)/'`test/util_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-util_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-util_tests.Po
+#	$(AM_V_CXX)source='test/util_tests.cpp' object='test/test_test_zozocoin-util_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-versionbits_tests.o `test -f 'test/versionbits_tests.cpp' || echo '$(srcdir)/'`test/versionbits_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-util_tests.o `test -f 'test/util_tests.cpp' || echo '$(srcdir)/'`test/util_tests.cpp
 
-test/test_test_dash-versionbits_tests.obj: test/versionbits_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-versionbits_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-versionbits_tests.Tpo -c -o test/test_test_dash-versionbits_tests.obj `if test -f 'test/versionbits_tests.cpp'; then $(CYGPATH_W) 'test/versionbits_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/versionbits_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-versionbits_tests.Tpo test/$(DEPDIR)/test_test_dash-versionbits_tests.Po
-#	$(AM_V_CXX)source='test/versionbits_tests.cpp' object='test/test_test_dash-versionbits_tests.obj' libtool=no \
+test/test_test_zozocoin-util_tests.obj: test/util_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-util_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-util_tests.Tpo -c -o test/test_test_zozocoin-util_tests.obj `if test -f 'test/util_tests.cpp'; then $(CYGPATH_W) 'test/util_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/util_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-util_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-util_tests.Po
+#	$(AM_V_CXX)source='test/util_tests.cpp' object='test/test_test_zozocoin-util_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-versionbits_tests.obj `if test -f 'test/versionbits_tests.cpp'; then $(CYGPATH_W) 'test/versionbits_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/versionbits_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-util_tests.obj `if test -f 'test/util_tests.cpp'; then $(CYGPATH_W) 'test/util_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/util_tests.cpp'; fi`
 
-test/test_test_dash-uint256_tests.o: test/uint256_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-uint256_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-uint256_tests.Tpo -c -o test/test_test_dash-uint256_tests.o `test -f 'test/uint256_tests.cpp' || echo '$(srcdir)/'`test/uint256_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-uint256_tests.Tpo test/$(DEPDIR)/test_test_dash-uint256_tests.Po
-#	$(AM_V_CXX)source='test/uint256_tests.cpp' object='test/test_test_dash-uint256_tests.o' libtool=no \
+test/test_test_zozocoin-accounting_tests.o: test/accounting_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-accounting_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Tpo -c -o test/test_test_zozocoin-accounting_tests.o `test -f 'test/accounting_tests.cpp' || echo '$(srcdir)/'`test/accounting_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Po
+#	$(AM_V_CXX)source='test/accounting_tests.cpp' object='test/test_test_zozocoin-accounting_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-uint256_tests.o `test -f 'test/uint256_tests.cpp' || echo '$(srcdir)/'`test/uint256_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-accounting_tests.o `test -f 'test/accounting_tests.cpp' || echo '$(srcdir)/'`test/accounting_tests.cpp
 
-test/test_test_dash-uint256_tests.obj: test/uint256_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-uint256_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-uint256_tests.Tpo -c -o test/test_test_dash-uint256_tests.obj `if test -f 'test/uint256_tests.cpp'; then $(CYGPATH_W) 'test/uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/uint256_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-uint256_tests.Tpo test/$(DEPDIR)/test_test_dash-uint256_tests.Po
-#	$(AM_V_CXX)source='test/uint256_tests.cpp' object='test/test_test_dash-uint256_tests.obj' libtool=no \
+test/test_test_zozocoin-accounting_tests.obj: test/accounting_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-accounting_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Tpo -c -o test/test_test_zozocoin-accounting_tests.obj `if test -f 'test/accounting_tests.cpp'; then $(CYGPATH_W) 'test/accounting_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/accounting_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-accounting_tests.Po
+#	$(AM_V_CXX)source='test/accounting_tests.cpp' object='test/test_test_zozocoin-accounting_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-uint256_tests.obj `if test -f 'test/uint256_tests.cpp'; then $(CYGPATH_W) 'test/uint256_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/uint256_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-accounting_tests.obj `if test -f 'test/accounting_tests.cpp'; then $(CYGPATH_W) 'test/accounting_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/accounting_tests.cpp'; fi`
 
-test/test_test_dash-univalue_tests.o: test/univalue_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-univalue_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-univalue_tests.Tpo -c -o test/test_test_dash-univalue_tests.o `test -f 'test/univalue_tests.cpp' || echo '$(srcdir)/'`test/univalue_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-univalue_tests.Tpo test/$(DEPDIR)/test_test_dash-univalue_tests.Po
-#	$(AM_V_CXX)source='test/univalue_tests.cpp' object='test/test_test_dash-univalue_tests.o' libtool=no \
+wallet/test/test_test_zozocoin-wallet_tests.o: wallet/test/wallet_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_zozocoin-wallet_tests.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Tpo -c -o wallet/test/test_test_zozocoin-wallet_tests.o `test -f 'wallet/test/wallet_tests.cpp' || echo '$(srcdir)/'`wallet/test/wallet_tests.cpp
+	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Tpo wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Po
+#	$(AM_V_CXX)source='wallet/test/wallet_tests.cpp' object='wallet/test/test_test_zozocoin-wallet_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-univalue_tests.o `test -f 'test/univalue_tests.cpp' || echo '$(srcdir)/'`test/univalue_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_zozocoin-wallet_tests.o `test -f 'wallet/test/wallet_tests.cpp' || echo '$(srcdir)/'`wallet/test/wallet_tests.cpp
 
-test/test_test_dash-univalue_tests.obj: test/univalue_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-univalue_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-univalue_tests.Tpo -c -o test/test_test_dash-univalue_tests.obj `if test -f 'test/univalue_tests.cpp'; then $(CYGPATH_W) 'test/univalue_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/univalue_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-univalue_tests.Tpo test/$(DEPDIR)/test_test_dash-univalue_tests.Po
-#	$(AM_V_CXX)source='test/univalue_tests.cpp' object='test/test_test_dash-univalue_tests.obj' libtool=no \
+wallet/test/test_test_zozocoin-wallet_tests.obj: wallet/test/wallet_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_zozocoin-wallet_tests.obj -MD -MP -MF wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Tpo -c -o wallet/test/test_test_zozocoin-wallet_tests.obj `if test -f 'wallet/test/wallet_tests.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Tpo wallet/test/$(DEPDIR)/test_test_zozocoin-wallet_tests.Po
+#	$(AM_V_CXX)source='wallet/test/wallet_tests.cpp' object='wallet/test/test_test_zozocoin-wallet_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-univalue_tests.obj `if test -f 'test/univalue_tests.cpp'; then $(CYGPATH_W) 'test/univalue_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/univalue_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_zozocoin-wallet_tests.obj `if test -f 'wallet/test/wallet_tests.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_tests.cpp'; fi`
 
-test/test_test_dash-util_tests.o: test/util_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-util_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-util_tests.Tpo -c -o test/test_test_dash-util_tests.o `test -f 'test/util_tests.cpp' || echo '$(srcdir)/'`test/util_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-util_tests.Tpo test/$(DEPDIR)/test_test_dash-util_tests.Po
-#	$(AM_V_CXX)source='test/util_tests.cpp' object='test/test_test_dash-util_tests.o' libtool=no \
+test/test_test_zozocoin-rpc_wallet_tests.o: test/rpc_wallet_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-rpc_wallet_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Tpo -c -o test/test_test_zozocoin-rpc_wallet_tests.o `test -f 'test/rpc_wallet_tests.cpp' || echo '$(srcdir)/'`test/rpc_wallet_tests.cpp
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Po
+#	$(AM_V_CXX)source='test/rpc_wallet_tests.cpp' object='test/test_test_zozocoin-rpc_wallet_tests.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-util_tests.o `test -f 'test/util_tests.cpp' || echo '$(srcdir)/'`test/util_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-rpc_wallet_tests.o `test -f 'test/rpc_wallet_tests.cpp' || echo '$(srcdir)/'`test/rpc_wallet_tests.cpp
 
-test/test_test_dash-util_tests.obj: test/util_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-util_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-util_tests.Tpo -c -o test/test_test_dash-util_tests.obj `if test -f 'test/util_tests.cpp'; then $(CYGPATH_W) 'test/util_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/util_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-util_tests.Tpo test/$(DEPDIR)/test_test_dash-util_tests.Po
-#	$(AM_V_CXX)source='test/util_tests.cpp' object='test/test_test_dash-util_tests.obj' libtool=no \
+test/test_test_zozocoin-rpc_wallet_tests.obj: test/rpc_wallet_tests.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_zozocoin-rpc_wallet_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Tpo -c -o test/test_test_zozocoin-rpc_wallet_tests.obj `if test -f 'test/rpc_wallet_tests.cpp'; then $(CYGPATH_W) 'test/rpc_wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_wallet_tests.cpp'; fi`
+	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Tpo test/$(DEPDIR)/test_test_zozocoin-rpc_wallet_tests.Po
+#	$(AM_V_CXX)source='test/rpc_wallet_tests.cpp' object='test/test_test_zozocoin-rpc_wallet_tests.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-util_tests.obj `if test -f 'test/util_tests.cpp'; then $(CYGPATH_W) 'test/util_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/util_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_zozocoin_CPPFLAGS) $(CPPFLAGS) $(test_test_zozocoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_zozocoin-rpc_wallet_tests.obj `if test -f 'test/rpc_wallet_tests.cpp'; then $(CYGPATH_W) 'test/rpc_wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_wallet_tests.cpp'; fi`
 
-test/test_test_dash-accounting_tests.o: test/accounting_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-accounting_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-accounting_tests.Tpo -c -o test/test_test_dash-accounting_tests.o `test -f 'test/accounting_tests.cpp' || echo '$(srcdir)/'`test/accounting_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-accounting_tests.Tpo test/$(DEPDIR)/test_test_dash-accounting_tests.Po
-#	$(AM_V_CXX)source='test/accounting_tests.cpp' object='test/test_test_dash-accounting_tests.o' libtool=no \
+zozocoin_cli-zozocoin-cli.o: zozocoin-cli.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_cli_CPPFLAGS) $(CPPFLAGS) $(zozocoin_cli_CXXFLAGS) $(CXXFLAGS) -MT zozocoin_cli-zozocoin-cli.o -MD -MP -MF $(DEPDIR)/zozocoin_cli-zozocoin-cli.Tpo -c -o zozocoin_cli-zozocoin-cli.o `test -f 'zozocoin-cli.cpp' || echo '$(srcdir)/'`zozocoin-cli.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/zozocoin_cli-zozocoin-cli.Tpo $(DEPDIR)/zozocoin_cli-zozocoin-cli.Po
+#	$(AM_V_CXX)source='zozocoin-cli.cpp' object='zozocoin_cli-zozocoin-cli.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-accounting_tests.o `test -f 'test/accounting_tests.cpp' || echo '$(srcdir)/'`test/accounting_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_cli_CPPFLAGS) $(CPPFLAGS) $(zozocoin_cli_CXXFLAGS) $(CXXFLAGS) -c -o zozocoin_cli-zozocoin-cli.o `test -f 'zozocoin-cli.cpp' || echo '$(srcdir)/'`zozocoin-cli.cpp
 
-test/test_test_dash-accounting_tests.obj: test/accounting_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-accounting_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-accounting_tests.Tpo -c -o test/test_test_dash-accounting_tests.obj `if test -f 'test/accounting_tests.cpp'; then $(CYGPATH_W) 'test/accounting_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/accounting_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-accounting_tests.Tpo test/$(DEPDIR)/test_test_dash-accounting_tests.Po
-#	$(AM_V_CXX)source='test/accounting_tests.cpp' object='test/test_test_dash-accounting_tests.obj' libtool=no \
+zozocoin_cli-zozocoin-cli.obj: zozocoin-cli.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_cli_CPPFLAGS) $(CPPFLAGS) $(zozocoin_cli_CXXFLAGS) $(CXXFLAGS) -MT zozocoin_cli-zozocoin-cli.obj -MD -MP -MF $(DEPDIR)/zozocoin_cli-zozocoin-cli.Tpo -c -o zozocoin_cli-zozocoin-cli.obj `if test -f 'zozocoin-cli.cpp'; then $(CYGPATH_W) 'zozocoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/zozocoin-cli.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/zozocoin_cli-zozocoin-cli.Tpo $(DEPDIR)/zozocoin_cli-zozocoin-cli.Po
+#	$(AM_V_CXX)source='zozocoin-cli.cpp' object='zozocoin_cli-zozocoin-cli.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-accounting_tests.obj `if test -f 'test/accounting_tests.cpp'; then $(CYGPATH_W) 'test/accounting_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/accounting_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_cli_CPPFLAGS) $(CPPFLAGS) $(zozocoin_cli_CXXFLAGS) $(CXXFLAGS) -c -o zozocoin_cli-zozocoin-cli.obj `if test -f 'zozocoin-cli.cpp'; then $(CYGPATH_W) 'zozocoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/zozocoin-cli.cpp'; fi`
 
-wallet/test/test_test_dash-wallet_tests.o: wallet/test/wallet_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_dash-wallet_tests.o -MD -MP -MF wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Tpo -c -o wallet/test/test_test_dash-wallet_tests.o `test -f 'wallet/test/wallet_tests.cpp' || echo '$(srcdir)/'`wallet/test/wallet_tests.cpp
-	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Tpo wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Po
-#	$(AM_V_CXX)source='wallet/test/wallet_tests.cpp' object='wallet/test/test_test_dash-wallet_tests.o' libtool=no \
+zozocoin_tx-zozocoin-tx.o: zozocoin-tx.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_tx_CPPFLAGS) $(CPPFLAGS) $(zozocoin_tx_CXXFLAGS) $(CXXFLAGS) -MT zozocoin_tx-zozocoin-tx.o -MD -MP -MF $(DEPDIR)/zozocoin_tx-zozocoin-tx.Tpo -c -o zozocoin_tx-zozocoin-tx.o `test -f 'zozocoin-tx.cpp' || echo '$(srcdir)/'`zozocoin-tx.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/zozocoin_tx-zozocoin-tx.Tpo $(DEPDIR)/zozocoin_tx-zozocoin-tx.Po
+#	$(AM_V_CXX)source='zozocoin-tx.cpp' object='zozocoin_tx-zozocoin-tx.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-wallet_tests.o `test -f 'wallet/test/wallet_tests.cpp' || echo '$(srcdir)/'`wallet/test/wallet_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_tx_CPPFLAGS) $(CPPFLAGS) $(zozocoin_tx_CXXFLAGS) $(CXXFLAGS) -c -o zozocoin_tx-zozocoin-tx.o `test -f 'zozocoin-tx.cpp' || echo '$(srcdir)/'`zozocoin-tx.cpp
 
-wallet/test/test_test_dash-wallet_tests.obj: wallet/test/wallet_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/test_test_dash-wallet_tests.obj -MD -MP -MF wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Tpo -c -o wallet/test/test_test_dash-wallet_tests.obj `if test -f 'wallet/test/wallet_tests.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Tpo wallet/test/$(DEPDIR)/test_test_dash-wallet_tests.Po
-#	$(AM_V_CXX)source='wallet/test/wallet_tests.cpp' object='wallet/test/test_test_dash-wallet_tests.obj' libtool=no \
+zozocoin_tx-zozocoin-tx.obj: zozocoin-tx.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_tx_CPPFLAGS) $(CPPFLAGS) $(zozocoin_tx_CXXFLAGS) $(CXXFLAGS) -MT zozocoin_tx-zozocoin-tx.obj -MD -MP -MF $(DEPDIR)/zozocoin_tx-zozocoin-tx.Tpo -c -o zozocoin_tx-zozocoin-tx.obj `if test -f 'zozocoin-tx.cpp'; then $(CYGPATH_W) 'zozocoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/zozocoin-tx.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/zozocoin_tx-zozocoin-tx.Tpo $(DEPDIR)/zozocoin_tx-zozocoin-tx.Po
+#	$(AM_V_CXX)source='zozocoin-tx.cpp' object='zozocoin_tx-zozocoin-tx.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/test_test_dash-wallet_tests.obj `if test -f 'wallet/test/wallet_tests.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoin_tx_CPPFLAGS) $(CPPFLAGS) $(zozocoin_tx_CXXFLAGS) $(CXXFLAGS) -c -o zozocoin_tx-zozocoin-tx.obj `if test -f 'zozocoin-tx.cpp'; then $(CYGPATH_W) 'zozocoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/zozocoin-tx.cpp'; fi`
 
-test/test_test_dash-rpc_wallet_tests.o: test/rpc_wallet_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-rpc_wallet_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Tpo -c -o test/test_test_dash-rpc_wallet_tests.o `test -f 'test/rpc_wallet_tests.cpp' || echo '$(srcdir)/'`test/rpc_wallet_tests.cpp
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Tpo test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Po
-#	$(AM_V_CXX)source='test/rpc_wallet_tests.cpp' object='test/test_test_dash-rpc_wallet_tests.o' libtool=no \
+zozocoind-zozocoind.o: zozocoind.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoind_CPPFLAGS) $(CPPFLAGS) $(zozocoind_CXXFLAGS) $(CXXFLAGS) -MT zozocoind-zozocoind.o -MD -MP -MF $(DEPDIR)/zozocoind-zozocoind.Tpo -c -o zozocoind-zozocoind.o `test -f 'zozocoind.cpp' || echo '$(srcdir)/'`zozocoind.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/zozocoind-zozocoind.Tpo $(DEPDIR)/zozocoind-zozocoind.Po
+#	$(AM_V_CXX)source='zozocoind.cpp' object='zozocoind-zozocoind.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-rpc_wallet_tests.o `test -f 'test/rpc_wallet_tests.cpp' || echo '$(srcdir)/'`test/rpc_wallet_tests.cpp
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoind_CPPFLAGS) $(CPPFLAGS) $(zozocoind_CXXFLAGS) $(CXXFLAGS) -c -o zozocoind-zozocoind.o `test -f 'zozocoind.cpp' || echo '$(srcdir)/'`zozocoind.cpp
 
-test/test_test_dash-rpc_wallet_tests.obj: test/rpc_wallet_tests.cpp
-	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_dash-rpc_wallet_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Tpo -c -o test/test_test_dash-rpc_wallet_tests.obj `if test -f 'test/rpc_wallet_tests.cpp'; then $(CYGPATH_W) 'test/rpc_wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_wallet_tests.cpp'; fi`
-	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Tpo test/$(DEPDIR)/test_test_dash-rpc_wallet_tests.Po
-#	$(AM_V_CXX)source='test/rpc_wallet_tests.cpp' object='test/test_test_dash-rpc_wallet_tests.obj' libtool=no \
+zozocoind-zozocoind.obj: zozocoind.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoind_CPPFLAGS) $(CPPFLAGS) $(zozocoind_CXXFLAGS) $(CXXFLAGS) -MT zozocoind-zozocoind.obj -MD -MP -MF $(DEPDIR)/zozocoind-zozocoind.Tpo -c -o zozocoind-zozocoind.obj `if test -f 'zozocoind.cpp'; then $(CYGPATH_W) 'zozocoind.cpp'; else $(CYGPATH_W) '$(srcdir)/zozocoind.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/zozocoind-zozocoind.Tpo $(DEPDIR)/zozocoind-zozocoind.Po
+#	$(AM_V_CXX)source='zozocoind.cpp' object='zozocoind-zozocoind.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_dash_CPPFLAGS) $(CPPFLAGS) $(test_test_dash_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_dash-rpc_wallet_tests.obj `if test -f 'test/rpc_wallet_tests.cpp'; then $(CYGPATH_W) 'test/rpc_wallet_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/rpc_wallet_tests.cpp'; fi`
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(zozocoind_CPPFLAGS) $(CPPFLAGS) $(zozocoind_CXXFLAGS) $(CXXFLAGS) -c -o zozocoind-zozocoind.obj `if test -f 'zozocoind.cpp'; then $(CYGPATH_W) 'zozocoind.cpp'; else $(CYGPATH_W) '$(srcdir)/zozocoind.cpp'; fi`
 
 .cpp.o:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -8971,33 +8988,33 @@ test/test_test_dash-rpc_wallet_tests.obj: test/rpc_wallet_tests.cpp
 #	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) \
 #	$(AM_V_OBJCXX_no)$(LTOBJCXXCOMPILE) -c -o $@ $<
 
-qt/qt_dash_qt-macdockiconhandler.o: qt/macdockiconhandler.mm
-	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_dash_qt-macdockiconhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Tpo -c -o qt/qt_dash_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Po
-#	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_dash_qt-macdockiconhandler.o' libtool=no \
+qt/qt_zozocoin_qt-macdockiconhandler.o: qt/macdockiconhandler.mm
+	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_zozocoin_qt-macdockiconhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Tpo -c -o qt/qt_zozocoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Po
+#	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_zozocoin_qt-macdockiconhandler.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) \
-#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_dash_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
+#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_zozocoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
 
-qt/qt_dash_qt-macdockiconhandler.obj: qt/macdockiconhandler.mm
-	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_dash_qt-macdockiconhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Tpo -c -o qt/qt_dash_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_dash_qt-macdockiconhandler.Po
-#	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_dash_qt-macdockiconhandler.obj' libtool=no \
+qt/qt_zozocoin_qt-macdockiconhandler.obj: qt/macdockiconhandler.mm
+	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_zozocoin_qt-macdockiconhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Tpo -c -o qt/qt_zozocoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_zozocoin_qt-macdockiconhandler.Po
+#	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_zozocoin_qt-macdockiconhandler.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) \
-#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_dash_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
+#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_zozocoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
 
-qt/qt_dash_qt-macnotificationhandler.o: qt/macnotificationhandler.mm
-	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_dash_qt-macnotificationhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Tpo -c -o qt/qt_dash_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Po
-#	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_dash_qt-macnotificationhandler.o' libtool=no \
+qt/qt_zozocoin_qt-macnotificationhandler.o: qt/macnotificationhandler.mm
+	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_zozocoin_qt-macnotificationhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Tpo -c -o qt/qt_zozocoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Po
+#	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_zozocoin_qt-macnotificationhandler.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) \
-#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_dash_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
+#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_zozocoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
 
-qt/qt_dash_qt-macnotificationhandler.obj: qt/macnotificationhandler.mm
-	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_dash_qt-macnotificationhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Tpo -c -o qt/qt_dash_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
-	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_dash_qt-macnotificationhandler.Po
-#	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_dash_qt-macnotificationhandler.obj' libtool=no \
+qt/qt_zozocoin_qt-macnotificationhandler.obj: qt/macnotificationhandler.mm
+	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_zozocoin_qt-macnotificationhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Tpo -c -o qt/qt_zozocoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
+	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_zozocoin_qt-macnotificationhandler.Po
+#	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_zozocoin_qt-macnotificationhandler.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) \
-#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_dash_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_dash_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
+#	$(AM_V_OBJCXX_no)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_zozocoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_zozocoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -9274,16 +9291,16 @@ recheck: all
 	        am__force_recheck=am--force-recheck \
 	        TEST_LOGS="$$log_list"; \
 	exit $$?
-test/test_dash.log: test/test_dash$(EXEEXT)
-	@p='test/test_dash$(EXEEXT)'; \
-	b='test/test_dash'; \
+test/test_zozocoin.log: test/test_zozocoin$(EXEEXT)
+	@p='test/test_zozocoin$(EXEEXT)'; \
+	b='test/test_zozocoin'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-qt/test/test_dash-qt.log: qt/test/test_dash-qt$(EXEEXT)
-	@p='qt/test/test_dash-qt$(EXEEXT)'; \
-	b='qt/test/test_dash-qt'; \
+qt/test/test_zozocoin-qt.log: qt/test/test_zozocoin-qt$(EXEEXT)
+	@p='qt/test/test_zozocoin-qt$(EXEEXT)'; \
+	b='qt/test/test_zozocoin-qt'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -9584,13 +9601,13 @@ check-security: $(bin_PROGRAMS)
 
 $(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
-dash_test: $(TEST_BINARY)
+zozocoin_test: $(TEST_BINARY)
 
-dash_test_check: $(TEST_BINARY) FORCE
+zozocoin_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
-dash_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_dash_OBJECTS) $(TEST_BINARY)
+zozocoin_test_clean : FORCE
+	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_zozocoin_OBJECTS) $(TEST_BINARY)
 
 check-local:
 	@echo "Running test/bitcoin-util-test.py..."
@@ -9620,12 +9637,12 @@ bench: $(BENCH_BINARY) FORCE
 	$(BENCH_BINARY)
 
 bitcoin_bench_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_dash_OBJECTS) $(BENCH_BINARY)
+	rm -f $(CLEAN_BITCOIN_BENCH) $(bench_bench_zozocoin_OBJECTS) $(BENCH_BINARY)
 
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_dash_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_zozocoin_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -9634,29 +9651,29 @@ $(QT_MOC_CPP): $(PROTOBUF_H)
 
 SECONDARY: $(QT_QM)
 
-qt/dashstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
+qt/zozocoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/dashstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/zozocoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/dash_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/zozocoin_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@test -f $(@D)/$(<F) || cp -f $< $(@D)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name dash_locale $(@D)/$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name zozocoin_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name dash $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name zozocoin $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-dash_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_dash_qt_OBJECTS) qt/dash-qt$(EXEEXT) $(LIBBITCOINQT)
+zozocoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_zozocoin_qt_OBJECTS) qt/zozocoin-qt$(EXEEXT) $(LIBBITCOINQT)
 
-dash_qt : qt/dash-qt$(EXEEXT)
+zozocoin_qt : qt/zozocoin-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)
@@ -9676,13 +9693,13 @@ moc_%.cpp: %.h
 	@$(MKDIR_P) $(@D)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
 
-test_dash_qt : qt/test/test_dash-qt$(EXEEXT)
+test_zozocoin_qt : qt/test/test_zozocoin-qt$(EXEEXT)
 
-test_dash_qt_check : qt/test/test_dash-qt$(EXEEXT) FORCE
+test_zozocoin_qt_check : qt/test/test_zozocoin-qt$(EXEEXT) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
-test_dash_qt_clean: FORCE
-	rm -f $(CLEAN_BITCOIN_QT_TEST) $(qt_test_test_dash_qt_OBJECTS)
+test_zozocoin_qt_clean: FORCE
+	rm -f $(CLEAN_BITCOIN_QT_TEST) $(qt_test_test_zozocoin_qt_OBJECTS)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

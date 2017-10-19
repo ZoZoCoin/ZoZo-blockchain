@@ -1,0 +1,6 @@
+usr/local/bin/zozocoin-qt usr/bin
+share/pixmaps/zozocoin32.xpm usr/share/pixmaps
+share/pixmaps/zozocoin16.xpm usr/share/pixmaps
+share/pixmaps/zozocoin128.png usr/share/pixmaps
+debian/zozocoin-qt.desktop usr/share/applications
+debian/zozocoin-qt.protocol usr/share/kde4/services/

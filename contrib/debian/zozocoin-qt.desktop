@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Zozocoin
+Comment=Zozocoin P2P Cryptocurrency
+Comment[fr]=Zozocoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Zozocoin, eşten eşe kriptografik sanal para birimi
+Exec=zozocoin-qt %u
+Terminal=false
+Type=Application
+Icon=zozocoin128
+MimeType=x-scheme-handler/zozocoin;
+Categories=Office;Finance;
