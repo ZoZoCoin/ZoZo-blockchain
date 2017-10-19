@@ -511,7 +511,7 @@
                </font>
               </property>
               <property name="text">
-               <string notr="true">0 ZOZO</string>
+               <string notr="true">0 ZZC</string>
               </property>
              </widget>
             </item>
@@ -525,7 +525,7 @@
             <item row="3" column="1">
              <widget class="QLabel" name="labelAmountRounds">
               <property name="text">
-               <string>0 ZOZO / 0 Rounds</string>
+               <string>0 ZZC / 0 Rounds</string>
               </property>
              </widget>
             </item>

@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy zozocoind.init to /etc/init.d/zozocoind. Test by running `service zozocoind start`.
 
 Using this script, you can adjust the path and flags to the zozocoind program by
-setting the ZOZOD and FLAGS environment variables in the file
+setting the ZZCD and FLAGS environment variables in the file
 /etc/sysconfig/zozocoind. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X

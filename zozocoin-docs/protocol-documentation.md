@@ -59,9 +59,9 @@ Whenever a masternode comes online or a client is syncing, they will send this m
 
 | Field Size | Field Name | Data type | Description |
 | ---------- | ----------- | --------- | -------- |
-| 41 | vin | CTxIn | The unspent output which is holding 1000 ZOZO
-| # | addr | CService | Address of the main 1000 ZOZO unspent output
-| 33-65 | pubKeyCollateralAddress | CPubKey | CPubKey of the main 1000 ZOZO unspent output
+| 41 | vin | CTxIn | The unspent output which is holding 1000 ZZC
+| # | addr | CService | Address of the main 1000 ZZC unspent output
+| 33-65 | pubKeyCollateralAddress | CPubKey | CPubKey of the main 1000 ZZC unspent output
 | 33-65 | pubKeyMasternode | CPubKey | CPubKey of the secondary signing key (For all other messaging other than announce message)
 | 71-73 | sig | char[] | Signature of this message
 | 8 | sigTime | int64_t | Time which the signature was created

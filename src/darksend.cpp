@@ -2196,10 +2196,10 @@ int CDarksendPool::GetDenominations(const std::vector<CTxOut>& vecTxOut, bool fS
 bool CDarksendPool::GetDenominationsBits(int nDenom, std::vector<int> &vecBitsRet)
 {
     // ( bit on if present, 4 denominations example )
-    // bit 0 - 100ZOZO+1
-    // bit 1 - 10ZOZO+1
-    // bit 2 - 1ZOZO+1
-    // bit 3 - .1ZOZO+1
+    // bit 0 - 100ZZC+1
+    // bit 1 - 10ZZC+1
+    // bit 2 - 1ZZC+1
+    // bit 3 - .1ZZC+1
 
     int nMaxDenoms = vecPrivateSendDenominations.size();
 

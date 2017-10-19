@@ -1,5 +1,5 @@
-#ifndef BITCOIN_TEST_TEST_ZOZO_H
-#define BITCOIN_TEST_TEST_ZOZO_H
+#ifndef BITCOIN_TEST_TEST_ZZC_H
+#define BITCOIN_TEST_TEST_ZZC_H
 
 #include "chainparamsbase.h"
 #include "key.h"

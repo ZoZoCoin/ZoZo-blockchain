@@ -172,8 +172,8 @@
         <translation>Potvrďte šifrovanie peňaženky</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZOZO&lt;/b&gt;!</source>
-        <translation>Upozornenie: Ak zašifrujete vašu peňaženku a stratíte prístupové heslo, potom &lt;b&gt;prídete o všetky svoje ZOZO-y&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ZZC&lt;/b&gt;!</source>
+        <translation>Upozornenie: Ak zašifrujete vašu peňaženku a stratíte prístupové heslo, potom &lt;b&gt;prídete o všetky svoje ZZC-y&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -901,28 +901,28 @@
         <translation>Prosím vyberte úroveň súkromia.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 ZOZO</source>
-        <translation>Použiť 2 rozdielne masternode pre fixovanie prostriedkov až do 1000 ZOZO</translation>
+        <source>Use 2 separate masternodes to mix funds up to 1000 ZZC</source>
+        <translation>Použiť 2 rozdielne masternode pre fixovanie prostriedkov až do 1000 ZZC</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 ZOZO</source>
-        <translation>Použiť 8 rozdielnych masternode pre fixovanie prostriedkov až do 1000 ZOZO</translation>
+        <source>Use 8 separate masternodes to mix funds up to 1000 ZZC</source>
+        <translation>Použiť 8 rozdielnych masternode pre fixovanie prostriedkov až do 1000 ZZC</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Použiť 16 rozdielnych masternode</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 ZOZO to anonymize 1000 ZOZO</source>
-        <translation>Táto možnosť je najrýchlejšia a bude stáť približne 0.025 ZOZO pre anonimizáciu 1000 ZOZO</translation>
+        <source>This option is the quickest and will cost about ~0.025 ZZC to anonymize 1000 ZZC</source>
+        <translation>Táto možnosť je najrýchlejšia a bude stáť približne 0.025 ZZC pre anonimizáciu 1000 ZZC</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 ZOZO to anonymize 1000 ZOZO</source>
-        <translation>Táto možnosť je stredne rýchla bude stáť približne 0.05 ZOZO pre anonimizáciu 1000 ZOZO</translation>
+        <source>This option is moderately fast and will cost about 0.05 ZZC to anonymize 1000 ZZC</source>
+        <translation>Táto možnosť je stredne rýchla bude stáť približne 0.05 ZZC pre anonimizáciu 1000 ZZC</translation>
     </message>
     <message>
-        <source>0.1 ZOZO per 1000 ZOZO you anonymize.</source>
-        <translation>0.1 ZOZO za 1000 ZOZO ktoré spravíte anonymnými.</translation>
+        <source>0.1 ZZC per 1000 ZZC you anonymize.</source>
+        <translation>0.1 ZZC za 1000 ZZC ktoré spravíte anonymnými.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1523,8 +1523,8 @@ https://www.transifex.com/projects/p/zozocoin/</translation>
         <translation>Čiastka a kolá:</translation>
     </message>
     <message>
-        <source>0 ZOZO / 0 Rounds</source>
-        <translation>0 ZOZO / 0 Kôl</translation>
+        <source>0 ZZC / 0 Rounds</source>
+        <translation>0 ZZC / 0 Kôl</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -3281,8 +3281,8 @@ https://www.transifex.com/projects/p/zozocoin/</translation>
         <translation>Poslať Mince</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ZOZO.</source>
-        <translation>InstantSend zatiaľ nepodporuje posielanie takto vysokých čiastok. Transakcie sú limitované na %1 ZOZO.</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ZZC.</source>
+        <translation>InstantSend zatiaľ nepodporuje posielanie takto vysokých čiastok. Transakcie sú limitované na %1 ZZC.</translation>
     </message>
     </context>
 <context>
@@ -3587,8 +3587,8 @@ https://www.transifex.com/projects/p/zozocoin/</translation>
         <translation>Tento produkt obsahuje softvér vyvinutý projektom OpenSSL pre použitie sady nástrojov OpenSSL &lt;https://www.openssl.org/&gt; a kryptografického softvéru napísaného Eric Young a UPnP softvér napísaný Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 ZOZO.</source>
-        <translation>Nenašiel sa dostatok prostriedkov pre túto transakciu, ktorú nie sú rovné 1000 ZOZO.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 1000 ZZC.</source>
+        <translation>Nenašiel sa dostatok prostriedkov pre túto transakciu, ktorú nie sú rovné 1000 ZZC.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -3939,8 +3939,8 @@ https://www.transifex.com/projects/p/zozocoin/</translation>
         <translation>Kľúč KeePassHttp pre šifrovanú AES komunikáciu s KeePass</translation>
     </message>
     <message>
-        <source>Keep N ZOZO anonymized (default: %u)</source>
-        <translation>Udržiavať N ZOZO anonymizovaných (predvolené: %u)</translation>
+        <source>Keep N ZZC anonymized (default: %u)</source>
+        <translation>Udržiavať N ZZC anonymizovaných (predvolené: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
@@ -3971,8 +3971,8 @@ https://www.transifex.com/projects/p/zozocoin/</translation>
         <translation>Poplatky (v %s/kB) menšie ako toto, sú považované za nulový transakčný poplatok (predvolené: %s)</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ZOZO.</source>
-        <translation>InstantSend zatiaľ nepodporuje posielanie takto vysokých čiastok. Transakcie sú limitované na %1 ZOZO.</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 ZZC.</source>
+        <translation>InstantSend zatiaľ nepodporuje posielanie takto vysokých čiastok. Transakcie sú limitované na %1 ZZC.</translation>
     </message>
     <message>
         <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
@@ -3999,8 +3999,8 @@ https://www.transifex.com/projects/p/zozocoin/</translation>
         <translation>Nedá sa nájsť dostatok denominácií PrivateSend pre túto transakciu. </translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 ZOZO.</source>
-        <translation>Nedá sa nájsť dostatok ne-denominovaných PrivateSend zdrojov pre túto transakciu, ktoré nie sú rovné 1000 ZOZO.</translation>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 ZZC.</source>
+        <translation>Nedá sa nájsť dostatok ne-denominovaných PrivateSend zdrojov pre túto transakciu, ktoré nie sú rovné 1000 ZZC.</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>

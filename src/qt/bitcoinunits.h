@@ -57,9 +57,9 @@ public:
      */
     enum Unit
     {
-        ZOZO,
-        mZOZO,
-        uZOZO,
+        ZZC,
+        mZZC,
+        uZZC,
         duffs
     };
 

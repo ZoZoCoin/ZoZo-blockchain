@@ -62,10 +62,10 @@ for arg in sys.argv[1:]:
 
 #Set env vars
 buildDir = BUILDDIR
-if "ZOZOD" not in os.environ:
-    os.environ["ZOZOD"] = buildDir + '/src/zozocoind' + EXEEXT
-if "ZOZOCLI" not in os.environ:
-    os.environ["ZOZOCLI"] = buildDir + '/src/zozocoin-cli' + EXEEXT
+if "ZZCD" not in os.environ:
+    os.environ["ZZCD"] = buildDir + '/src/zozocoind' + EXEEXT
+if "ZZCCLI" not in os.environ:
+    os.environ["ZZCCLI"] = buildDir + '/src/zozocoin-cli' + EXEEXT
 
 if EXEEXT == ".exe" and "-win" not in opts:
     # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9

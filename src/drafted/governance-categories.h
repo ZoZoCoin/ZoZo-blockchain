@@ -4,7 +4,7 @@
 
 	* means the category has an associated class
 	
-	CZozocoinNetwork: ZOZO NETWORK (ROOT)
+	CZozocoinNetwork: ZZC NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
 		vector<CZozocoinProject> vecProjects;
@@ -19,7 +19,7 @@
 
 */
 
-	// ZOZO NETWORK (ROOT)
+	// ZZC NETWORK (ROOT)
 	// 	-> NETWORK VARIABLE
 	// 		-> switch, setting
 	// 	-> CATEGORIES
@@ -49,7 +49,7 @@
 	// 			-> USER1 (only users are allowed here in this scope)
 	// 			-> USER2
 	// 		-> GROUP2 (EVO)
-	// 			-> VALUEOVERRIDE (STORE=ZOZODRIVE)
+	// 			-> VALUEOVERRIDE (STORE=ZZCDRIVE)
 	// 			-> USER1
 
 	// 	-> COMPANIES

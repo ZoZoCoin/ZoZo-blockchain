@@ -1,4 +1,4 @@
-TOR SUPPORT IN ZOZO CORE
+TOR SUPPORT IN ZZC CORE
 =======================
 
 It is possible to run Zozo Core as a Tor hidden service, and connect to such services.

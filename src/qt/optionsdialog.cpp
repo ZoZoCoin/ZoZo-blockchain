@@ -90,10 +90,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("ZOZO-light"), QVariant("light"));
-    ui->theme->addItem(QString("ZOZO-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("ZOZO-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("ZOZO-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("ZZC-light"), QVariant("light"));
+    ui->theme->addItem(QString("ZZC-blue"), QVariant("drkblue"));
+    ui->theme->addItem(QString("ZZC-Crownium"), QVariant("crownium"));
+    ui->theme->addItem(QString("ZZC-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");
