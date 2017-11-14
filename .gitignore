@@ -6,13 +6,13 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/dtmi
-src/dtmid
-src/dtmi-cli
-src/dtmi-tx
-src/test/test_dtmi
-src/qt/test/test_dtmi-qt
-src/bench/bench_dtmi
+src/zozocoin
+src/zozocoind
+src/zozocoin-cli
+src/zozocoin-tx
+src/test/test_zozocoin
+src/qt/test/test_zozocoin-qt
+src/bench/bench_zozocoin 
 
 # autoreconf
 Makefile.in
@@ -35,8 +35,8 @@ config.log
 config.status
 configure
 libtool
-src/config/dtmi-config.h
-src/config/dtmi-config.h.in
+src/config/zozocoin-config.h
+src/config/zozocoin-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -62,7 +62,7 @@ libconftest.dylib*
 *.o
 *.o-*
 *.patch
-.dtmi
+.zozocoin
 *.a
 *.pb.cc
 *.pb.h
@@ -81,12 +81,12 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dtmi-qt
-Dtmi-Qt.app
+zozocoin-qt
+Zozocoin-Qt.app
 
 # Unit-tests
 Makefile.test
-dtmi-qt_test
+zozocoin-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -100,7 +100,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_dtmi.coverage/
+test_zozocoin.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -124,11 +124,11 @@ share/BitcoindComparisonTool.jar
 /doc/doxygen/
 
 libbitcoinconsensus.pc
-src/qt/dtmi-qt.bash
+src/qt/zozocoin-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-dtmi-cli
-dtmid
-dtmi-qt
+zozocoin-cli
+zozocoind
+zozocoin-qt
 make

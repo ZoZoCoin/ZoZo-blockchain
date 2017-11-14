@@ -1,4 +1,4 @@
-Building Dtmi Core
+Building Zozo Core
 
 Use the autogen script to prepare the build environment.
 
@@ -7,10 +7,10 @@ Use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/dtmipay/dtmi-binaries
+https://github.com/zozocoinpay/zozocoin-binaries
 
 Always verify the signatures and checksums.
 
-See doc/build-*.md for instructions on building dtmid,
+See doc/build-*.md for instructions on building zozocoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Dtmi.
+implementation of Zozo.

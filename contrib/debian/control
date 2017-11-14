@@ -1,8 +1,8 @@
-Source: dtmi
+Source: zozocoin
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@dtmi.org>
-Uploaders: Holger Schinzel <holger@dtmi.org>
+Maintainer: Holger Schinzel <holger@zozocoin.org>
+Uploaders: Holger Schinzel <holger@zozocoin.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -24,45 +24,45 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://www.dtmi.org/
-Vcs-Git: git://github.com/dtmipay/dtmi.git
-Vcs-Browser: https://github.com/dtmipay/dtmi
+Homepage: https://www.zozocoin.org/
+Vcs-Git: git://github.com/zozocoinpay/zozocoin.git
+Vcs-Browser: https://github.com/zozocoinpay/zozocoin
 
-Package: dtmid
+Package: zozocoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Dtmi is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Dtmi uses peer-to-peer
+ Zozocoin is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Zozocoin uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dtmi Core
+ and issuing money are carried out collectively by the network. Zozocoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, dtmid, and the CLI tool
- dtmi-cli to interact with the daemon.
+ This package provides the daemon, zozocoind, and the CLI tool
+ zozocoin-cli to interact with the daemon.
 
-Package: dtmi-qt
+Package: zozocoin-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Dtmi is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Dtmi uses peer-to-peer
+ Zozocoin is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Zozocoin uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dtmi Core
+ and issuing money are carried out collectively by the network. Zozocoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Dtmi-Qt, a GUI for Dtmi based on Qt.
+ This package provides Zozocoin-Qt, a GUI for Zozocoin based on Qt.
 
-Package: dtmi-tx
+Package: zozocoin-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Dtmi is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Dtmi uses peer-to-peer
+ Zozocoin is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Zozocoin uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Dtmi Core
+ and issuing money are carried out collectively by the network. Zozocoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides dtmi-tx, a command-line transaction creation
- tool which can be used without a dtmi daemon.  Some means of
+ This package provides zozocoin-tx, a command-line transaction creation
+ tool which can be used without a zozocoin daemon.  Some means of
  exchanging minimal transaction data with peers is still required.
