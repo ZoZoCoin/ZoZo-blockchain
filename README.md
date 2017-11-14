@@ -1,36 +1,34 @@
-Dtmi Core staging tree 0.12.1
+Zozo Core staging tree 0.12.1
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/dtmipay/dtmi.svg?branch=master)](https://travis-ci.org/dtmipay/dtmi) `v0.12.0.x:` [![Build Status](https://travis-ci.org/dtmipay/dtmi.svg?branch=v0.12.0.x)](https://travis-ci.org/dtmipay/dtmi/branches) `v0.12.1.x:` [![Build Status](https://travis-ci.org/dtmipay/dtmi.svg?branch=v0.12.1.x)](https://travis-ci.org/dtmipay/dtmi/branches)
-
-https://www.dtmi.org
+`master:` 
 
 
-What is Dtmi?
+What is Zozo?
 ----------------
 
-Dtmi is an experimental new digital currency that enables anonymous, instant
-payments to anyone, anywhere in the world. Dtmi uses peer-to-peer technology
+Zozo is an experimental new digital currency that enables anonymous, instant
+payments to anyone, anywhere in the world. Zozo uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Dtmi Core is the name of the open
+are carried out collectively by the network. Zozo Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Dtmi Core software, see https://www.dtmi.org/get-dtmi/.
+the Zozo Core software.
 
 
 License
 -------
 
-Dtmi Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Zozo Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
-Development Process
+Development Process 
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/dtmipay/dtmi/tags) are created to indicate new official,
-stable release versions of Dtmi Core.
+[Tags](https://github.com/Chainbytes/zozocoin/tags) are created to indicate new official,
+stable release versions of Zozo Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -62,16 +60,3 @@ code. This is especially important for large or high-risk changes. It is useful
 to add a test plan to the pull request description if testing the changes is
 not straightforward.
 
-Translations
-------------
-
-Changes to translations as well as new translations can be submitted to
-[Dtmi Core's Transifex page](https://www.transifex.com/projects/p/dtmi/).
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
-
-Translators should also follow the [forum](https://www.dtmi.org/forum/topic/dtmi-worldwide-collaboration.88/).
