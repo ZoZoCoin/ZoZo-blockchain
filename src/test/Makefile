@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. zozocoin_test
+	$(MAKE) -C .. dtmi_test
 clean:
-	$(MAKE) -C .. zozocoin_test_clean
+	$(MAKE) -C .. dtmi_test_clean
 check:
-	$(MAKE) -C .. zozocoin_test_check
+	$(MAKE) -C .. dtmi_test_check

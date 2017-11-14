@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,10 +19,52 @@
 #include "version.h"
 
 #include <boost/foreach.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/algorithm/string.hpp>
+//#include <boost/process.hpp>
 
+
+
+#include <iostream>
+#include <stdexcept>
+#include <stdio.h>
+#include <string>
 #include <univalue.h>
 
+
+
+#include <iostream>
+#include <stdexcept>
+#include <stdio.h>
+#include <string>
 using namespace std;
+
+
+
+
+std::string exec(const char* cmd) {
+	char buffer[128];
+	std::string result = "";
+	FILE* pipe = popen(cmd, "r");
+	if (!pipe) throw std::runtime_error("popen() failed!");
+	try {
+		while (!feof(pipe)) {
+			if (fgets(buffer, 128, pipe) != NULL)
+				result += buffer;
+		}
+	}
+	catch (...) {
+		pclose(pipe);
+		throw;
+	}
+	pclose(pipe);
+	return result;
+}
+
+
+
+
+
 
 UniValue getconnectioncount(const UniValue& params, bool fHelp)
 {
@@ -102,7 +144,7 @@ UniValue getpeerinfo(const UniValue& params, bool fHelp)
             "    \"minping\": n,              (numeric) minimum observed ping time\n"
             "    \"pingwait\": n,             (numeric) ping wait\n"
             "    \"version\": v,              (numeric) The peer version, such as 7001\n"
-            "    \"subver\": \"/Zozocoin Core:x.x.x/\",  (string) The string version\n"
+            "    \"subver\": \"/Dtmi Core:x.x.x/\",  (string) The string version\n"
             "    \"inbound\": true|false,     (boolean) Inbound (true) or Outbound (false)\n"
             "    \"startingheight\": n,       (numeric) The starting height (block) of the peer\n"
             "    \"banscore\": n,             (numeric) The ban score\n"
@@ -187,8 +229,8 @@ UniValue addnode(const UniValue& params, bool fHelp)
             "1. \"node\"     (string, required) The node (see getpeerinfo for nodes)\n"
             "2. \"command\"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once\n"
             "\nExamples:\n"
-            + HelpExampleCli("addnode", "\"192.168.0.6:9999\" \"onetry\"")
-            + HelpExampleRpc("addnode", "\"192.168.0.6:9999\", \"onetry\"")
+            + HelpExampleCli("addnode", "\"192.168.0.6:1117\" \"onetry\"")
+            + HelpExampleRpc("addnode", "\"192.168.0.6:1117\", \"onetry\"")
         );
 
     string strNode = params[0].get_str();
@@ -263,7 +305,7 @@ UniValue getaddednodeinfo(const UniValue& params, bool fHelp)
             "    \"connected\" : true|false,          (boolean) If connected\n"
             "    \"addresses\" : [\n"
             "       {\n"
-            "         \"address\" : \"192.168.0.201:9999\",  (string) The zozocoin server host and port\n"
+            "         \"address\" : \"192.168.0.201:1117\",  (string) The dtmi server host and port\n"
             "         \"connected\" : \"outbound\"           (string) connection, inbound or outbound\n"
             "       }\n"
             "       ,...\n"
@@ -424,6 +466,235 @@ static UniValue GetNetworksInfo()
     return networks;
 }
 
+UniValue pushdata(const UniValue& params, bool fHelp)
+{
+	string strCommand;
+	for(int i=0; i<params.size(); i++)
+	{
+	    if(i>0)
+	     strCommand=strCommand+" "+params[i].get_str();
+	    else
+	     strCommand=params[i].get_str();
+
+	}
+
+	if (params.size() == 0)
+	{
+		throw runtime_error(
+			"Need data for adding to blockchain\n");
+	}
+
+	//если передали ссылку на картинку=======================================
+	std::size_t found = strCommand.find("http");
+	if (found != std::string::npos) // скачиваем картинку и конертим ее в base64
+	{
+		string  cmdStr = "sudo /home/ubuntu/php-OP_RETURN/./mypush.sh '" + strCommand + "'";
+
+		std::cout << "_________________\n";
+
+		std::cout << "cmdStr= " << cmdStr << "\n";
+
+		std::cout << "_________________\n";
+
+
+
+		const char * cmd = cmdStr.c_str();
+
+
+
+		std::string strA = exec(cmd);
+
+		strCommand = strA;
+
+
+		std::cout << "_________________\n";
+
+		std::cout << "base64= " << strCommand << "\n";
+
+		std::cout << "_________________\n";
+
+
+	}
+
+
+
+	
+
+	UniValue obj(UniValue::VOBJ);
+
+	if (strCommand.size() > 80)
+	{
+		int count = 1;
+		for (int i = 0; i < strCommand.size(); i += 80)
+		{
+			
+
+			string cmd80 = strCommand.substr(i, 80);
+			
+
+			//UniValue obj(UniValue::VOBJ);
+			////obj.push_back(Pair("TxId", strA));
+			//return obj;
+
+			
+
+			string  cmdStr = "sudo /home/ubuntu/php-OP_RETURN/./push.sh '" + cmd80 + "'";
+
+			std::cout << "_________________\n";
+
+			std::cout << "strCommand= " << cmdStr << "\n";
+
+			std::cout << "_________________\n";
+
+
+
+			const char * cmd = cmdStr.c_str();
+
+
+
+			std::string strA = exec(cmd);
+
+
+			//txId==================
+			int sz = strA.size();
+			strA.erase(sz - 1, 1);
+			//======================
+
+			string s = boost::lexical_cast<string>(count);
+			//string num = std::to_string(i + 1);
+			obj.push_back(Pair(s, strA));
+			count++;
+
+			/*
+				"1": "txId1",
+				"2" : "txId2",
+				*/
+		}
+	}
+	else
+	{
+		string  cmdStr = "sudo /home/ubuntu/php-OP_RETURN/./push.sh '" + strCommand + "'";
+
+		const char * cmd = cmdStr.c_str();
+
+		std::string strA = exec(cmd);
+
+
+		//txId==================
+		int sz = strA.size();
+		strA.erase(sz - 1, 1);
+		//======================
+
+
+		obj.push_back(Pair("1", strA));
+
+	}
+	
+		return obj;
+
+}
+
+UniValue getdata(const UniValue& params, bool fHelp)
+{
+
+	UniValue obj(UniValue::VOBJ);
+	
+
+
+	string strCommand;
+	string itogForSend;
+	if (params.size() > 0)
+	{
+		int count = 1;
+		for (int i = 0; i < params.size(); i++)
+		{
+			strCommand = params[i].get_str();
+			std::cout << "_________________\n";
+
+			std::cout << "strCommand= " << strCommand << "\n";
+
+			std::cout << "_________________\n";
+
+
+			string  cmdStr = "sudo /home/ubuntu/php-OP_RETURN/./get.sh " + strCommand;
+
+			const char * cmd = cmdStr.c_str();
+
+
+			std::string mystr = exec(cmd);
+			string itog;
+			int a = (int)mystr[1];
+			if (a <= 75)
+			{
+				itog = mystr.substr(2, a);
+			}
+			else if (a == 76)
+				itog = mystr.substr(3, int(mystr[2]));
+			else if (a == 77)
+				itog = mystr.substr(4, int(mystr[2]) + 256 * int(mystr[3]));
+
+			itogForSend = itogForSend + itog;
+			//string s = boost::lexical_cast<string>(count);
+			
+
+			//count++;
+		}
+
+		//strCommand = params[0].get_str();
+	}
+	else
+	{
+		throw runtime_error(
+			"Need RefID for getting data from blockchain\n");
+	}
+
+	boost::replace_all(itogForSend, "\n", " ");
+	
+
+
+	obj.push_back(Pair("ASCII", itogForSend));
+
+
+	/*string  cmdStr = "sudo /home/ubuntu/php-OP_RETURN/./get.sh " + strCommand;
+	
+	const char * cmd = cmdStr.c_str();
+
+
+	std::string mystr = exec(cmd);
+	string itog;
+	int a = (int)mystr[1];
+	if (a <= 75)
+	{
+		itog = mystr.substr(2, a);
+	}
+	else if (a == 76)
+		itog = mystr.substr(3, int(mystr[2]));
+	else if (a == 77)
+		itog = mystr.substr(4, int(mystr[2]) + 256 * int(mystr[3]));*/
+
+
+
+
+
+	
+//	int sz = itog.size();
+//	itog.erase(sz - 1, 1);
+
+/*
+std::cout << "_________________\n";
+
+std::cout << "strA=" <<strA<<"\n";
+
+std::cout << "_________________\n";
+*/
+	
+
+	return obj;
+
+}
+
+
+
 UniValue getnetworkinfo(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 0)
@@ -433,7 +704,7 @@ UniValue getnetworkinfo(const UniValue& params, bool fHelp)
             "\nResult:\n"
             "{\n"
             "  \"version\": xxxxx,                      (numeric) the server version\n"
-            "  \"subversion\": \"/Zozocoin Core:x.x.x/\",     (string) the server subversion string\n"
+            "  \"subversion\": \"/Dtmi Core:x.x.x/\",     (string) the server subversion string\n"
             "  \"protocolversion\": xxxxx,              (numeric) the protocol version\n"
             "  \"localservices\": \"xxxxxxxxxxxxxxxx\", (string) the services we offer to the network\n"
             "  \"timeoffset\": xxxxx,                   (numeric) the time offset\n"

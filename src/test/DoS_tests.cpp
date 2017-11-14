@@ -13,7 +13,7 @@
 #include "serialize.h"
 #include "util.h"
 
-#include "test/test_zozocoin.h"
+#include "test/test_dtmi.h"
 
 #include <stdint.h>
 

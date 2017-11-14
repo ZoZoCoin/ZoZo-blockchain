@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/zozocoin-config.h"
+#include "config/dtmi-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -90,10 +90,10 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("ZZC-light"), QVariant("light"));
-    ui->theme->addItem(QString("ZZC-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("ZZC-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("ZZC-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("DTMI-light"), QVariant("light"));
+    ui->theme->addItem(QString("DTMI-blue"), QVariant("drkblue"));
+    ui->theme->addItem(QString("DTMI-Crownium"), QVariant("crownium"));
+    ui->theme->addItem(QString("DTMI-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");

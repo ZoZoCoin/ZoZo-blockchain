@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.zozocoin.Zozocoin-Qt";
+        return @"org.dtmi.Dtmi-Qt";
     } else {
         return [self __bundleIdentifier];
     }

@@ -1,0 +1,22 @@
+[Unit]
+Description=Dtmi's distributed currency daemon
+After=network.target
+
+[Service]
+User=dtmicore
+Group=dtmicore
+
+Type=forking
+PIDFile=/var/lib/dtmid/dtmid.pid
+ExecStart=/usr/bin/dtmid -daemon -pid=/var/lib/dtmid/dtmid.pid \
+-conf=/etc/dtmicore/dtmi.conf -datadir=/var/lib/dtmid -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

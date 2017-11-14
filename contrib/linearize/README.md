@@ -1,9 +1,9 @@
 # Linearize
 Construct a linear, no-fork, best version of the blockchain.
 
-## Step 0: Install zozocoin_hash
+## Step 0: Install dtmi_hash
 
-https://github.com/zozocoinpay/zozocoin_hash
+https://github.com/dtmipay/dtmi_hash
 
 ## Step 1: Download hash list
 

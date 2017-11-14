@@ -109,22 +109,20 @@ background-color:#f2f2f2;
 /*******************************************************/
 
 QPushButton { /* Global Button Style */
-background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #44bf35, stop: .1 #34af25, stop: .95 #34af25, stop: 1 #249f15);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .05 #222222, stop: .3 #FFFFFF, stop: .7 #FFFFFF, stop: 1 #222222);
 border:0;
 border-radius:3px;
-color:#ffffff;
+color:#000000;
 font-size:12px;
-font-weight:normal;
-height: 26px;
+font-weight:bold;
 padding-left:25px;
 padding-right:25px;
 padding-top:5px;
 padding-bottom:5px;
-margin-right: 10px;
 }
 
 QPushButton:hover {
-background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #54cf45, stop: .1 #44bf35, stop: .95 #44bf35, stop: 1 #34af25);
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .05 #444444, stop: .2 #FFFFFF, stop: .8 #FFFFFF, stop: 1 #444444);
 }
 
 QPushButton:focus {
@@ -764,16 +762,16 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Zozocoin Dialog */
+/* About Dtmi Dialog */
 QDialog#AboutDialog {
 background-color:#F8F6F6;
 }
 
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Zozocoin Contents */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Dtmi Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Zozocoin text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About Dtmi text */
 margin-right:10px;
 }
 
@@ -1128,7 +1126,7 @@ min-width:410px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/crownium/zozocoin_logo_horizontal');
+background-image: url(':/images/crownium/dtmi_logo_horizontal');
 background-repeat:none;
 }
 

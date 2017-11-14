@@ -1,11 +1,11 @@
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef GOVERNANCE_OBJECT_H
 #define GOVERNANCE_OBJECT_H
 
-//#define ENABLE_ZZC_DEBUG
+//#define ENABLE_DTMI_DEBUG
 
 #include "cachemultimap.h"
 #include "governance-exceptions.h"
@@ -34,7 +34,7 @@ static const int GOVERNANCE_OBJECT_PROPOSAL = 1;
 static const int GOVERNANCE_OBJECT_TRIGGER = 2;
 static const int GOVERNANCE_OBJECT_WATCHDOG = 3;
 
-static const CAmount GOVERNANCE_PROPOSAL_FEE_TX = (5.0*COIN);
+static const CAmount GOVERNANCE_PROPOSAL_FEE_TX = (500.0*COIN);
 
 static const int64_t GOVERNANCE_FEE_CONFIRMATIONS = 6;
 static const int64_t GOVERNANCE_UPDATE_MIN = 60*60;

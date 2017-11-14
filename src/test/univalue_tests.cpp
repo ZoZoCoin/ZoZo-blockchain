@@ -7,7 +7,7 @@
 #include <string>
 #include <map>
 #include <univalue.h>
-#include "test/test_zozocoin.h"
+#include "test/test_dtmi.h"
 
 #include <boost/test/unit_test.hpp>
 

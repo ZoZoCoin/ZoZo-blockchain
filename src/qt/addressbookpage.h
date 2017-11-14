@@ -27,7 +27,7 @@ QT_END_NAMESPACE
   */
 class AddressBookPage : public QDialog
 {
-    Q_OBJECT 
+    Q_OBJECT
 
 public:
     enum Tabs {

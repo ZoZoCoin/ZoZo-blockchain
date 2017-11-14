@@ -4,22 +4,22 @@
 
 	* means the category has an associated class
 	
-	CZozocoinNetwork: ZZC NETWORK (ROOT)
+	CDtmiNetwork: DTMI NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CZozocoinProject> vecProjects;
+		vector<CDtmiProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CZozocoinProject:
+	CDtmiProject:
 	has:
 		name
 		employees
 
 */
 
-	// ZZC NETWORK (ROOT)
+	// DTMI NETWORK (ROOT)
 	// 	-> NETWORK VARIABLE
 	// 		-> switch, setting
 	// 	-> CATEGORIES
@@ -49,7 +49,7 @@
 	// 			-> USER1 (only users are allowed here in this scope)
 	// 			-> USER2
 	// 		-> GROUP2 (EVO)
-	// 			-> VALUEOVERRIDE (STORE=ZZCDRIVE)
+	// 			-> VALUEOVERRIDE (STORE=DTMIDRIVE)
 	// 			-> USER1
 
 	// 	-> COMPANIES

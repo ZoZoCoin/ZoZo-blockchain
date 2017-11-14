@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef MASTERNODE_SYNC_H
@@ -24,7 +24,7 @@ static const int MASTERNODE_SYNC_FINISHED        = 999;
 static const int MASTERNODE_SYNC_TICK_SECONDS    = 6;
 static const int MASTERNODE_SYNC_TIMEOUT_SECONDS = 30; // our blocks are 2.5 minutes so 30 seconds should be fine
 
-static const int MASTERNODE_SYNC_ENOUGH_PEERS    = 6;
+static const int MASTERNODE_SYNC_ENOUGH_PEERS    = 1;
 
 extern CMasternodeSync masternodeSync;
 

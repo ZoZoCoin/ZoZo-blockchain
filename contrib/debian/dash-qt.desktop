@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dtmi
+Comment=Dtmi P2P Cryptocurrency
+Comment[fr]=Dtmi, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Dtmi, eşten eşe kriptografik sanal para birimi
+Exec=dtmi-qt %u
+Terminal=false
+Type=Application
+Icon=dtmi128
+MimeType=x-scheme-handler/dtmi;
+Categories=Office;Finance;

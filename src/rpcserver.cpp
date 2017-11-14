@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -243,11 +243,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Zozocoin Core server.");
+            "\nStop Dtmi Core server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "Zozocoin Core server stopping";
+    return "Dtmi Core server stopping";
 }
 
 /**
@@ -261,6 +261,8 @@ static const CRPCCommand vRPCCommands[] =
     { "control",            "debug",                  &debug,                  true  },
     { "control",            "help",                   &help,                   true  },
     { "control",            "stop",                   &stop,                   true  },
+	{ "control", "pushdata", &pushdata, true },
+	{ "control", "getdata",  &getdata, true },
 
     /* P2P networking */
     { "network",            "getnetworkinfo",         &getnetworkinfo,         true  },
@@ -342,19 +344,19 @@ static const CRPCCommand vRPCCommands[] =
     { "hidden",             "resendwallettransactions", &resendwallettransactions, true},
 #endif
 
-    /* Zozocoin features */
-    { "zozocoin",               "masternode",             &masternode,             true  },
-    { "zozocoin",               "masternodelist",         &masternodelist,         true  },
-    { "zozocoin",               "masternodebroadcast",    &masternodebroadcast,    true  },
-    { "zozocoin",               "gobject",                &gobject,                true  },
-    { "zozocoin",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
-    { "zozocoin",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
-    { "zozocoin",               "voteraw",                &voteraw,                true  },
-    { "zozocoin",               "mnsync",                 &mnsync,                 true  },
-    { "zozocoin",               "spork",                  &spork,                  true  },
-    { "zozocoin",               "getpoolinfo",            &getpoolinfo,            true  },
+    /* Dtmi features */
+    { "dtmi",               "masternode",             &masternode,             true  },
+    { "dtmi",               "masternodelist",         &masternodelist,         true  },
+    { "dtmi",               "masternodebroadcast",    &masternodebroadcast,    true  },
+    { "dtmi",               "gobject",                &gobject,                true  },
+    { "dtmi",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
+    { "dtmi",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
+    { "dtmi",               "voteraw",                &voteraw,                true  },
+    { "dtmi",               "mnsync",                 &mnsync,                 true  },
+    { "dtmi",               "spork",                  &spork,                  true  },
+    { "dtmi",               "getpoolinfo",            &getpoolinfo,            true  },
 #ifdef ENABLE_WALLET
-    { "zozocoin",               "privatesend",            &privatesend,            false },
+    { "dtmi",               "privatesend",            &privatesend,            false },
 
     /* Wallet */
     { "wallet",             "keepass",                &keepass,                true },
@@ -577,13 +579,13 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> zozocoin-cli " + methodname + " " + args + "\n";
+    return "> dtmi-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
-        "\"method\": \"" + methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:9998/\n";
+        "\"method\": \"" + methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:3882/\n";
 }
 
 void RPCRegisterTimerInterface(RPCTimerInterface *iface)

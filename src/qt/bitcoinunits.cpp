@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,9 +19,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(ZZC);
-    unitlist.append(mZZC);
-    unitlist.append(uZZC);
+    unitlist.append(DTMI);
+    unitlist.append(mDTMI);
+    unitlist.append(uDTMI);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -30,9 +30,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case ZZC:
-    case mZZC:
-    case uZZC:
+    case DTMI:
+    case mDTMI:
+    case uDTMI:
     case duffs:
         return true;
     default:
@@ -46,9 +46,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case ZZC: return QString("ZZC");
-            case mZZC: return QString("mZZC");
-            case uZZC: return QString::fromUtf8("μZZC");
+            case DTMI: return QString("DTMI");
+            case mDTMI: return QString("mDTMI");
+            case uDTMI: return QString::fromUtf8("μDTMI");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -57,9 +57,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case ZZC: return QString("tZZC");
-            case mZZC: return QString("mtZZC");
-            case uZZC: return QString::fromUtf8("μtZZC");
+            case DTMI: return QString("tDTMI");
+            case mDTMI: return QString("mtDTMI");
+            case uDTMI: return QString::fromUtf8("μtDTMI");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case ZZC: return QString("Zozocoin");
-            case mZZC: return QString("Milli-Zozocoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uZZC: return QString("Micro-Zozocoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Zozocoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case DTMI: return QString("Dtmi");
+            case mDTMI: return QString("Milli-Dtmi (1 / 1" THIN_SP_UTF8 "000)");
+            case uDTMI: return QString("Micro-Dtmi (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-Dtmi (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case ZZC: return QString("TestZozocoins");
-            case mZZC: return QString("Milli-TestZozocoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uZZC: return QString("Micro-TestZozocoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestZozocoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case DTMI: return QString("TestDtmis");
+            case mDTMI: return QString("Milli-TestDtmi (1 / 1" THIN_SP_UTF8 "000)");
+            case uDTMI: return QString("Micro-TestDtmi (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestDtmi (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -96,9 +96,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case ZZC:  return 100000000;
-    case mZZC: return 100000;
-    case uZZC: return 100;
+    case DTMI:  return 100000000;
+    case mDTMI: return 100000;
+    case uDTMI: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -108,9 +108,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case ZZC: return 8;
-    case mZZC: return 5;
-    case uZZC: return 2;
+    case DTMI: return 8;
+    case mDTMI: return 5;
+    case uDTMI: return 2;
     case duffs: return 0;
     default: return 0;
     }

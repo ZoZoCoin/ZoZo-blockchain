@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -83,16 +83,25 @@ bool CMasternodeSync::IsBlockchainSynced(bool fBlockAccepted)
 
     nTimeLastProcess = GetTime();
     nSkipped = 0;
-
+	
     if(fBlockchainSynced) return true;
-
+	if (fDebug) LogPrintf("1");
     if(fCheckpointsEnabled && pCurrentBlockIndex->nHeight < Checkpoints::GetTotalBlocksEstimate(Params().Checkpoints()))
         return false;
-
+	if (fDebug) LogPrintf("2");
     std::vector<CNode*> vNodesCopy = CopyNodeVector();
 
     // We have enough peers and assume most of them are synced
-    if(vNodesCopy.size() >= MASTERNODE_SYNC_ENOUGH_PEERS) {
+
+	/*std::string s = std::to_string(vNodesCopy.size());
+	char const *pchar = s.c_str();
+	if (fDebug) LogPrintf("vNodesCopy.size()=" + pchar);
+	*/
+	if (fDebug) LogPrintf("vNodesCopy.size()= %d\n", vNodesCopy.size());
+
+    if(vNodesCopy.size() >= MASTERNODE_SYNC_ENOUGH_PEERS) 
+	{
+		if (fDebug) LogPrintf("3");
         // Check to see how many of our peers are (almost) at the same height as we are
         int nNodesAtSameHeight = 0;
         BOOST_FOREACH(CNode* pnode, vNodesCopy)
@@ -109,16 +118,21 @@ bool CMasternodeSync::IsBlockchainSynced(bool fBlockAccepted)
             }
         }
     }
+	if (fDebug) LogPrintf("4");
     ReleaseNodeVector(vNodesCopy);
-
+	if (fDebug) LogPrintf("5");
     // wait for at least one new block to be accepted
     if(!fFirstBlockAccepted) return false;
-
+	if (fDebug) LogPrintf("6");
     // same as !IsInitialBlockDownload() but no cs_main needed here
     int64_t nMaxBlockTime = std::max(pCurrentBlockIndex->GetBlockTime(), pindexBestHeader->GetBlockTime());
+
+	if (fDebug) LogPrintf("7.maxblocktime:");
+	if (fDebug) LogPrintf("nMaxBlockTime");
     fBlockchainSynced = pindexBestHeader->nHeight - pCurrentBlockIndex->nHeight < 24 * 6 &&
                         GetTime() - nMaxBlockTime < Params().MaxTipAge();
-
+	//if (fDebug) LogPrintf("fBlockchainSynced=");
+	//if (fDebug) LogPrintf(fBlockchainSynced);
     return fBlockchainSynced;
 }
 

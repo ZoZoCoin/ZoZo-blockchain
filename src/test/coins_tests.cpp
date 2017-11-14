@@ -5,7 +5,7 @@
 #include "coins.h"
 #include "random.h"
 #include "uint256.h"
-#include "test/test_zozocoin.h"
+#include "test/test_dtmi.h"
 #include "main.h"
 #include "consensus/validation.h"
 

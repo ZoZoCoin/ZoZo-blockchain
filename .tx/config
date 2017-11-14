@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[zozocoin.qt-translation-012x]
-file_filter = src/qt/locale/zozocoin_<lang>.ts
-source_file = src/qt/locale/zozocoin_en.ts
+[dtmi.qt-translation-012x]
+file_filter = src/qt/locale/dtmi_<lang>.ts
+source_file = src/qt/locale/dtmi_en.ts
 source_lang = en

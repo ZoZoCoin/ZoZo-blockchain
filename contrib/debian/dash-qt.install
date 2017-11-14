@@ -1,0 +1,6 @@
+usr/local/bin/dtmi-qt usr/bin
+share/pixmaps/dtmi32.xpm usr/share/pixmaps
+share/pixmaps/dtmi16.xpm usr/share/pixmaps
+share/pixmaps/dtmi128.png usr/share/pixmaps
+debian/dtmi-qt.desktop usr/share/applications
+debian/dtmi-qt.protocol usr/share/kde4/services/

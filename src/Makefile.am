@@ -55,15 +55,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += zozocoind
+  bin_PROGRAMS += dtmid
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += zozocoin-cli zozocoin-tx
+  bin_PROGRAMS += dtmi-cli dtmi-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# zozocoin core #
+# dtmi core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addressindex.h \
@@ -191,7 +191,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between zozocoind and zozocoin-qt
+# server: shared between dtmid and dtmi-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -249,7 +249,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between zozocoind and zozocoin-qt, but only linked
+# wallet: shared between dtmid and dtmi-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -318,7 +318,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
-# common: shared between zozocoind, and zozocoin-qt and non-server tools
+# common: shared between dtmid, and dtmi-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -375,7 +375,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between zozocoin-cli and zozocoin-qt
+# cli: shared between dtmi-cli and dtmi-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -386,16 +386,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-zozocoind_SOURCES = zozocoind.cpp
-zozocoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-zozocoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-zozocoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+dtmid_SOURCES = dtmid.cpp
+dtmid_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+dtmid_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+dtmid_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-zozocoind_SOURCES += zozocoind-res.rc
+dtmid_SOURCES += dtmid-res.rc
 endif
 
-zozocoind_LDADD = \
+dtmid_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -406,50 +406,50 @@ zozocoind_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-zozocoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+dtmid_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-zozocoind_LDADD += libbitcoin_wallet.a
+dtmid_LDADD += libbitcoin_wallet.a
 endif
 
-zozocoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+dtmid_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# zozocoin-cli binary #
-zozocoin_cli_SOURCES = zozocoin-cli.cpp
-zozocoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-zozocoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-zozocoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# dtmi-cli binary #
+dtmi_cli_SOURCES = dtmi-cli.cpp
+dtmi_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+dtmi_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+dtmi_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-zozocoin_cli_SOURCES += zozocoin-cli-res.rc
+dtmi_cli_SOURCES += dtmi-cli-res.rc
 endif
 
-zozocoin_cli_LDADD = \
+dtmi_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-zozocoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+dtmi_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# zozocoin-tx binary #
-zozocoin_tx_SOURCES = zozocoin-tx.cpp
-zozocoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-zozocoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-zozocoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# dtmi-tx binary #
+dtmi_tx_SOURCES = dtmi-tx.cpp
+dtmi_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+dtmi_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+dtmi_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-zozocoin_tx_SOURCES += zozocoin-tx-res.rc
+dtmi_tx_SOURCES += dtmi-tx-res.rc
 endif
 
-zozocoin_tx_LDADD = \
+dtmi_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-zozocoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+dtmi_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

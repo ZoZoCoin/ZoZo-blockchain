@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the Zozo Core software.
+This document provides guidelines for internationalization of the Dtmi Core software.
 
 How to translate?
 ------------------
@@ -85,10 +85,10 @@ In Qt code use tr's third argument for optional plurality. For example:
 This adds `<numerusform>`s to the respective `.ts` file, which can be translated separately depending on the language. In English, this is simply:
 
     <message numerus="yes">
-        <source>%n active connection(s) to Zozo network</source>
+        <source>%n active connection(s) to Dtmi network</source>
         <translation>
-            <numerusform>%n active connection to Zozo network</numerusform>
-            <numerusform>%n active connections to Zozo network</numerusform>
+            <numerusform>%n active connection to Dtmi network</numerusform>
+            <numerusform>%n active connections to Dtmi network</numerusform>
         </translation>
     </message>
 

@@ -1,11 +1,11 @@
-Zozo Core 0.12.1
+Dtmi Core 0.12.1
 =====================
 
-This is the official reference wallet for Zozo digital currency and comprises the backbone of the Zozo peer-to-peer network. You can [download Zozo Core](https://www.zozocoin.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Dtmi digital currency and comprises the backbone of the Dtmi peer-to-peer network. You can [download Dtmi Core](https://www.dtmi.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Zozo on your native platform.
+The following are some helpful notes on how to run Dtmi on your native platform.
 
 ### Unix
 
@@ -16,22 +16,22 @@ Unpack the files into a directory and run:
 
 ### Windows
 
-Unpack the files into a directory, and then run zozocoin-qt.exe.
+Unpack the files into a directory, and then run dtmi-qt.exe.
 
 ### OS X
 
-Drag Zozo-Qt to your applications folder, and then run Zozo-Qt.
+Drag Dtmi-Qt to your applications folder, and then run Dtmi-Qt.
 
 ### Need Help?
 
-* See the [Zozo documentation](https://zozocoinpay.atlassian.net/wiki/display/DOC)
+* See the [Dtmi documentation](https://dtmipay.atlassian.net/wiki/display/DOC)
 for help and more information.
-* Ask for help on [#zozocoinpay](http://webchat.freenode.net?channels=zozocoinpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=zozocoinpay).
-* Ask for help on the [ZozoTalk](https://zozocointalk.org/) forums.
+* Ask for help on [#dtmipay](http://webchat.freenode.net?channels=dtmipay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=dtmipay).
+* Ask for help on the [DtmiTalk](https://dtmitalk.org/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Zozo Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Dtmi Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build Zozo Core on your native platf
 
 Development
 ---------------------
-The Zozo Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Dtmi Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -57,8 +57,8 @@ The Zozo Core repo's [root README](/README.md) contains relevant information on 
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [ZozoTalk](https://zozocointalk.org/) forums, in the Development & Technical Discussion board.
-* Discuss on [#zozocoinpay](http://webchat.freenode.net/?channels=zozocoinpay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=zozocoinpay).
+* Discuss on the [DtmiTalk](https://dtmitalk.org/) forums, in the Development & Technical Discussion board.
+* Discuss on [#dtmipay](http://webchat.freenode.net/?channels=dtmipay) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=dtmipay).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

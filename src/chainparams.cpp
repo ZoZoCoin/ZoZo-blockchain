@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Zozocoin Core developers
+// Copyright (c) 2014-2017 The Dtmi Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -51,8 +51,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Wired 09/Jan/2014 The Grand Experiment Goes Live: Overstock.com Is Now Accepting Bitcoins";
-    const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+	const char* pszTimestamp = "DTMI started nov 2017";
+    const CScript genesisOutputScript = CScript() << ParseHex("04471b2bc6ebebe7bcd404d3249142a44ee9342b9c36fdbe5db2ff94b6e3f06329040c0522ac7014099137c3e9c35cd4f89ee8ce0c08c9f27665caae32ae2746d5") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -92,8 +92,8 @@ public:
         consensus.BIP34Height = 227931;
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Zozocoin: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Zozocoin: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dtmi: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Dtmi: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -116,33 +116,41 @@ public:
         pchMessageStart[1] = 0x0c;
         pchMessageStart[2] = 0x6b;
         pchMessageStart[3] = 0xbd;
-        vAlertPubKey = ParseHex("048240a8748a80a286b270ba126705ced4f2ce5a7847b3610ea3c06513150dade2a8512ed5ea86320824683fc0818f0ac019214973e677acd1244f6d0571fc5103");
-        nDefaultPort = 9999;
+        vAlertPubKey = ParseHex("04ec99263d616bd23205468d7c4e4b83170147550980d4e914ea40854067e3d29d0d77bfd0efdeb0cb5e34771cb7681485012d7996f8f083f4a65a3104236102ae");
+        nDefaultPort = 1117;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nPruneAfterHeight = 100000;
-
-        genesis = CreateGenesisBlock(1390095618, 28917698, 0x1e0ffff0, 1, 50 * COIN);
+									
+		genesis = CreateGenesisBlock(1510297200, 3274684, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000074250fad823defafb34f4ce78e2811a0de318a1aa8d2a1d11c259175ec8"));
+        assert(genesis.hashMerkleRoot == uint256S("0x91921f9b9d52dbbe6aef7ed6b7a2e23499d14a89702541994f9a75aecc1c85eb"));
 
 
-        vSeeds.push_back(CDNSSeedData("zozocoin.org", "dnsseed.zozocoin.org"));
-        vSeeds.push_back(CDNSSeedData("zozocoindot.io", "dnsseed.zozocoindot.io"));
+vSeeds.push_back(CDNSSeedData("chickenkiller.com", "seed_chainbytes1.chickenkiller.com")); //	A	159.203.69.168
+vSeeds.push_back(CDNSSeedData("chickenkiller.com", "seed_chainbytes2.chickenkiller.com")); //	A	104.131.4.108
+vSeeds.push_back(CDNSSeedData("chickenkiller.com", "seed_chainbytes3.chickenkiller.com")); //	A	104.236.7.27
+vSeeds.push_back(CDNSSeedData("chickenkiller.com", "seed_chainbytes4.chickenkiller.com")); //	A	13.59.242.222
+vSeeds.push_back(CDNSSeedData("chickenkiller.com", "seed_chainbytes5.chickenkiller.com")); //	A	18.220.34.254
+
+
+		/*
+        vSeeds.push_back(CDNSSeedData("dtmi.org", "dnsseed.dtmi.org"));
+        vSeeds.push_back(CDNSSeedData("dtmidot.io", "dnsseed.dtmidot.io"));
         vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
-        vSeeds.push_back(CDNSSeedData("zozocoinpay.io", "dnsseed.zozocoinpay.io"));
-
-        // Zozocoin addresses start with 'X'
+        vSeeds.push_back(CDNSSeedData("dtmipay.io", "dnsseed.dtmipay.io"));
+		*/
+        // Dtmi addresses start with 'X'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,76);
-        // Zozocoin script addresses start with '7'
+        // Dtmi script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        // Zozocoin private keys start with '7' or 'X'
+        // Dtmi private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-        // Zozocoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Dtmi BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Zozocoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Dtmi BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Zozocoin BIP44 coin type is '5'
+        // Dtmi BIP44 coin type is '5'
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x05).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -155,13 +163,13 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
-        strSporkPubKey = "04549ac134f694c0243f503e8c8a9a986f5de6610049c40b07816809b0d1d06a21b07be27b9bb555931773f62ba6cf35a25fd52f694d4e1106ccd237a7bb899fdd";
-        strMasternodePaymentsPubKey = "04549ac134f694c0243f503e8c8a9a986f5de6610049c40b07816809b0d1d06a21b07be27b9bb555931773f62ba6cf35a25fd52f694d4e1106ccd237a7bb899fdd";
+        strSporkPubKey = "0470dfa5b5769f10b1b208b7f1a1c35e1cab09fae0cb89abe001208b05ead5533daaf8782dc74ecaabcf2f9f0e67ce913c555bf6c1f2099aec6ac1d0906d330065";
+        strMasternodePaymentsPubKey = "0470dfa5b5769f10b1b208b7f1a1c35e1cab09fae0cb89abe001208b05ead5533daaf8782dc74ecaabcf2f9f0e67ce913c555bf6c1f2099aec6ac1d0906d330065";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  1500, uint256S("0x000000aaf0300f59f49bc3e970bad15c11f961fe2347accffff19d96ec9778e3"))
-            (  4991, uint256S("0x000000003b01809551952460744d5dbb8fcbd6cbae3c220267bf7fa43f837367"))
+            (  0, uint256S("0x0000074250fad823defafb34f4ce78e2811a0de318a1aa8d2a1d11c259175ec8"))
+            /*(  4991, uint256S("0x000000003b01809551952460744d5dbb8fcbd6cbae3c220267bf7fa43f837367"))
             (  9918, uint256S("0x00000000213e229f332c0ffbe34defdaa9e74de87f2d8d1f01af8d121c3c170b"))
             ( 16912, uint256S("0x00000000075c0d10371d55a60634da70f197548dbbfa4123e12abfcbc5738af9"))
             ( 23912, uint256S("0x0000000000335eac6703f3b1732ec8b2f89c3ba3a7889e5767b090556bb9a276"))
@@ -179,11 +187,11 @@ public:
             ( 312645, uint256S("0x0000000000059dcb71ad35a9e40526c44e7aae6c99169a9e7017b7d84b1c2daf"))
             ( 407452, uint256S("0x000000000003c6a87e73623b9d70af7cd908ae22fee466063e4ffc20be1d2dbc"))
             ( 523412, uint256S("0x000000000000e54f036576a10597e0e42cc22a5159ce572f999c33975e121d4d"))
-            ( 523930, uint256S("0x0000000000000bccdb11c2b1cfb0ecab452abf267d89b7f46eaf2d54ce6e652c")),
-            1471809614, // * UNIX timestamp of last checkpoint block
-            1998064,    // * total number of transactions between genesis and last checkpoint
+            ( 523930, uint256S("0x0000000000000bccdb11c2b1cfb0ecab452abf267d89b7f46eaf2d54ce6e652c"))*/,
+			1510297200, // * UNIX timestamp of last checkpoint block
+            0,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            2800        // * estimated number of transactions per day after checkpoint
+            500        // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -216,8 +224,8 @@ public:
         consensus.BIP34Height = 21111;
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Zozocoin: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Zozocoin: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dtmi: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Dtmi: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -235,32 +243,33 @@ public:
         pchMessageStart[1] = 0xe2;
         pchMessageStart[2] = 0xca;
         pchMessageStart[3] = 0xff;
-        vAlertPubKey = ParseHex("04517d8a699cb43d3938d7b24faaff7cda448ca4ea267723ba614784de661949bf632d6304316b244646dea079735b9a6fc4af804efb4752075b9fe2245e14e412");
-        nDefaultPort = 19999;
+        vAlertPubKey = ParseHex("04daef6cf0bb137ff35ec2c98a4df4f770172c8960f6625f8c2691b96049cc8825e757c4b79cc77dd4ad3e2b9d17e8803d179333cb9ee47a48f30135be339ca765");
+        nDefaultPort = 11117;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1390666206UL, 3861367235UL, 0x1e0ffff0, 1, 50 * COIN);
+		genesis = CreateGenesisBlock(1510297201UL, 99684UL, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000cb97d38bc0965979ae9cc1d7e51f34d3a2926c5798d30a979440b90ff69"));
+        assert(genesis.hashMerkleRoot == uint256S("0x91921f9b9d52dbbe6aef7ed6b7a2e23499d14a89702541994f9a75aecc1c85eb"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("zozocoindot.io",  "testnet-seed.zozocoindot.io"));
+       /* vSeeds.push_back(CDNSSeedData("dtmidot.io",  "testnet-seed.dtmidot.io"));
         vSeeds.push_back(CDNSSeedData("masternode.io", "test.dnsseed.masternode.io"));
+		*/
 
-        // Testnet Zozocoin addresses start with 'y'
+        // Testnet Dtmi addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Zozocoin script addresses start with '8' or '9'
+        // Testnet Dtmi script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Zozocoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Dtmi BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Zozocoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Dtmi BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Zozocoin BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Dtmi BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -273,21 +282,21 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
-        strSporkPubKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
-        strMasternodePaymentsPubKey = "046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb501b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f75e76869f0e";
+        strSporkPubKey = "049f3e34759cc471f10cc42df9aa4eb70835db139f67e428bfe33d9224258a5de6e3e1fcfa9433c623c49be6094e4366f0633dff9ee9fa1e1f6671d8d76ac6e767";
+        strMasternodePaymentsPubKey = "049f3e34759cc471f10cc42df9aa4eb70835db139f67e428bfe33d9224258a5de6e3e1fcfa9433c623c49be6094e4366f0633dff9ee9fa1e1f6671d8d76ac6e767";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    261, uint256S("0x00000c26026d0815a7e2ce4fa270775f61403c040647ff2c3091f99e894a4618"))
-            (   1999, uint256S("0x00000052e538d27fa53693efe6fb6892a0c1d26c0235f599171c48a3cce553b1"))
+            (    0, uint256S("0x00000cb97d38bc0965979ae9cc1d7e51f34d3a2926c5798d30a979440b90ff69"))
+          /*  (   1999, uint256S("0x00000052e538d27fa53693efe6fb6892a0c1d26c0235f599171c48a3cce553b1"))
             (   2999, uint256S("0x0000024bc3f4f4cb30d29827c13d921ad77d2c6072e586c7f60d83c2722cdcc5"))
             (  12907, uint256S("0x00000067de20fd6d276ee0839a3187b203accaa5aad04ca5c17c2997e2730e4c"))
             (  15590, uint256S("0x00000009df8f2ee9c230aef9dad257d82bde20ca83378a208ce5d95d29a78852"))
             (  65900, uint256S("0x00000063e4e94d75d0dc075e93898444c8ef50655990dfff7c32d92a7efff671"))
-            ( 127618, uint256S("0x0000002104a2c1fc923b0e3b74b1860236fbc2b4479a833c28abaf456ea4e466")),
+            ( 127618, uint256S("0x0000002104a2c1fc923b0e3b74b1860236fbc2b4479a833c28abaf456ea4e466"))*/,
 
-            1483076495, // * UNIX timestamp of last checkpoint block
-            168590,     // * total number of transactions between genesis and last checkpoint
+			1510297201, // * UNIX timestamp of last checkpoint block
+            0,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500         // * estimated number of transactions per day after checkpoint
         };
@@ -323,8 +332,8 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Zozocoin: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Zozocoin: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dtmi: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Dtmi: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -341,13 +350,13 @@ public:
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
-        nDefaultPort = 19994;
+        nDefaultPort = 17222;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1417713337, 1096447, 0x207fffff, 1, 50 * COIN);
+		genesis = CreateGenesisBlock(1510297202, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x544c17dd5ed2ea586e7a6f221593d10e62b250aab5fe28607f34079b90a1b8d7"));
+        assert(genesis.hashMerkleRoot == uint256S("0x91921f9b9d52dbbe6aef7ed6b7a2e23499d14a89702541994f9a75aecc1c85eb"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
@@ -362,22 +371,22 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e")),
+            ( 0, uint256S("0x544c17dd5ed2ea586e7a6f221593d10e62b250aab5fe28607f34079b90a1b8d7")),
             0,
             0,
             0
         };
-        // Regtest Zozocoin addresses start with 'y'
+        // Regtest Dtmi addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Zozocoin script addresses start with '8' or '9'
+        // Regtest Dtmi script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Zozocoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Dtmi BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Zozocoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Dtmi BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Zozocoin BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Dtmi BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
    }
 };

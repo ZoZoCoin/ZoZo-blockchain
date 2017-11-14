@@ -123,7 +123,7 @@ public:
 };
 
 /**
- * Zozocoin RPC command dispatcher.
+ * Dtmi RPC command dispatcher.
  */
 class CRPCTable
 {
@@ -170,6 +170,11 @@ extern std::string HelpExampleCli(const std::string& methodname, const std::stri
 extern std::string HelpExampleRpc(const std::string& methodname, const std::string& args);
 
 extern void EnsureWalletIsUnlocked();
+
+extern UniValue getdata(const UniValue& params, bool fHelp);
+extern UniValue pushdata(const UniValue& params, bool fHelp);
+
+
 
 extern UniValue getconnectioncount(const UniValue& params, bool fHelp); // in rpcnet.cpp
 extern UniValue getaddressmempool(const UniValue& params, bool fHelp);
@@ -251,6 +256,10 @@ extern UniValue getblockchaininfo(const UniValue& params, bool fHelp);
 extern UniValue getnetworkinfo(const UniValue& params, bool fHelp);
 extern UniValue setmocktime(const UniValue& params, bool fHelp);
 extern UniValue resendwallettransactions(const UniValue& params, bool fHelp);
+
+//rell
+
+//extern UniValue getdata(const UniValue& params, bool fHelp);
 
 extern UniValue getrawtransaction(const UniValue& params, bool fHelp); // in rcprawtransaction.cpp
 extern UniValue listunspent(const UniValue& params, bool fHelp);

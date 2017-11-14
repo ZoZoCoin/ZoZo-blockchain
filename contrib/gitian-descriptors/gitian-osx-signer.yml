@@ -1,5 +1,5 @@
 ---
-name: "zozocoin-dmg-signer"
+name: "dtmi-dmg-signer"
 suites:
 - "trusty"
 architectures:
@@ -8,10 +8,10 @@ packages:
 - "faketime"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/zozocoinpay/zozocoin-detached-sigs.git"
+- "url": "https://github.com/dtmipay/dtmi-detached-sigs.git"
   "dir": "signature"
 files:
-- "zozocoin-osx-unsigned.tar.gz"
+- "dtmi-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -28,10 +28,10 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=zozocoin-osx-unsigned.tar.gz
-  SIGNED=zozocoin-osx-signed.dmg
+  UNSIGNED=dtmi-osx-unsigned.tar.gz
+  SIGNED=dtmi-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   ./detached-sig-apply.sh ${UNSIGNED} signature/osx
-  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Zozocoin-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
+  ${WRAP_DIR}/genisoimage -no-cache-inodes -D -l -probe -V "Dtmi-Core" -no-pad -r -dir-mode 0755 -apple -o uncompressed.dmg signed-app
   ${WRAP_DIR}/dmg dmg uncompressed.dmg ${OUTDIR}/${SIGNED}
