@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2017 The Dtmi Core developers
+// Copyright (c) 2014-2017 The Zozocoin Core developers
 
 #include "cachemap.h"
 
-#include "test/test_dtmi.h"
+#include "test/test_zozocoin.h"
 
 #include <boost/test/unit_test.hpp>
 

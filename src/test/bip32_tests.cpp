@@ -9,7 +9,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_dtmi.h"
+#include "test/test_zozocoin.h"
 
 #include <string>
 #include <vector>

@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of Dtmi.
+This directory contains data-driven tests for various aspects of Zozocoin.
 
 License
 --------

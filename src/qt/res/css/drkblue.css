@@ -100,23 +100,26 @@ background-color:#f2f2f2;
 
 /*******************************************************/
 
+
+
 QPushButton { /* Global Button Style */
-background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #64ACD2, stop: .1 #3398CC, stop: .95 #3398CC, stop: 1 #1D80B5);
+background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #44bf35, stop: .1 #34af25, stop: .95 #34af25, stop: 1 #249f15);
 border:0;
 border-radius:3px;
 color:#ffffff;
 font-size:12px;
-font-weight:bold;
+font-weight:normal;
+height: 26px;
 padding-left:25px;
 padding-right:25px;
 padding-top:5px;
 padding-bottom:5px;
+margin-right: 10px;
 }
 
 QPushButton:hover {
-background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #64ACD2, stop: .1 #46AADE, stop: .95 #46AADE, stop: 1 #1D80B5);
+background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #54cf45, stop: .1 #44bf35, stop: .95 #44bf35, stop: 1 #34af25);
 }
-
 QPushButton:focus {
 border:none;
 outline:none;
@@ -740,16 +743,16 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Dtmi Dialog */
+/* About Zozocoin Dialog */
 QDialog#AboutDialog {
 background-color:#F8F6F6;
 }
 
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Dtmi Contents */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Zozocoin Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Dtmi text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About Zozocoin text */
 margin-right:10px;
 }
 
@@ -806,7 +809,7 @@ margin-left:16px;
 QWidget .QFrame#frame .QLabel#labelBalanceText { /* Available Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignRight';
 min-width:160px;
-background-color:#56ABD8;
+background-color:#34af25;
 color:#ffffff;
 margin-right:5px;
 padding-right:5px;
@@ -819,7 +822,7 @@ QWidget .QFrame#frame .QLabel#labelBalance { /* Available Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:12px;
 font-weight:bold;
-color:#56ABD8;
+color:#34af25;
 margin-left:0px;
 }
 
@@ -909,7 +912,7 @@ min-width: 421px;
 QWidget .QFrame#framePrivateSend .QLabel#labelPrivateSendHeader { /* PrivateSend Header */
 qproperty-alignment: 'AlignVCenter | AlignRight';
 min-width:160px;
-background-color:#56ABD8;
+background-color:#34af25;
 color:#fff;
 margin-right:5px;
 padding-right:5px;
@@ -1103,7 +1106,7 @@ min-width:410px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/drkblue/dtmi_logo_horizontal');
+background-image: url(':/images/drkblue/zozocoin_logo_horizontal');
 background-repeat:none;
 }
 

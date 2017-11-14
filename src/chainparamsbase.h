@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between dtmi-cli and dtmid)
- * of a given instance of the Dtmi system.
+ * CBaseChainParams defines the base parameters (shared between zozocoin-cli and zozocoind)
+ * of a given instance of the Zozocoin system.
  */
 class CBaseChainParams
 {

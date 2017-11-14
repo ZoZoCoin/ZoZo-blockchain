@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
 #include "timedata.h"
-#include "test/test_dtmi.h"
+#include "test/test_zozocoin.h"
 
 #include <boost/test/unit_test.hpp>
 

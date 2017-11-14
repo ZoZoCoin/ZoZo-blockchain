@@ -5,7 +5,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "hash.h"
-#include "test/test_dtmi.h"
+#include "test/test_zozocoin.h"
 
 #include <stdint.h>
 

@@ -17,7 +17,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
-#include "test/test_dtmi.h"
+#include "test/test_zozocoin.h"
 
 #include <boost/test/unit_test.hpp>
 

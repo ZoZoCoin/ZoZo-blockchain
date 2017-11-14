@@ -9,7 +9,7 @@
 #include <utility>
 #include <vector>
 
-#include "test/test_dtmi.h"
+#include "test/test_zozocoin.h"
 
 #include <boost/foreach.hpp>
 #include <boost/test/unit_test.hpp>

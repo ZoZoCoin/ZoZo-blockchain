@@ -16,9 +16,9 @@ enum GovernanceObjectType {
     ValueOverride = 1, 
 
     // -------------------------------
-    // DtmiNetwork - is the root node
-    DtmiNetwork = 1000,
-    DtmiNetworkVariable = 1001,
+    // ZozocoinNetwork - is the root node
+    ZozocoinNetwork = 1000,
+    ZozocoinNetworkVariable = 1001,
     Category = 1002,
 
     // Actors
