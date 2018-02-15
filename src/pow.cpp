@@ -141,12 +141,16 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     unsigned int retarget = DIFF_DGW;
 
     // mainnet/regtest share a configuration 
-    if (Params().NetworkIDString() == CBaseChainParams::MAIN || Params().NetworkIDString() == CBaseChainParams::REGTEST) {
-        if (pindexLast->nHeight + 1 >= 34140) retarget = DIFF_DGW;
-        else if (pindexLast->nHeight + 1 >= 15200) retarget = DIFF_KGW;
-        else retarget = DIFF_BTC;
+    if (Params().NetworkIDString() == CBaseChainParams::MAIN || Params().NetworkIDString() == CBaseChainParams::REGTEST)
+    {
+        if (pindexLast->nHeight + 1 >= 8000)
+           retarget = DIFF_KGW;
+        else
+	   retarget = DIFF_BTC;
     // testnet -- we want a lot of coins in existance early on 
-    } else {
+    }
+     else
+    {
         if (pindexLast->nHeight + 1 >= 3000) retarget = DIFF_DGW;
         else retarget = DIFF_BTC;
     }
