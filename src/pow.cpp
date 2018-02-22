@@ -143,7 +143,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     // mainnet/regtest share a configuration 
     if (Params().NetworkIDString() == CBaseChainParams::MAIN || Params().NetworkIDString() == CBaseChainParams::REGTEST)
     {
-        if (pindexLast->nHeight + 1 >= 8000)
+        if (pindexLast->nHeight + 1 >= 7750)
            retarget = DIFF_KGW;
         else
 	   retarget = DIFF_BTC;
